@@ -1,0 +1,49 @@
+<div>
+  <label for="name">Name</label>
+  <input 
+    type="text" 
+    name="name" 
+    value="<%= strata_corporation ? strata_corporation.name : '' %>"
+  >
+</div>
+<div>
+    <label for="strata_plan_number">Strata Plan #</label>
+    <input 
+      type="text" 
+      name="strata_plan_number" 
+      value="<%= strata_corporation ? strata_corporation.strata_plan_number : '' %>"
+    >
+  </div>
+<div>
+  <input type="radio" name="title_to_land" value="freehold" checked> Freehold<br>
+  <input type="radio" name="title_to_land" value="leasehold"> Leasehold<br>
+  <input type="radio" name="title_to_land" value="airspace"> Airspace Parcel<br>
+  <input type="radio" name="title_to_land" value="other"> Other
+</div>
+<div>
+    <label for="status">Status</label>
+    <input 
+      type="text" 
+      name="status" 
+      value="<%= strata_corporation ? strata_corporation.status : '' %>"
+    >
+  </div>
+
+
+
+<!-- <div class="form-group mb-3"> -->
+  <!-- <label for="title">Title</label>
+  <input 
+    class="form-control" 
+    type="text" 
+    name="title" 
+    value="<%#= article ? article.title : '' %>"
+  >
+</div>
+<div class="form-group mb-3">
+  <label for="content">Content</label>
+  <textarea class="form-control" type="text" name="content">
+    <%#= article ? article.content : '' %>
+  </textarea>
+</div> -->
+  <input type="submit" value="<%= strata_corporation ? "Update" : "Create" %>" ">

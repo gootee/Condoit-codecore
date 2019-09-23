@@ -1,0 +1,6 @@
+<%- include("../partials/header") %>
+  <form action="/stratas/<%= strata_corporation.id %>" method="POST">
+    <input type="hidden" value="PATCH" name="_method">
+    <%- include("./partials/form_inputs") %>
+  </form>
+<%- include("../partials/footer") %>

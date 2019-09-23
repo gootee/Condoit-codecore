@@ -8,5 +8,16 @@
     "start": "DEBUG=knex:query nodemon app.js"
   },
   "author": "John Gootee",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bookshelf": "^1.0.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "knex": "^0.19.4",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.2",
+    "pg": "^7.12.1"
+  }
 }

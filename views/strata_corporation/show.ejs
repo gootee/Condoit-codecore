@@ -1,0 +1,13 @@
+
+<%- include("../partials/header") %>
+  <div>
+    <h2>
+      <%= strata_corporation.name %> <span> <%= strata_corporation.strata_plan_number %> </span>
+    </h2>
+    <form action="/stratas/<%= strata_corporation.id %>" method="POST">
+      <input type="hidden" value="DELETE" name="_method">
+      <input type="submit" value="Delete"">
+    </form>
+  </div>
+  <a href="/stratas/<%= strata_corporation.id %>/edit">Edit</a>
+<%- include("../partials/footer") %>
