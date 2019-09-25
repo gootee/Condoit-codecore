@@ -40,7 +40,7 @@ exports.up = function(knex) {
 
 exports.down = function(knex) {
   return knex.schema.dropTable('strata_sections')
-  .dropTable('strata_corporations')
+    .dropTable('strata_corporations')
 };
 
 // exports.up = function(knex) {
