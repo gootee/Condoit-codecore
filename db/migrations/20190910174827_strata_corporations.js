@@ -10,7 +10,6 @@ exports.up = function(knex) {
       .notNullable();
     t
       .string('strata_plan_number')
-      .unique()
       .notNullable();
     t.string('title_to_land');  
     t.string('status');

@@ -1,0 +1,320 @@
+<%- include("../partials/header") %>
+
+<form action="/profile" method="POST">
+  <%#- include("./partials/formInputs") %>
+  <div>
+    <p1>Unit Buyer Profile</p1>
+
+    <div class="ui accordion">
+        <!-- <div class="active title"> -->
+        <div class="active title">
+          <i class="dropdown icon"></i>
+         Classify
+        </div>
+        <!-- <div class="active content"> -->
+        <div class="active content">
+          <div>
+            <input type="radio" id="resident"
+              name="purpose" value="mail">
+            <label for="resident">I will live there</label>  
+
+            <input type="radio" id="resident_investor"
+              name="purpose" value="phone">
+            <label for="resident_investor">Live there now, maybe rent later</label>  
+
+            <input type="radio" id="investor"
+              name="purpose" value="email">
+            <label for="investor">Investment for rental</label>
+          </div>
+
+          <div>
+            <input type="checkbox" class="real_estate_agent" name="real_estate_agent" value="real_estate_agent"> I'm working with a real estate agent.
+            <div>
+              <label class="real_estate_agent_info" style = "display: none" for="real_estate_agent_name">Agent name</label>         
+              <input class="real_estate_agent_info" style = "display: none" type="text" name="real_estate_agent_name">
+              <label class="real_estate_agent_info" style = "display: none" for="real_estate_agent_name" >Email</label>
+              <input class="real_estate_agent_info" style = "display: none" type="email" name="real_estate_agent_email">
+            </div>
+          </div>
+        </div>
+        <div class="title">
+          <i class="dropdown icon"></i>
+          Us
+        </div>
+        <div class="content">
+          <p>Who will live there?</p>
+          <p>People</p>
+          <div class="occupant_list">
+          </div>
+          <p>Pets</p>          
+          <div class="pet_list">
+          </div>
+        </div>
+
+        <div class="title">
+          <i class="dropdown icon"></i>
+          My new unit
+
+        </div>
+
+
+        <div class="content">
+          <p>Features:</p>
+
+          <div class="laundry">
+            <div>
+              <input type="checkbox" class="laundry" name="laundry" value="laundry"> 
+              <label for="laundry_type">Laundry: </label>
+              <select name="laundry_type">
+                <option value="in_unit" selected>In-unit</option>
+                <option value="in_building">In-building</option>
+                <option value="nearby">Nearby</option>
+              </select>              
+            </div>
+            <label for="importance">Importance</label>
+            <select name="importance">
+              <option value="required">Required</option>
+              <option value="important">Important</option>
+              <option value="preferred" selected>Preferred</option>
+              <option value="no_thanks">No thanks</option>
+            </select>
+          </div>
+          <div class="garburator">
+            <input type="checkbox" class="garburator" name="garburator" value="garburator"> 
+            <label for="garburator">Garburator: </label>
+            <label for="importance">Importance</label>
+            <select name="importance">
+              <option value="required">Required</option>
+              <option value="important">Important</option>
+              <option value="preferred" selected>Preferred</option>
+              <option value="no_thanks">No thanks</option>
+            </select>
+          </div>
+          <div class="dishwasher">
+            <input type="checkbox" class="dishwasher" name="dishwasher" value="dishwasher"> 
+            <label for="dishwasher">Dishwasher: </label>
+            <label for="importance">Importance</label>
+            <select name="importance">
+              <option value="required">Required</option>
+              <option value="important">Important</option>
+              <option value="preferred" selected>Preferred</option>
+              <option value="no_thanks">No thanks</option>
+            </select>
+          </div>
+          <div class="fireplace">
+            <input type="checkbox" class="fireplace" name="fireplace" value="fireplace"> 
+            <label for="fireplace">Fireplace: </label>
+            <label for="importance">Importance</label>
+            <select name="importance">
+              <option value="required">Required</option>
+              <option value="important">Important</option>
+              <option value="preferred" selected>Preferred</option>
+              <option value="no_thanks">No thanks</option>
+            </select>
+          </div>
+          <div class="balcony">
+            <input type="checkbox" class="balcony" name="balcony" value="balcony"> 
+            <label for="balcony">Outdoor area (balcony/deck/yard): </label>
+            <label for="importance">Importance</label>
+            <select name="importance">
+              <option value="required">Required</option>
+              <option value="important">Important</option>
+              <option value="preferred" selected>Preferred</option>
+              <option value="no_thanks">No thanks</option>
+            </select>
+          </div>
+          <label class="min_bedrooms" for="min_bedrooms">Minimum bedrooms</label>         
+          <select name="min_bedrooms">
+            <option value="0">Studio</option>
+            <option value="1">1+</option>
+            <option value="2" selected>2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+          </select>
+          <label class="min_bathrooms" for="min_bathrooms">Minimum bedrooms</label>         
+          <select name="min_bathrooms">
+            <option value="1" selected>1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+          </select>
+        </div>
+        <div class="title">
+          <i class="dropdown icon"></i>
+          Getting Places
+        </div>
+        <div class="content">
+          <p>Getting Places - Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+        </div>
+        <div class="title">
+          <i class="dropdown icon"></i>
+          Lifestyle
+        </div>
+        <div class="content">
+          <p>Lifestyle - Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+        </div>
+        <div class="title">
+          <i class="dropdown icon"></i>
+          Financial
+        </div>
+        <div class="content">
+          <p>Financial - Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+        </div>
+
+      <input type="submit" value="Save">
+      <!-- <input type="submit" value="<%#= article ? "Update" : "Create" %>" class="btn btn-primary"> -->
+    </form>  
+    <!-- <form action="/clucks/new" method="POST" class="inputForm">
+      <label for="content" class="label">Content</label>
+      <input type="text" name="content" class="input"  placeholder="Whatchoo cluckin' 'bout?'"></input>
+      <label for="imageUrl" class="label">Image URL</label>
+      <input type="text" name="imageUrl" class="input"  placeholder="https://i.imgur.com/qM6AGGG99"></input>
+      <input type="submit" value="Cluck!" class="btn btn-primary submitButton">
+    </form> -->
+  </div>
+    
+  <script>
+    function activateAccordian(e) {
+      let thisElement, otherElement
+      switch(e.target.tagName.toLowerCase()) {
+        case "div":
+          thisElement = e.target //title div
+          otherElement = e.target.nextElementSibling  // content div
+          break;
+        case "p":
+          thisElement = e.target.parentElement  //the content div that holds p
+          otherElement = thisElement.previousElementSibling //the title div
+          break;
+        case "i":
+          thisElement = e.target.parentElement  //the title div that holds i
+          otherElement = thisElement.nextElementSibling //the content div          
+        default:
+      }      
+
+      if (thisElement.classList.contains("active")) {
+        thisElement.classList.remove("active")
+        otherElement.classList.remove("active")
+      } else {
+        const titles = document.querySelectorAll(".title")
+        titles.forEach(t => t.classList.remove("active"))
+        const contents = document.querySelectorAll(".content")
+        contents.forEach(c => c.classList.remove("active"))
+        thisElement.classList.add("active")
+        otherElement.classList.add("active")
+      }
+    }
+
+    function petType(e) {
+      const parentPet = e.target.parentElement
+      const petSize = parentPet.querySelector(".pet_size")
+      const petSizeLabel = parentPet.querySelector(".pet_size_label")
+      if (e.target.value === "dog") {
+        petSize.style = "display: inline"
+        petSizeLabel.style = "display: inline"
+      } else {
+        petSize.style = "display: none"
+        petSizeLabel.style = "display: none"
+      }
+    }
+
+    function realEstateAgent(e) {
+      const realtors = document.querySelectorAll(".real_estate_agent_info")
+      if (e.target.checked) {
+        realtors.forEach(r => {
+          r.style = "display: inline"
+        })
+      } else {
+        realtors.forEach(r => {
+          r.style = "display: none"
+        })
+      }
+    }
+
+    function addOccupantRow(e) {
+      occupantID = -1
+      if (e) {
+        occupantID = parseInt(e.target.parentElement.getAttribute("id"))
+        e.target.parentElement.setAttribute("id", 1)       
+      }
+
+      if (occupantID === -1) {  //first time some has edited this row
+        const occupantList = document.querySelector(".occupant_list")
+        htmlString = `<div id=-1 class="occupant">
+          <label for="occupant_name">Name</label>         
+          <input type="text" name="occupant_name">
+          <label for="occupant_age">Age</label>
+          <select name="occupant_age">
+            <option value="under_18">Under 18</option>
+            <option value="adult" selected>Adult</option>
+            <option value="senior">Senior (over 55)</option>
+          </select>
+        </div>`
+
+        occupantList.insertAdjacentHTML('beforeend', htmlString);
+        const newOccupant = occupantList.lastChild
+        newOccupant.addEventListener("input", addOccupantRow); 
+      }
+    }  
+     
+    function addPetRow(e) {
+      petID = -1
+      if (e) {
+        petID = parseInt(e.target.parentElement.getAttribute("id"))
+        e.target.parentElement.setAttribute("id", 1)       
+      }
+
+      if (petID === -1) {  //first time some has edited this row
+        const petList = document.querySelector(".pet_list")
+        htmlString = `<div id=-1 class="pet">
+          <label for="pet_name">Name</label>         
+          <input type="text" name="pet_name">
+          <label for="pet_type">Type</label>
+          <select name="pet_type" class="pet_type">
+            <option value="dog" selected>Dog</option>
+            <option value="cat">Cat</option>
+            <option value="bird">Bird</option>
+            <option value="aquarium">Aquarium</option>
+            <option value="other">Other</option>
+          </select>
+          <label for="pet_size" class="pet_size_label">Size</label>
+          <select name="pet_size" class="pet_size">
+            <option value="small" selected>Small (less than 20 lbs.)</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large (40+ lbs.)</option>
+          </select>            
+        </div>`
+
+        petList.insertAdjacentHTML('beforeend', htmlString);
+        const newPet = petList.lastChild
+        debugger
+        newPet.addEventListener("input", addPetRow); 
+        const thisPetType = newPet.querySelector(".pet_type")
+        thisPetType.addEventListener("click", petType)
+      }
+    }  
+//          if (occupantList.hasChildNodes()) {
+//            const lastOccupant = occupantList.lastChild
+//            occupantID = lastOccupant.getAttribute("id");
+
+     
+
+      //lastOccupant.setAttribute("id", -1);
+    
+
+
+    
+
+
+    
+    function listeners() {
+      document.querySelectorAll(".dropdown icon").forEach(d => d.addEventListener("click", activateAccordian))
+      document.querySelectorAll(".title").forEach(t => t.addEventListener("click", activateAccordian))
+      document.querySelectorAll(".content").forEach(c => c.addEventListener("click", activateAccordian))
+      document.querySelector(".real_estate_agent").addEventListener("click", realEstateAgent)
+    }
+  
+    listeners()
+    addOccupantRow()
+    addPetRow()
+  </script>
+<%- include("../partials/footer") %>

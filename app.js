@@ -6,9 +6,10 @@ const path = require('path');
 const methodOverride = require('method-override');
 const app = express();
 const rootRouter = require("./routes/root");
-// const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 
 const strataCorporationRouter = require("./routes/strata_corporation")
+const profileRouter = require("./routes/profile")
 
 //  -= MIDDLEWARE =-
 
@@ -21,24 +22,25 @@ app.use(methodOverride((req, res) => {
   }
 }))
 
-// console.log(__dirname);
 app.use(express.static(path.join(__dirname, 'public')));
 // custom middleware to get username
 function getUsernameMiddleware(request, response, next) {
   // response.locals is an object that allows us to set global
   // variables that are accessible within any template
 
-  // response.locals.username = request.cookies.username;
+  response.locals.username = request.cookies.username;
   next();
 }
 
 app.use(logger('dev'));
-
-// app.use(cookieParser()); 
+app.use(cookieParser()); 
 // cookie-parser middleware will look for cookies sent through the headers of
 // a request and create a req.cookies object that houses the cookie data
-
 app.use(getUsernameMiddleware);
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+
 
 
 //Models
@@ -46,29 +48,29 @@ app.use(getUsernameMiddleware);
 //   tableName: 'users'
 // })
 
-const Strata_Corporation = bookshelf.model('Strata_Corporation', {
-  tableName: 'strata_corporations'
-})
+// const Strata_Corporation = bookshelf.model('Strata_Corporation', {
+//   tableName: 'strata_corporations'
+// })
 
 app.use(rootRouter);
-// app.use("/strata_corporation", strataCorporationRouter);
 app.use("/stratas", strataCorporationRouter);
+app.use ("/profile", profileRouter)
 // app.set allows us to change settings in our express app
 
-// app.use(function(req, res, next) {
-//   const url = req.url;
+app.use(function(req, res, next) {
+  const url = req.url;
 
-//   // check to see if user is trying to go to /contact_us
-//   if(url === '/contact_us') {
-//     // check to see if user is logged in
-//     if(res.locals.username) {
-//       next(); // if the user is logged in then they can visit /contact_us
-//     } else {
-//       res.redirect('/'); //otherwise they get redirected to the root path
-//     }
-//   }
-//   next();
-// })
+  // check to see if user is trying to go to /contact_us
+  if(url === '/contact_us') {
+    // check to see if user is logged in
+    if(res.locals.username) {
+      next(); // if the user is logged in then they can visit /contact_us
+    } else {
+      res.redirect('/'); //otherwise they get redirected to the root path
+    }
+  }
+  next();
+})
 
 app.set('view engine', 'ejs'); // here we are telling express to render tempaltes using ejs
 
