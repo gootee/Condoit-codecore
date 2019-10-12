@@ -32,7 +32,7 @@
             <div>
               <label class="real_estate_agent_info" style = "display: none" for="real_estate_agent_name">Agent name</label>         
               <input class="real_estate_agent_info" style = "display: none" type="text" name="real_estate_agent_name">
-              <label class="real_estate_agent_info" style = "display: none" for="real_estate_agent_name" >Email</label>
+              <label class="real_estate_agent_info" style = "display: none" for="real_estate_agent_email" >Email</label>
               <input class="real_estate_agent_info" style = "display: none" type="email" name="real_estate_agent_email">
             </div>
           </div>
@@ -123,6 +123,17 @@
               <option value="no_thanks">No thanks</option>
             </select>
           </div>
+          <div class="home_office">
+            <input type="checkbox" class="home_office" name="home_office" value="home_office"> 
+            <label for="home_office">Home office: </label>
+            <label for="importance">Importance</label>
+            <select name="importance">
+              <option value="required">Required</option>
+              <option value="important">Important</option>
+              <option value="preferred" selected>Preferred</option>
+              <option value="no_thanks">No thanks</option>
+            </select>
+          </div>
           <label class="min_bedrooms" for="min_bedrooms">Minimum bedrooms</label>         
           <select name="min_bedrooms">
             <option value="0">Studio</option>
@@ -144,21 +155,266 @@
           Getting Places
         </div>
         <div class="content">
-          <p>Getting Places - Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+          <p>Places I go</p>
+          <label class="destination" for="destination">Destination: </label>         
+          <input class="destination" type="text" name="destination">
+          <select name="destination_type">
+            <option value="church">Church</option>
+            <option value="daycare">Daycare</option>
+            <option value="friend_family">Friend/Family</option>
+            <option value="gym">Gym</option>
+            <option value="school">School</option>
+            <option value="work">Work</option>
+            <option value="grocery">Grocery</option>
+            <option value="cafe">Cafe</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="other">Other</option>
+          </select>
+          <select name="destination_category">
+            <option value="any">Any</option>
+            <option value="specific">Specific</option>
+          </select>    
+          <label class="address" for="address">Address/Intersection: </label>         
+          <input class="address" type="text" name="address">   
+          <select name="travel_by">
+            <option value="walk">Walk</option>
+            <option value="bike">Bike</option>
+            <option value="public">Public Transportation</option>
+            <option value="drive">Drive</option>
+          </select>  
+          <label class="travel_time" for="travel_time">Travel time (minutes): </label>   
+          <select name="travel_time">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="45">45</option>
+            <option value="60">60</option>
+          </select>   
+          <label for="importance">Importance</label>
+          <select name="importance">
+            <option value="required">Required</option>
+            <option value="important">Important</option>
+            <option value="preferred" selected>Preferred</option>
+            <option value="no_thanks">No thanks</option>
+          </select>
+          <p>Vehicles</p>
+          <label class="vehicle_type" for="vehicle_type">Vehicle: </label>   
+          <select name="vehicle_type">
+            <option value="compact">Compact car</option>
+            <option value="full_size">Full-size car/truck</option>
+            <option value="motorcycle">Motorcycle</option>
+          </select>  
+          <label class="vehicle_parking" for="vehicle_parking">Parking: </label>   
+          <select name="vehicle_parking">
+            <option value="garage">Private garage</option>
+            <option value="covered">Covered</option>
+            <option value="motorcycle">Uncovered</option>
+            <option value="none">None</option>
+          </select>  
+          <label for="reserved">Reserved: </label>          
+          <input type="checkbox" class="reserved" name="reserved" value="reserved"> 
+          <label for="importance">Importance</label>
+          <select name="importance">
+            <option value="required">Required</option>
+            <option value="important">Important</option>
+            <option value="preferred" selected>Preferred</option>
+            <option value="no_thanks">No thanks</option>
+          </select>
         </div>
+
         <div class="title">
           <i class="dropdown icon"></i>
           Lifestyle
         </div>
         <div class="content">
-          <p>Lifestyle - Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+          <p>Lifestyle - Check all that apply to you</p>
+          <div class="access">
+            <input type="checkbox" class="no_stairs" name="no_stairs" value="no_stairs"> 
+            <label for="no_stairs">No stairs: </label>  
+            <input type="checkbox" class="no_elevator" name="no_elevator" value="no_elevator"> 
+            <label for="no_stairs">No elevator: </label> 
+            <select name="importance">
+              <option value="required">Required</option>
+              <option value="important">Important</option>
+              <option value="preferred" selected>Preferred</option>
+              <option value="no_thanks">No thanks</option>
+            </select>          
+          </div>
+          <div class="amenities">
+            <div class="storage">
+              <input type="checkbox" class="storage" name="storage" value="storage"> 
+              <label for="storage">Storage: </label> 
+              <select name="storage_type">
+                <option value="locker">Locker</option>
+                <option value="shed">Shed</option>
+              </select>   
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>                 
+            </div>
+            <div class="gym">
+              <input type="checkbox" class="gym" name="gym" value="gym"> 
+              <label for="gym">Gym: </label> 
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>                 
+            </div>
+            <div class="pool">
+              <input type="checkbox" class="pool" name="pool" value="pool"> 
+              <label for="pool">Pool: </label> 
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>                 
+            </div>
+            <div class="concierge">
+              <input type="checkbox" class="concierge" name="concierge" value="concierge"> 
+              <label for="concierge">Concierge: </label> 
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>                 
+            </div>
+            <div class="playground">
+              <input type="checkbox" class="playground" name="playground" value="playground"> 
+              <label for="playground">Playground: </label> 
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>                 
+            </div>
+            <div class="guest_suite">
+              <input type="checkbox" class="guest_suite" name="guest_suite" value="guest_suite"> 
+              <label for="guest_suite">Guest suite: </label> 
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>                 
+            </div>        
+            <div class="hot_tub">
+              <input type="checkbox" class="hot_tub" name="hot_tub" value="hot_tub"> 
+              <label for="hot_tub">Hot tub: </label> 
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>                 
+            </div>  
+            <div class="party_space">
+              <input type="checkbox" class="party_space" name="party_space" value="party_space"> 
+              <label for="party_space">Party space: </label> 
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>                 
+            </div>     
+            <div class="garden">
+              <input type="checkbox" class="garden" name="garden" value="garden"> 
+              <label for="garden">Garden/Greenhouse: </label> 
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>                 
+            </div>  
+            <div class="party_space">
+              <input type="checkbox" class="party_space" name="party_space" value="party_space"> 
+              <label for="party_space">Party space: </label> 
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>                 
+            </div>  
+          </div>
+          <div class="smoke">
+            <div class="tobacco">
+              <input type="checkbox" class="tobacco" name="tobacco" value="tobacco"> 
+              <label for="tobacco">Tabacco: </label> 
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>                 
+            </div>  
+            <div class="cannabis">
+              <input type="checkbox" class="cannabis" name="cannabis" value="cannabis"> 
+              <label for="cannabis">Cannabis: </label> 
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>                 
+            </div>  
+          </div>
         </div>
         <div class="title">
           <i class="dropdown icon"></i>
           Financial
         </div>
         <div class="content">
-          <p>Financial - Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+          <p>Financial</p>
+          <div class="monthly">
+            <p>Monthly expenses: your total budget for housing including:</p>
+            <ul>
+              <li>Mortgage</li>
+              <li>Utilities</li>
+              <li>Property taxes</li> 
+              <li>Property insurance</li>             
+              <li>Repairs & maintenance</li>
+            </ul>
+            <label class="monthly_budget" for="monthly_budget">$</label>         
+            <input class="monthly_budget"type="text" name="monthly_budget">
+            <p>Downpayment available for purchase:</p>
+            <label class="down_payment" for="down_payment">$</label>         
+            <input class="down_payment"type="text" name="down_payment">
+          </div>
+          <div class="savings">
+            <p>Savings: money put aside for major housing expenses (apart from down payment)</p>
+            <p>My savings preference</p>
+            <input type="radio" name="savings_plan" value="save"> Pay extra monthly to save for major expenses.<br>
+            <input type="radio" name="savings_plan" value="female"> Don't save extra.  I'll figure it out when expenses happen.<br>
+            <p>My current personal reserve for extra housing expenses: </p>
+            <select name="savings_amount">
+              <option value="under_10k">Less than $10,000</option>
+              <option value="under_25k">$10,000 to $25,000</option>
+              <option value="under_50k">$25,000 to $50,000</option>
+              <option value="under_100k">$50,000 to $100,000</option>
+              <option value="100K_plus">$100,000 +</option>
+            </select>  
+          </div>
+          <div class="lender">
+            <input type="checkbox" class="lender_preapproved" name="lender_preapproved" value="lender_preapproved"> I've been pre-approved for my mortgage.
+            <div>
+              <label class="lender_info" style = "display: none" for="lender_name">Lender</label>  
+              <input class="lender_info" style = "display: none" type="text" name="lender_name">
+              <label class="lender_info" style = "display: none" for="lender_email" >Email</label>
+              <input class="lender_info" style = "display: none" type="text" name="lender_email">
+            </div>
+          </div>
         </div>
 
       <input type="submit" value="Save">
@@ -217,7 +473,7 @@
       }
     }
 
-    function realEstateAgent(e) {
+    function toggleRealEstateAgent(e) {
       const realtors = document.querySelectorAll(".real_estate_agent_info")
       if (e.target.checked) {
         realtors.forEach(r => {
@@ -226,6 +482,19 @@
       } else {
         realtors.forEach(r => {
           r.style = "display: none"
+        })
+      }
+    }
+
+    function toggleLender(e) {
+      const lenders = document.querySelectorAll(".lender_info")
+      if (e.target.checked) {
+        lenders.forEach(l => {
+          l.style = "display: inline"
+        })
+      } else {
+        lenders.forEach(l => {
+          l.style = "display: none"
         })
       }
     }
@@ -255,7 +524,7 @@
         newOccupant.addEventListener("input", addOccupantRow); 
       }
     }  
-     
+    
     function addPetRow(e) {
       petID = -1
       if (e) {
@@ -292,25 +561,12 @@
         thisPetType.addEventListener("click", petType)
       }
     }  
-//          if (occupantList.hasChildNodes()) {
-//            const lastOccupant = occupantList.lastChild
-//            occupantID = lastOccupant.getAttribute("id");
-
-     
-
-      //lastOccupant.setAttribute("id", -1);
-    
-
-
-    
-
-
     
     function listeners() {
       document.querySelectorAll(".dropdown icon").forEach(d => d.addEventListener("click", activateAccordian))
       document.querySelectorAll(".title").forEach(t => t.addEventListener("click", activateAccordian))
-      document.querySelectorAll(".content").forEach(c => c.addEventListener("click", activateAccordian))
-      document.querySelector(".real_estate_agent").addEventListener("click", realEstateAgent)
+      document.querySelector(".real_estate_agent").addEventListener("click", toggleRealEstateAgent)
+      document.querySelector(".lender_preapproved").addEventListener("click", toggleLender)
     }
   
     listeners()
