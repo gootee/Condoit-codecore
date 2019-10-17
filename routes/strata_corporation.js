@@ -1,11 +1,19 @@
 const express = require("express");
 const knex = require("../db/client");
 const router = express.Router();
+// let sortString = "(a, b) => (a.created_at > b.created_at)"
+// let sortString = "(a, b) => (a.strata_plan_number > b.strata_plan_number)"
+// sortString = "(a, b) => (a.created_at > b.created_at) ? -1 : 1"
+
+// debugger
 
 router.get("/index", (req, res) => {
   knex("strata_corporations")
     .select("*")
+    .whereNotNull('strata_plan_number')
+    .andWhereNot('strata_plan_number', '')
     .then((data) => {
+      // data.sort(sortString ? -1 : 1)
       data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
 
       res.render("strata_corporation/index",{
@@ -18,8 +26,8 @@ router.get("/", (req, res) => {
   knex("strata_corporations")
     .select("*")
     .then((data) => {
+      // data.sort(sortString)
       data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
-
       res.render("strata_corporation/index",{
         strata_corporations: data,
       });

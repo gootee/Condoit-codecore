@@ -1,6 +1,6 @@
 <%- include("../partials/header") %>
 
-<form action="/profile" method="POST">
+<form class="ui form" action="/profile" method="POST">
   <%#- include("./partials/formInputs") %>
   <div>
     <p1>Unit Buyer Profile</p1>
@@ -11,43 +11,77 @@
           <i class="dropdown icon"></i>
          Classify
         </div>
-        <!-- <div class="active content"> -->
-        <div class="active content">
-          <div>
-            <input type="radio" id="resident"
-              name="purpose" value="mail">
-            <label for="resident">I will live there</label>  
-
-            <input type="radio" id="resident_investor"
-              name="purpose" value="phone">
-            <label for="resident_investor">Live there now, maybe rent later</label>  
-
-            <input type="radio" id="investor"
-              name="purpose" value="email">
-            <label for="investor">Investment for rental</label>
-          </div>
-
-          <div>
-            <input type="checkbox" class="real_estate_agent" name="real_estate_agent" value="real_estate_agent"> I'm working with a real estate agent.
-            <div>
-              <label class="real_estate_agent_info" style = "display: none" for="real_estate_agent_name">Agent name</label>         
-              <input class="real_estate_agent_info" style = "display: none" type="text" name="real_estate_agent_name">
-              <label class="real_estate_agent_info" style = "display: none" for="real_estate_agent_email" >Email</label>
-              <input class="real_estate_agent_info" style = "display: none" type="email" name="real_estate_agent_email">
+        <div class="active content">        <!-- <div class="active content"> -->
+          <div class="grouped fields">
+            <label>How will you use your new unit?</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="purpose" checked="checked" id="resident">
+                <label>I will live there</label>
+              </div>
             </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="purpose" id="resident_investor">
+                <label>Live there now, maybe rent later</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="purpose" id="investor">
+                <label>Investment for rental</label>
+              </div>
+            </div>
+          </div>  
+
+
+          <div class="realEstateAgent">
+            <div class="ui checkbox">
+              <input type="checkbox" class="using_real_estate_agent" name="real_estate_agent" value="real_estate_agent">
+              <label>I'm working with a real estate agent.</label>
+            </div>   
+            <div class="ui center aligned basic segment real_estate_agent_info" style = "display: none">
+              <div class="two fields">
+                <input type="text" name="first-name" placeholder="Agent's First Name">
+                <input type="text" class="real_estate_agent_info" style = "display: none" name="last-name" placeholder="Last Name">            
+              </div>  
+              <div class="ui horizontal divider ">
+                Or
+              </div>   
+              <div class="field">
+                <input class="real_estate_agent_info" style = "display: none" type="email" name="real_estate_agent_email" placeholder="Agent's Email">
+              </div>                         
+            </div>   
           </div>
         </div>
+
+
         <div class="title">
           <i class="dropdown icon"></i>
           Us
         </div>
+
         <div class="content">
           <p>Who will live there?</p>
-          <p>People</p>
-          <div class="occupant_list">
-          </div>
-          <p>Pets</p>          
-          <div class="pet_list">
+
+          <div class="whoWillLiveThere">
+            <div class="ui segments">
+              <div class="ui segment">
+                <p>People</p>
+              </div>
+              <div class="ui segment occupant_list">
+
+              </div>
+            </div>
+
+            <div class="ui segments">
+              <div class="ui segment">
+                <p>Pets</p>
+              </div>
+              <div class="ui segment pet_list">
+
+              </div>
+            </div> 
           </div>
         </div>
 
@@ -57,83 +91,7 @@
 
         </div>
 
-
         <div class="content">
-          <p>Features:</p>
-
-          <div class="laundry">
-            <div>
-              <input type="checkbox" class="laundry" name="laundry" value="laundry"> 
-              <label for="laundry_type">Laundry: </label>
-              <select name="laundry_type">
-                <option value="in_unit" selected>In-unit</option>
-                <option value="in_building">In-building</option>
-                <option value="nearby">Nearby</option>
-              </select>              
-            </div>
-            <label for="importance">Importance</label>
-            <select name="importance">
-              <option value="required">Required</option>
-              <option value="important">Important</option>
-              <option value="preferred" selected>Preferred</option>
-              <option value="no_thanks">No thanks</option>
-            </select>
-          </div>
-          <div class="garburator">
-            <input type="checkbox" class="garburator" name="garburator" value="garburator"> 
-            <label for="garburator">Garburator: </label>
-            <label for="importance">Importance</label>
-            <select name="importance">
-              <option value="required">Required</option>
-              <option value="important">Important</option>
-              <option value="preferred" selected>Preferred</option>
-              <option value="no_thanks">No thanks</option>
-            </select>
-          </div>
-          <div class="dishwasher">
-            <input type="checkbox" class="dishwasher" name="dishwasher" value="dishwasher"> 
-            <label for="dishwasher">Dishwasher: </label>
-            <label for="importance">Importance</label>
-            <select name="importance">
-              <option value="required">Required</option>
-              <option value="important">Important</option>
-              <option value="preferred" selected>Preferred</option>
-              <option value="no_thanks">No thanks</option>
-            </select>
-          </div>
-          <div class="fireplace">
-            <input type="checkbox" class="fireplace" name="fireplace" value="fireplace"> 
-            <label for="fireplace">Fireplace: </label>
-            <label for="importance">Importance</label>
-            <select name="importance">
-              <option value="required">Required</option>
-              <option value="important">Important</option>
-              <option value="preferred" selected>Preferred</option>
-              <option value="no_thanks">No thanks</option>
-            </select>
-          </div>
-          <div class="balcony">
-            <input type="checkbox" class="balcony" name="balcony" value="balcony"> 
-            <label for="balcony">Outdoor area (balcony/deck/yard): </label>
-            <label for="importance">Importance</label>
-            <select name="importance">
-              <option value="required">Required</option>
-              <option value="important">Important</option>
-              <option value="preferred" selected>Preferred</option>
-              <option value="no_thanks">No thanks</option>
-            </select>
-          </div>
-          <div class="home_office">
-            <input type="checkbox" class="home_office" name="home_office" value="home_office"> 
-            <label for="home_office">Home office: </label>
-            <label for="importance">Importance</label>
-            <select name="importance">
-              <option value="required">Required</option>
-              <option value="important">Important</option>
-              <option value="preferred" selected>Preferred</option>
-              <option value="no_thanks">No thanks</option>
-            </select>
-          </div>
           <label class="min_bedrooms" for="min_bedrooms">Minimum bedrooms</label>         
           <select name="min_bedrooms">
             <option value="0">Studio</option>
@@ -149,79 +107,145 @@
             <option value="3">3+</option>
             <option value="4">4+</option>
           </select>
+          <p>Features:</p>
+
+          <div class="laundry feature">
+            <div class="ui checkbox">
+              <input type="checkbox" class="laundry" name="laundry" value="laundry">
+              <label for="laundry_type">Laundry: </label>
+            </div>  
+
+            <div>
+              <select name="laundry_type">
+                <option value="in_unit" selected>In-unit</option>
+                <option value="in_building">In-building</option>
+                <option value="nearby">Nearby</option>
+              </select>                
+            </div>
+
+            <div>         
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>
+            </div>          
+          </div>
+
+          <div class="garburator feature">
+            <div class="ui checkbox">
+              <input type="checkbox" class="garburator" name="garburator" value="garburator"> 
+              <label for="garburator">Garburator: </label>              
+            </div>
+            <div>
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>              
+            </div>
+          </div>
+
+          <div class="dishwasher feature">
+            <div class="ui checkbox">
+              <input type="checkbox" class="dishwasher" name="dishwasher" value="dishwasher"> 
+              <label for="dishwasher">Dishwasher: </label>
+            </div>
+            <div>
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>              
+            </div>
+          </div>
+
+          <div class="fireplace feature">
+            <div class="ui checkbox">
+              <input type="checkbox" class="fireplace" name="fireplace" value="fireplace"> 
+              <label for="fireplace">Fireplace: </label>
+            </div>
+            <div>
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>              
+            </div>
+          </div>
+
+          <div class="balcony feature">
+            <div class="ui checkbox">
+              <input type="checkbox" class="balcony" name="balcony" value="balcony"> 
+              <label for="balcony">Outdoor area (balcony/deck/yard): </label>
+            </div>
+            <div>
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>              
+            </div>
+          </div>
+
+          <div class="home_office feature">
+            <div class="ui checkbox">
+              <input type="checkbox" class="home_office" name="home_office" value="home_office"> 
+              <label for="home_office">Home office: </label>
+            </div>
+            <div>
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>
+            </div>
+          </div>
         </div>
+
         <div class="title">
           <i class="dropdown icon"></i>
           Getting Places
         </div>
         <div class="content">
-          <p>Places I go</p>
-          <label class="destination" for="destination">Destination: </label>         
-          <input class="destination" type="text" name="destination">
-          <select name="destination_type">
-            <option value="church">Church</option>
-            <option value="daycare">Daycare</option>
-            <option value="friend_family">Friend/Family</option>
-            <option value="gym">Gym</option>
-            <option value="school">School</option>
-            <option value="work">Work</option>
-            <option value="grocery">Grocery</option>
-            <option value="cafe">Cafe</option>
-            <option value="restaurant">Restaurant</option>
-            <option value="other">Other</option>
-          </select>
-          <select name="destination_category">
-            <option value="any">Any</option>
-            <option value="specific">Specific</option>
-          </select>    
-          <label class="address" for="address">Address/Intersection: </label>         
-          <input class="address" type="text" name="address">   
-          <select name="travel_by">
-            <option value="walk">Walk</option>
-            <option value="bike">Bike</option>
-            <option value="public">Public Transportation</option>
-            <option value="drive">Drive</option>
-          </select>  
-          <label class="travel_time" for="travel_time">Travel time (minutes): </label>   
-          <select name="travel_time">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-            <option value="30">30</option>
-            <option value="45">45</option>
-            <option value="60">60</option>
-          </select>   
-          <label for="importance">Importance</label>
-          <select name="importance">
-            <option value="required">Required</option>
-            <option value="important">Important</option>
-            <option value="preferred" selected>Preferred</option>
-            <option value="no_thanks">No thanks</option>
-          </select>
-          <p>Vehicles</p>
-          <label class="vehicle_type" for="vehicle_type">Vehicle: </label>   
-          <select name="vehicle_type">
-            <option value="compact">Compact car</option>
-            <option value="full_size">Full-size car/truck</option>
-            <option value="motorcycle">Motorcycle</option>
-          </select>  
-          <label class="vehicle_parking" for="vehicle_parking">Parking: </label>   
-          <select name="vehicle_parking">
-            <option value="garage">Private garage</option>
-            <option value="covered">Covered</option>
-            <option value="motorcycle">Uncovered</option>
-            <option value="none">None</option>
-          </select>  
-          <label for="reserved">Reserved: </label>          
-          <input type="checkbox" class="reserved" name="reserved" value="reserved"> 
-          <label for="importance">Importance</label>
-          <select name="importance">
-            <option value="required">Required</option>
-            <option value="important">Important</option>
-            <option value="preferred" selected>Preferred</option>
-            <option value="no_thanks">No thanks</option>
-          </select>
+          <h1>Places I go</h1>
+
+          <div class="dropdown">
+            <button class="dropbtn">New</button>
+            <!-- <button class="circular ui icon button dropbtn">
+              <i class="dropbtn icon plus"></i>
+            </button>               -->
+            <div class="dropdown-content">
+              <a class="item destination_item" id="church">Church</a>
+              <a class="item destination_item" id="daycare">Daycare</a>
+              <a class="item destination_item" id="friend_family">Friend/Family</a>
+              <a class="item destination_item" id="gym">Gym</a>
+              <a class="item destination_item" id="school">School</a>
+              <a class="item destination_item" id="work">Work</a>
+              <a class="item destination_item" id="grocery">Grocery</a>
+              <a class="item destination_item" id="cafe">Cafe</a>
+              <a class="item destination_item" id="restaurant">Restaurant</a>
+              <a class="item destination_item" id="other">Other</a>
+            </div>
+          </div>
+
+          <div class="destinations">
+            <div class="destination_details">
+        
+            </div>   
+          </div>
+
+          <div class="vehicles">
+ 
+          </div>
+
+
         </div>
 
         <div class="title">
@@ -509,10 +533,8 @@
       if (occupantID === -1) {  //first time some has edited this row
         const occupantList = document.querySelector(".occupant_list")
         htmlString = `<div id=-1 class="occupant">
-          <label for="occupant_name">Name</label>         
-          <input type="text" name="occupant_name">
-          <label for="occupant_age">Age</label>
-          <select name="occupant_age">
+          <input type="text" name="occupant_name" placeholder="Name">
+          <select name="occupant_age" placeholder="Age">
             <option value="under_18">Under 18</option>
             <option value="adult" selected>Adult</option>
             <option value="senior">Senior (over 55)</option>
@@ -535,9 +557,7 @@
       if (petID === -1) {  //first time some has edited this row
         const petList = document.querySelector(".pet_list")
         htmlString = `<div id=-1 class="pet">
-          <label for="pet_name">Name</label>         
-          <input type="text" name="pet_name">
-          <label for="pet_type">Type</label>
+          <input type="text" name="pet_name" placeholder="Name">
           <select name="pet_type" class="pet_type">
             <option value="dog" selected>Dog</option>
             <option value="cat">Cat</option>
@@ -545,7 +565,6 @@
             <option value="aquarium">Aquarium</option>
             <option value="other">Other</option>
           </select>
-          <label for="pet_size" class="pet_size_label">Size</label>
           <select name="pet_size" class="pet_size">
             <option value="small" selected>Small (less than 20 lbs.)</option>
             <option value="medium">Medium</option>
@@ -555,22 +574,163 @@
 
         petList.insertAdjacentHTML('beforeend', htmlString);
         const newPet = petList.lastChild
-        debugger
         newPet.addEventListener("input", addPetRow); 
         const thisPetType = newPet.querySelector(".pet_type")
         thisPetType.addEventListener("click", petType)
       }
     }  
+
+    function toggleDestinationList(event) {
+      event.preventDefault()
+      document.querySelector(".destination_type").setAttribute("style", "display: block")
+      
+    }
+
+    function addVehicle(event) {
+      vehicleID = -1
+      if (e) {
+        vehicleID = parseInt(e.target.parentElement.getAttribute("id"))
+        e.target.parentElement.setAttribute("id", 1)       
+      }
+
+      if (vehicleID === -1) {  //first time some has edited this row
+        const vehicleList = document.querySelector(".vehicles")
+        htmlString = `<div>
+            <h1>Vehicles</h1>
+            <label class="vehicle_type" for="vehicle_type">Vehicle: </label>   
+            <select name="vehicle_type">
+              <option value="compact">Compact car</option>
+              <option value="full_size">Full-size car/truck</option>
+              <option value="motorcycle">Motorcycle</option>
+            </select>  
+            <label class="vehicle_parking" for="vehicle_parking">Parking: </label>   
+            <select name="vehicle_parking">
+              <option value="garage">Private garage</option>
+              <option value="covered">Covered</option>
+              <option value="motorcycle">Uncovered</option>
+              <option value="none">None</option>
+            </select>  
+            <label for="reserved">Reserved: </label>          
+            <input type="checkbox" class="reserved" name="reserved" value="reserved"> 
+            <label for="importance">Importance</label>
+            <select name="importance">
+              <option value="required">Required</option>
+              <option value="important">Important</option>
+              <option value="preferred" selected>Preferred</option>
+              <option value="no_thanks">No thanks</option>
+            </select>
+          </div>`
+
+        vehicleList.insertAdjacentHTML('beforeend', htmlString);
+        const newVehicle = vehicleList.lastChild
+        vehiclePet.addEventListener("input", addVehicle); 
+//        const thisPetType = newPet.querySelector(".pet_type")
+//        thisPetType.addEventListener("click", petType)
+      }
+
+
+
+
+
+
+
+
+      
+
+        document.querySelector(".vehicles").insertAdjacentHTML('afterbegin', htmlString);
+    }
+
+    function addDestination(event) {
+      event.preventDefault()
+      document.querySelector(".dropdown-content").setAttribute("style", "")
+      let iconPlace = '', ourPlaceholder =''
+
+      switch (event.target.id) {
+        case "church":
+          iconPlace = "Church"
+          break;
+        case "daycare":
+          iconPlace = "Daycare"
+          break;        
+        case "friend_family":
+          iconPlace = "Friend/Family"
+          break;
+        case "gym":
+          iconPlace = "Gym"
+          break;   
+        case "school":
+          iconPlace = "School"
+          break;
+        case "work":
+          iconPlace = "Work"
+          break;        
+        case "grocery":
+          iconPlace = "Grocery"
+          break;
+        case "cafe":
+          iconPlace = "Cafe"
+          break;           
+        case "restaurant":
+          iconPlace = "Restaurant"
+          break;  
+        default:
+          iconPlace = "Other"
+      }     
+      ourPlaceholder = iconPlace + " Name (optional)"
+
+      const htmlString = 
+        `<div>
+          <div>
+            <p>` + 
+        iconPlace + 
+           `</p>
+          </div>
+        </div> 
+
+        <div class="destination">
+          <input class="destination_name" type="text" name="destination" placeholder="` +
+          ourPlaceholder +
+          `">
+          <input class="address" type="text" name="address" placeholder="Address/Intersection"> 
+          <select name="travel_by" style="width:40%">
+            <option value="walk">Walk</option>
+            <option value="bike">Bike</option>
+            <option value="public" selected>Public</option>
+            <option value="drive">Drive</option>
+          </select> 
+          <select name="travel_time" style="width:40%">
+            <option value="5">5 min.</option>
+            <option value="10">10 min.</option>
+            <option value="15">15 min.</option>
+            <option value="20" selected>20 min.</option>
+            <option value="30">30 min.</option>
+            <option value="45">45 min.</option>
+            <option value="60">60 min.</option>
+          </select>           
+          <select name="importance" style="width:50%" class="one_column">
+            <option value="required">Required</option>
+            <option value="important">Important</option>
+            <option value="preferred" selected>Preferred</option>
+            <option value="no_thanks">No thanks</option>
+          </select>
+        </div>`
+
+      document.querySelector(".destination_details").insertAdjacentHTML('afterbegin', htmlString);
+
+    }
     
     function listeners() {
       document.querySelectorAll(".dropdown icon").forEach(d => d.addEventListener("click", activateAccordian))
       document.querySelectorAll(".title").forEach(t => t.addEventListener("click", activateAccordian))
-      document.querySelector(".real_estate_agent").addEventListener("click", toggleRealEstateAgent)
+      document.querySelector(".using_real_estate_agent").addEventListener("click", toggleRealEstateAgent)
       document.querySelector(".lender_preapproved").addEventListener("click", toggleLender)
+      const dest_items = document.querySelectorAll(".destination_item")
+      dest_items.forEach(d => d.addEventListener("click", addDestination))
     }
   
     listeners()
     addOccupantRow()
     addPetRow()
+    addVehicle()
   </script>
 <%- include("../partials/footer") %>

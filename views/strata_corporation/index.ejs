@@ -2,36 +2,32 @@
 
 <ul>
   <% for (let strata_corporation of strata_corporations) { %>
-    <% debugger %>
+    <!-- <% debugger %> -->
     <!-- <a> -->
       <li>
-
-        <!-- <div class="cluck">
-          <div class="chickenNav"> -->
-            <!-- <img src=/images/chicken.jpeg alt="Chicken"> -->
-          <!-- </div> -->
-          <!-- <div class="cluckSpecifics"> -->
-            <!-- <div class="cluckheading"> -->
-        <div>
-            whole: <%= strata_corporation%>
-            id: <%= strata_corporation.id%>
-            title: <%= strata_corporation.title_to_land%>
-            plan#: <%= strata_corporation.strata_plan_number %>
-        </div>
-        <a href="/stratas/<%= strata_corporation.id %>">              
+        <div class="strataListing">
+          <a href="/stratas/<%= strata_corporation.id %>">              
+            <div>
+              <%= strata_corporation.name%>
+            </div>
+          </a>         
           <div>
-            <%= strata_corporation.name%>
-          </div>
-        </a>              
-              
+              id: <%= strata_corporation.id%>
+              title: <%= strata_corporation.title_to_land%>
+              plan#: <%= strata_corporation.strata_plan_number %>
+          </div>          
         </div>
+
+             
+              
+        <!-- </div> -->
                     
           <!-- <%# if (cluck.image_url && cluck.image_url.length > 0) { %>
             <div class="cluckImage">
               <img src=<%#= cluck.image_url %> alt="Cluck image">
             </div>                      -->
           <!-- <%# } %>                -->
-        </div>
+        <!-- </div> -->
         <!-- </div> -->
       </li>
 
