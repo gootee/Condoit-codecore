@@ -38,21 +38,6 @@
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
-
-
-
-
-
-
-
-
-
-
-.container {
-  display: flex;
-  flex-direction: row;
-}
-
 .sidebar {
   width: 100px;
   height: 100%;
@@ -67,13 +52,12 @@
   border-width: 1em
 }
 
-.realEstateAgent {
+.control_group {
   display: flex;
-  flex-direction: column;
-  margin: 16px;
+  flex-direction: row;
 }
 
-.feature {
+.container {
   display: flex;
   flex-direction: row;
 }
@@ -84,30 +68,3 @@
   flex-direction: row;
   margin: 0 0 1em 0;
 }
-
-.destinations {
-  display: flex;
-  flex-direction: column;
-}
-
-.occupant {
-  display: flex;
-  flex-direction: row;
-}
-
-.pet {
-  display: flex;
-  flex-direction: row;
-}
-
-/* select, option {
-  width: 400px;
-} */
-
-/* .destination_name {
-  margin: 8px 0;
-} */
-
-/* .one_column {
-  width: 40%
-} */
