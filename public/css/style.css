@@ -64,7 +64,7 @@
   flex-direction: row;
 }
 
-.container {
+.app_container {
   display: flex;
   flex-direction: row;
 }
@@ -102,3 +102,32 @@
   flex-direction: row;
   align-content: space-between;
 }
+
+.app_area {
+  border-width:1px;
+  border-style:solid;
+  border-color:black;
+  margin: 2px;
+}
+
+.container {
+  margin: 2px;
+}
+
+.profile_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.strata_index_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.strata_index_heading_left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+

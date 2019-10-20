@@ -1,17 +1,64 @@
 <%- include("../partials/header") %>
-<p>Listing Show</p>
 
-  <div>
-    <h2>
-      <%= listing.number %>
-    </h2>
-    <form action="/listing/<%= listing.id %>" method="POST">
-      <input type="hidden" value="DELETE" name="_method">
-      <input type="submit" value="Delete"">
-    </form>
+<div class="container">
+  <div class="listing_show_top app_area">
+    <p>Top</p>
+    <div class="listing_show_cover_image app_area">
+      <p>Cover image</p>
+    </div>
+    <div class="listing_show_basic_info app_area">
+      <p>Basic info</p>
+      <div class="listing_show_name app_area">
+        <p>Name</p>
+        <a href="/listing/<%= listing.id %>">              
+          <h2>
+            <%= listing.number %>
+          </h2>        
+        </a> 
+        id: <%= listing.id%>            
+      </div>
+      <div class="listing_show_details"> 
+        
+      </div>              
+    </div>
+    <div class="listing_show_buttons app_area">
+      <p>Buttons</p>
+      <div class="heart">
+          <i class="heart outline icon"></i>
+      </div>  
+      <form action="" method="">
+        <!-- <input type="hidden" value="DELETE" name="_method"> -->
+        <input type="button" value="Request Showing"">
+      </form>
+      <form action="/listing/<%= listing.id %>" method="POST">
+        <input type="hidden" value="DELETE" name="_method">
+        <input type="submit" value="Delete"">
+      </form>
+    </div>
+  
+    <a href="/listing/<%= listing.id %>/edit">Edit</a>            
   </div>
 
-  <a href="/listing/<%= listing.id %>/edit">Edit</a>
+  </div>
+  <div class="listing_show_info app_area">
+    <p>Info</p>
+    <div class="listing_show_ratings app_area">
+      <p>Ratings</p>
+    </div>
+    <div class="listing_show_financials app_area">
+      <p>Financials</p>
+    </div>
+  </div>
+  <div class="listing_show_images images app_area">
+    <p>Images</p>
+    <ul>
+      <div class="image">
+        <p>Image</p>
+      </div>
+    </ul>
+  </div>
+</div>
+
 <%- include("../partials/footer") %>
 
 

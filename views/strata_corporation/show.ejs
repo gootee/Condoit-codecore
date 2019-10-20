@@ -2,16 +2,133 @@
 <%- include("../partials/header") %>
 
   <div class="container">
+    <div class="strata_show_top app_area">
+      <p>Top</p>
+      <div class="strata_show_cover_image app_area">
+        <p>Cover image</p>
+      </div>
+      <div class="strata_show_basic_info app_area">
+        <p>Basic Info</p>
+        <div class="strata_show_name app_area">
+          <p>Name</p>
+          <a href="/stratas/<%= strata_corporation.id %>">              
+            <h2>
+              <%= strata_corporation.name %> <span> <%= strata_corporation.strata_plan_number %> </span>
+            </h2>        
+          </a> 
+          id: <%= strata_corporation.id%>            
+        </div>
+        <div class="strata_show_details app_area"> 
+          <p>Details</p>
+        </div>              
+      </div>
+      <div class="strata_show_buttons app_area">
+        <div class="heart">
+            <i class="heart outline icon"></i>
+        </div>  
+        <form action="/stratas/<%= strata_corporation.id %>" method="POST">
+          <input type="hidden" value="DELETE" name="_method">
+          <input type="submit" value="Delete"">
+        </form>
+        <a href="/stratas/<%= strata_corporation.id %>/edit">Edit</a>            
+      </div>
 
-    <h2>
-      <%= strata_corporation.name %> <span> <%= strata_corporation.strata_plan_number %> </span>
-    </h2>
-    <div class="buttons">
-      <form action="/stratas/<%= strata_corporation.id %>" method="POST">
-        <input type="hidden" value="DELETE" name="_method">
-        <input type="submit" value="Delete"">
-      </form>
-      <a href="/stratas/<%= strata_corporation.id %>/edit">Edit</a>       
+    </div>
+    <div class="strata_show_info app_area">
+      <p>Info</p>
+      <div class="strata_show_ratings app_area">
+        <p>Ratings</p>
+      </div>
+      <div class="strata_show_neigbourhood app_area">
+        <p>Neighbourhood</p>
+        <div class="strata_show_neighbourhood_top app_area">
+          <p>Top</p>
+          <div class="strata_neighbourhood_ratings app_area">
+            <p>Ratings</p>
+            <ul>
+              <li>
+                <div class="strata_neighbourhood_rating app_area">
+                  <p>Rating</p>
+                  <div class="strata_neighbourhood_rating_icon app_area">
+                    <p>Icon</p>
+                  </div>
+                  <div class="strata_neighbourhood_rating_description app_area">
+                    <p>Description</p>             
+                  </div>
+                  <div class="strata_neighbourhood_rating_grade app_area">
+                    <p>Grade</p>
+                  </div>
+                </div>             
+              </li>
+            </ul>
+
+          </div>
+          <div class="strata_neighbourhood_maps app_area">
+            <p>Maps</p>
+          </div>          
+        </div>
+        <div class="strata_show_neighbourhood_nearby app_area">
+          <p>Nearby</p>
+        </div>
+        <div class="strata_show_neighbourhood_groups app_area">
+          <p>Groups</p>
+        </div>
+      </div>
+      <div class="strata_show_features app_area">
+        <p>Features</p>
+        <ul>
+          <li>
+            <div class="strata_feature_rating app_area">
+              <p>Rating</p>
+              <div class="strata_feature_rating_icon app_area">
+                <p>Icon</p>
+              </div>
+              <div class="strata_feature_rating_description app_area">
+                <p>Description</p>
+              </div>
+              <div class="strata_feature_rating_grade app_area">
+                <p>Grade</p>
+              </div>
+              <div class="strata_feature_extra_info app_area">
+                <p>Extra infop</p>
+              </div>              
+            </div>             
+          </li>
+        </ul>
+      </div>
+      <div class="strata_show_listings app_area">
+        <p>Unit listings</p>
+      </div>
+      <div class="strata_show_rules_and_bylaws app_area">
+        <p>Rules and bylaws</p>
+        <ul>
+          <li>
+            <div class="strata_rule_bylaw app_area">
+              <p>Rule/bylaw</p>
+              <div class="strata_rule_bylaw_icon app_area">
+                <p>Icon</p>
+              </div>
+              <div class="strata_rule_bylaw_description app_area">
+                <p>Description</p>
+              </div>
+              <div class="strata_rule_bylaw_grade app_area">
+                <p>Grade</p>
+              </div>
+              <div class="strata_rule_bylaw_info app_area">
+                <p>Info</p>
+              </div>              
+            </div>             
+          </li>
+        </ul>
+      </div>  
+    </div>
+    <div class="strata_show_images images app_area">
+      <p>Images</p>
+      <ul>
+        <div class="image app_area">
+          <p>Image</p>
+        </div>
+      </ul>
     </div>
   </div>
 

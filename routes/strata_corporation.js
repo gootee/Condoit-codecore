@@ -31,6 +31,7 @@ router.get("/index", (req, res) => {
       'strata_images.image_url')
     .whereNotNull('strata_corporations.strata_plan_number')
     .andWhereNot('strata_corporations.strata_plan_number', '')
+    .limit(15)
     .then((data) => {
       data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
 
