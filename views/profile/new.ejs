@@ -245,6 +245,9 @@
             <h1>Vehicles</h1>
           </div>
 
+          <div class="bicycles">
+            <h1>Bicycles</h1>
+          </div>
 
         </div>
 
@@ -418,77 +421,97 @@
           Financial
         </div>
         <div class="content">
-          <p>Financial</p>
-          <div class="monthly">
-            <div>
-              <p>Monthly expenses: your total budget for housing including:</p>
-              <ul class="ui list">
-                <li>Mortgage</li>
-                <li>Utilities</li>
-                <li>Property taxes</li> 
-                <li>Property insurance</li>             
-                <li>Repairs & maintenance</li>
-              </ul>              
-            </div>
-            <div class="ui right labeled input">
-              <label for="monthly_budget" class="ui label">$</label>
-              <input type="text" placeholder="Monthly housing budget" id="monthly_budget">
-              <!-- <div class="ui basic label">.00</div> -->
-            </div>
-
-            <!-- <div class="control_group">
-              <label class="monthly_budget" for="monthly_budget">$</label>         
-              <input class="monthly_budget"type="text" name="monthly_budget">              
-            </div> -->
-            <p>Downpayment available for purchase:</p>
-            <div class="ui right labeled input">
-              <label for="down_payment" class="ui label">$</label>
-              <input type="text" placeholder="Down payment" id="down_payment">
-              <!-- <div class="ui basic label">.00</div> -->
-            </div>
-            
-            <!-- <label class="down_payment" for="down_payment">$</label>         
-            <input class="down_payment"type="text" name="down_payment"> -->
-          </div>
-          <div class="savings">
-            <p>Savings: money put aside for major housing expenses (apart from down payment)</p>
-            <div class="grouped fields">
-              <label>My savings preference</label>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="savings">
-                  <label>Pay extra monthly to save for major expenses.</label>
-                </div>
+          <div>
+            <p>Monthly housing expenses:</p>
+            <div class="monthly control_group">
+              <div>
+                <div class="ui right labeled input">
+                  <label for="monthly_budget" class="ui label">$</label>
+                  <input type="text" placeholder="Monthly housing budget" id="monthly_budget">
+                  <!-- <div class="ui basic label">.00</div> -->
+                </div>                 
               </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="savings">
-                  <label>Don't save extra.  I'll figure it out when expenses happen.</label>
-                </div>
+              <div class="explanation">
+                <p>Your total housing budget including:</p>
+                <ul class="ui list">
+                  <li>Mortgage</li>
+                  <li>Utilities</li>
+                  <li>Property taxes</li> 
+                  <li>Property insurance</li>             
+                  <li>Repairs & maintenance</li>
+                </ul>              
               </div>
-            </div>
+            </div>            
+          </div>
 
-            <!-- <input type="radio" name="savings_plan" value="save"> <br>
-            <input type="radio" name="savings_plan" value="female"> <br> -->
-            <p>My current personal reserve for extra housing expenses: </p>
-            <select name="savings_amount">
-              <option value="under_10k">Less than $10,000</option>
-              <option value="under_25k">$10,000 to $25,000</option>
-              <option value="under_50k">$25,000 to $50,000</option>
-              <option value="under_100k">$50,000 to $100,000</option>
-              <option value="100K_plus">$100,000 +</option>
-            </select>  
+          <div>
+            <p>Downpayment:</p>
+            <div class="ui right labeled input downpayment">
+              <div>
+                <div class="ui right labeled input">
+                  <label for="down_payment" class="ui label">$</label>
+                  <input type="text" placeholder="Down payment" id="down_payment">                
+                </div>                
+              </div>
+              <div class="explanation">
+                <p>Downpayment is the cash you put into the purchase:</p>
+                <ul class="ui list">
+                  <li>Minimum of 5% of purchase price</li>
+                  <li>If your downpayment is less than 20%, you will be charged for mortgage insurance</li>
+                </ul>  
+              </div>
+              <!-- <div class="ui basic label">.00</div> -->
+            </div>            
           </div>
-          <div class="lender">
-            <div class="ui checkbox">
-              <input type="checkbox" class="lender_preapproved" name="lender_preapproved" value="lender_preapproved"> 
-              <label for="lender_preapproved">I've been pre-approved for my mortgage: </label>
-            </div>
-            <div class="control_group">  
-              <input class="lender_info" style = "display: none" type="text" name="lender_name" placeholder="Lender Name">
-              <input class="lender_info" style = "display: none" type="text" name="lender_email" placeholder="Email">
+          <div>
+            <p>Savings:</p>
+            <div class="savings control_group">
+              <div>
+                <div class="grouped fields">
+                  <div class="field">
+                    <label>My savings preference</label> 
+                    <div class="ui radio checkbox">
+                      <input type="radio" name="savings">
+                      <label>Pay extra monthly to save for major expenses.</label>
+                    </div>
+                  </div>                
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" name="savings">
+                      <label>Don't save extra.  I'll figure it out when expenses happen.</label>
+                    </div>
+                  </div>
+                </div>
+
+                <label>My current personal reserve for extra housing expenses: </label>
+                <select name="savings_amount">
+                  <option value="under_10k">Less than $10,000</option>
+                  <option value="under_25k">$10,000 to $25,000</option>
+                  <option value="under_50k">$25,000 to $50,000</option>
+                  <option value="under_100k">$50,000 to $100,000</option>
+                  <option value="100K_plus">$100,000 +</option>
+                </select>  
+              </div>  
+              <div>
+                <p>This money put aside for major housing expenses (apart from purchase expenses and down payment)</p>
+              </div>                
             </div>
           </div>
+
+          <div>
+            <p>Lender:</p>
+            <div class="lender">
+              <div class="ui checkbox">
+                <input type="checkbox" class="lender_preapproved" name="lender_preapproved" value="lender_preapproved"> 
+                <label for="lender_preapproved">I've been pre-approved for my mortgage: </label>
+              </div>
+              <div class="control_group">  
+                <input class="lender_info" style = "display: none" type="text" name="lender_name" placeholder="Lender Name">
+                <input class="lender_info" style = "display: none" type="text" name="lender_email" placeholder="Email">
+              </div>
+            </div>            
+          </div>
+
         </div>
 
       <input type="submit" value="Save">

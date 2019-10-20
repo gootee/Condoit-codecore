@@ -1,0 +1,20 @@
+<%- include("../partials/header") %>
+<p>Listing Show</p>
+
+  <div>
+    <h2>
+      <%= listing.number %>
+    </h2>
+    <form action="/listing/<%= listing.id %>" method="POST">
+      <input type="hidden" value="DELETE" name="_method">
+      <input type="submit" value="Delete"">
+    </form>
+  </div>
+
+  <a href="/listing/<%= listing.id %>/edit">Edit</a>
+<%- include("../partials/footer") %>
+
+
+
+
+

@@ -2,6 +2,39 @@ const express = require("express");
 const knex = require("../db/client");
 const router = express.Router();
 
+router.get("/", (req, res) => {
+  // //   knex("strata_corporations")
+  // //     .select("*")
+  // //     .then((data) => {
+  // //       data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
+  
+        res.render("profile/new",{
+          // strata_corporations: data,
+        });
+  // //     });
+  });
+
+router.get("/new", (req, res) => {
+  const profileParams = {
+    // image_url: req.body.imageUrl,
+    // content: req.body.content,
+    // username: res.locals.username
+  };
+  res.render("profile/new",{
+    // strata_corporations: data,
+  });
+})
+
+router.get("/show", (req, res) => {
+  const profileParams = {
+    // image_url: req.body.imageUrl,
+    // content: req.body.content,
+    // username: res.locals.username
+  };
+  res.render("profile/show",{
+    // strata_corporations: data,
+  });
+})
 
 // router.get("/index", (req, res) => {
 //   knex("strata_corporations")
@@ -15,17 +48,7 @@ const router = express.Router();
 //     });
 // });
 
-router.get("/", (req, res) => {
-// //   knex("strata_corporations")
-// //     .select("*")
-// //     .then((data) => {
-// //       data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
 
-      res.render("profile/new",{
-        // strata_corporations: data,
-      });
-// //     });
-});
 
   
 
@@ -114,14 +137,7 @@ router.get("/", (req, res) => {
 //   }
 // });
 
-router.post("/new", (req, res) => {
-  debugger
-  const profileParams = {
-    // image_url: req.body.imageUrl,
-    // content: req.body.content,
-    // username: res.locals.username
-  };
-})
+
 
 //   // save a cluck to database
 //   knex("clucks")

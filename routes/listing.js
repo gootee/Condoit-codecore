@@ -21,24 +21,24 @@ const router = express.Router();
 //     });
 // });
 
-router.get("/index", (req, res) => {
-  knex('strata_corporations')
-    .leftJoin('strata_images', 'strata_corporations.id', '=', 'strata_images.strata_corporation_id')
-    .select(
-      'strata_corporations.id',
-      'strata_corporations.name',
-      'strata_corporations.strata_plan_number', 
-      'strata_images.image_url')
-    .whereNotNull('strata_corporations.strata_plan_number')
-    .andWhereNot('strata_corporations.strata_plan_number', '')
-    .then((data) => {
-      data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
+// router.get("/index", (req, res) => {
+//   knex('strata_corporations')
+//     .leftJoin('strata_images', 'strata_corporations.id', '=', 'strata_images.strata_corporation_id')
+//     .select(
+//       'strata_corporations.id',
+//       'strata_corporations.name',
+//       'strata_corporations.strata_plan_number', 
+//       'strata_images.image_url')
+//     .whereNotNull('strata_corporations.strata_plan_number')
+//     .andWhereNot('strata_corporations.strata_plan_number', '')
+//     .then((data) => {
+//       data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
 
-      res.render("strata_corporation/index",{
-        strata_corporations: data,
-      });
-    });
-});
+//       res.render("strata_corporation/index",{
+//         strata_corporations: data,
+//       });
+//     });
+// });
 
 router.get("/show", (req, res) => {
   // knex('strata_corporations')
@@ -53,27 +53,28 @@ router.get("/show", (req, res) => {
   //   .then((data) => {
   //     data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
       const data = {
-        id: 4396,
-        name: "Koret",
-        strata_plan_number: "BCS2025"
+        id: 111,
+        number: "BR549"
+        // name: "Koret",
+        // strata_plan_number: "BCS2025"
       }
-      res.render("strata_corporation/show",{
-        strata_corporation: data,
+      res.render("listing/show",{
+        listing: data,
       });
   //   });
 });
 
-router.get("/", (req, res) => {
-  knex("strata_corporations")
-    .select("*")
-    .then((data) => {
-      // data.sort(sortString)
-      data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
-      res.render("strata_corporation/index",{
-        strata_corporations: data,
-      });
-    });
-});
+// router.get("/", (req, res) => {
+//   knex("strata_corporations")
+//     .select("*")
+//     .then((data) => {
+//       // data.sort(sortString)
+//       data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
+//       res.render("strata_corporation/index",{
+//         strata_corporations: data,
+//       });
+//     });
+// });
 
   
 

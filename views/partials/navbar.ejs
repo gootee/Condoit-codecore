@@ -1,10 +1,12 @@
 <nav class="navbar">
-  <div class="navHeader">
-    <a href="/stratas">
+  <div>
+    <a href="/stratas/index">
       <div>
         <img src="/images/condoit.jpg" class="logo" alt="Condoit">
       </div>    
-    </a>
+    </a>    
+  </div>
+
 
     
     
@@ -18,41 +20,47 @@
 
     <!-- <img src="http://icons.iconarchive.com/icons/google/noto-emoji-animals-nature/256/22266-chicken-icon.png> -->
     <!-- <h1>Cluckr</h1> -->
-    <!-- <div class="links">
+    <div class="links">
+      <a href="/listing/show">Listing Show</a>
+      |  
+      <a href="/stratas/show">Strata Show</a>
+      |  
+      <a href="/stratas/index">Strata Index</a>
+      |      
       <a href="/">Home</a>
       |
-      <a href="/cohorts">Cohorts</a>
+      <a href="/profile/show">Profile Show</a>
       |
-      <a href="/cohorts/new">New Cohort</a>      
-    </div> -->
+      <a href="/profile/new">Original Profile New</a>      
+    </div>
+    <div>
+      <% if (username) { %> 
+        <!-- <a href="/articles/new">New Articles</a> -->
+        <!-- <div class="signedInNav"> -->
+          <!-- <form action="/clucks/new" method="GET"> -->
+            <!-- <label for="username">Sign in!</label>
+            <input type="text" name="username"></input> -->
+            <!-- <input type="submit" value="Cluck!" class="btn btn-primary"> -->
+          <!-- </form> -->
 
-    <% if (username) { %> 
-      <!-- <a href="/articles/new">New Articles</a> -->
-      <!-- <div class="signedInNav"> -->
-        <!-- <form action="/clucks/new" method="GET"> -->
-          <!-- <label for="username">Sign in!</label>
-          <input type="text" name="username"></input> -->
-          <!-- <input type="submit" value="Cluck!" class="btn btn-primary"> -->
-        <!-- </form> -->
+          <div class="usernameDisplay">
+            <%= username %>
+          </div>
 
-        <div class="usernameDisplay">
-          <%= username %>
+          <form action="/sign_out" method="POST">
+            <input type="submit" value="Sign Out" class="btn btn-primary">
+          </form>
         </div>
-
-        <form action="/sign_out" method="POST">
-          <input type="submit" value="Sign Out" class="btn btn-primary">
+  
+      <% } else { %>
+        <form action="/sign_in" method="POST">
+          <label for="username">Sign in!</label>
+          <input type="text" name="username"></input>
+          <input type="submit" value="Sign In">
         </form>
-      </div>
- 
-    <% } else { %>
+      <% } %>      
+    </div>
 
-
-      <form action="/sign_in" method="POST">
-        <label for="username">Sign in!</label>
-        <input type="text" name="username"></input>
-        <input type="submit" value="Sign In">
-      </form>
-    <% } %>
 
 
 
@@ -72,5 +80,4 @@
       </form>
     < % } % > -->
 
-  </div>
 </nav>

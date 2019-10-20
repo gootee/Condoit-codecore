@@ -5,11 +5,12 @@ const logger = require('morgan');
 const path = require('path');
 const methodOverride = require('method-override');
 const app = express();
-const rootRouter = require("./routes/root");
 const cookieParser = require('cookie-parser');
 
+const rootRouter = require("./routes/root");
 const strataCorporationRouter = require("./routes/strata_corporation")
 const profileRouter = require("./routes/profile")
+const listingRouter = require("./routes/listing")
 
 //  -= MIDDLEWARE =-
 
@@ -55,6 +56,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(rootRouter);
 app.use("/stratas", strataCorporationRouter);
 app.use ("/profile", profileRouter)
+app.use ("/listing", listingRouter)
 // app.set allows us to change settings in our express app
 
 app.use(function(req, res, next) {
@@ -74,10 +76,10 @@ app.use(function(req, res, next) {
 
 app.set('view engine', 'ejs'); // here we are telling express to render tempaltes using ejs
 
-app.get("/", (req, res) => {
-  res.render('./strata_corporation/index');
-  // res.redirect('/strata_corporation/');
-})
+// app.get("/", (req, res) => {
+//   res.render('./strata_corporation/index');
+//   // res.redirect('/strata_corporation/');
+// })
 
 app.get("/", (req, res) => {
   res.render('./welcome');

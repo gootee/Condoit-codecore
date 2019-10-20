@@ -45,11 +45,18 @@
   background-color: lightblue;
 }
 
-.strataListing {
+.strata_listing {
+  display: flex;
+  flex-direction: row;
   padding: 2em;
   border: 1em;
   border-color: black;
   border-width: 1em
+}
+
+.strata_listing_details {
+  display: flex;
+  flex-direction: row;  
 }
 
 .control_group {
@@ -62,9 +69,36 @@
   flex-direction: row;
 }
 
+.lender {
+  margin: 2em;
+}
+
+.savings {
+  margin: 2em;
+}
+
+.monthly {
+  margin: 2em;
+}
+
+.explanation {
+  margin: 0 0 0 4em;
+}
+
+.downpayment {
+  margin: 2em;
+}
+
 .destination {
   /* min-width: 200px; */
   display: flex;
   flex-direction: row;
   margin: 0 0 1em 0;
+}
+
+.navbar {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
 }
