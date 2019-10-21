@@ -107,7 +107,7 @@
   border-width:1px;
   border-style:solid;
   border-color:black;
-  margin: 2px;
+  margin: 5px;
 }
 
 .container {
@@ -117,6 +117,11 @@
 .profile_container {
   display: flex;
   flex-direction: row;
+}
+
+.listing_container {
+  display: flex;
+  flex-direction: column;
 }
 
 .strata_index_heading {
@@ -131,3 +136,122 @@
   justify-content: space-between;
 }
 
+.strata_listing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.scoring {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.strata_listing_right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.score_up_and_down {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.score_up_and_down_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+
+.details_listing {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.detail_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.strata_show_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+
+.profile_us_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+
+.profile_financial_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+
+.strata_show_neighbourhood_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.listing_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.report_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.report_card_grade {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list_of_items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.list_of_items_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.list_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.profile_element {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.input_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.input_fields {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}

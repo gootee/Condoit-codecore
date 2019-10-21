@@ -1,8 +1,7 @@
 <%- include("../partials/header") %>
 
-<div class="container">
-  <div class="listing_show_top app_area">
-    <p>Top</p>
+<div class="container listing_container">
+  <div class="listing_top app_area">
     <div class="listing_show_cover_image app_area">
       <p>Cover image</p>
     </div>
@@ -34,9 +33,10 @@
         <input type="hidden" value="DELETE" name="_method">
         <input type="submit" value="Delete"">
       </form>
+      <a href="/listing/<%= listing.id %>/edit">Edit</a>       
     </div>
   
-    <a href="/listing/<%= listing.id %>/edit">Edit</a>            
+           
   </div>
 
   </div>
@@ -44,18 +44,71 @@
     <p>Info</p>
     <div class="listing_show_ratings app_area">
       <p>Ratings</p>
+      <div class="scoring app_area">
+        <p>Scoring</p>
+        <div class="overall_score app_area">
+          <p>Listing scoring overall</p>
+        </div>
+        <div class="score_up_and_down app_area">
+          <div class="score_up_and_down_item app_area">
+            <div class="thumbs_up app_area">
+              <i class="thumbs up icon outline icon"></i>
+            </div>
+            <div class="score_items score_up_items app_area">
+              <ul>
+                <div class="score_item">
+                  <p>Listing score up item</p>
+                </div>
+              </ul>
+            </div>
+          </div>  
+          <div class="score_up_and_down_item app_area">
+            <div class="thumbs_down app_area">
+              <i class="thumbs down icon outline icon"></i>
+            </div>
+            <div class="score_items score_down_items app_area">
+              <ul>
+                <div class="score_item">
+                  <p>Listing score up item</p>
+                </div>
+              </ul>
+            </div>
+          </div> 
+        </div>
+      </div>
+
+
+
+
+
     </div>
     <div class="listing_show_financials app_area">
       <p>Financials</p>
+      <div class="offer_price">
+        <p>Offer</p>
+      </div>
+      <div class="down_payment">
+        <p>Down Payment</p>
+      </div>
+      <div class="mortgage_insurance">
+        <p>Mortgage Insurance</p>
+      </div>
+      <div class="strata_fees">
+        <p>Strata Fees</p>
+      </div> 
     </div>
   </div>
-  <div class="listing_show_images images app_area">
+
+  <div class="strata_show_images images app_area">
     <p>Images</p>
-    <ul>
-      <div class="image">
-        <p>Image</p>
-      </div>
-    </ul>
+
+    <div class="ui small images list_of_items_row app_area">
+      <img src="/images/wireframe/image.png">
+      <img src="/images/wireframe/image.png">
+      <img src="/images/wireframe/image.png">
+      <img src="/images/wireframe/image.png">
+    </div>
+
   </div>
 </div>
 

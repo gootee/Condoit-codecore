@@ -18,19 +18,15 @@
     </div>    
   </div>
   <div class="strata_listings app_area">
-    <p>Listings</p>
     <ul>
       <% for (let strata_corporation of strata_corporations) { %>
         <li>
           <div class="strata_listing app_area">
-            <p>Listing</p>
             <div class="strata_listing_cover_image app_area">
               <img src="<%= strata_corporation.image_url%>" alt="Strata photo" height="120" width="120">
             </div>
             <div class="strata_listing_data app_area">
-              <p>Listing data</p>
               <div class="strata_listing_name app_area">
-                <p>Listing name</p>
                 <a href="/stratas/<%= strata_corporation.id %>">              
                   <div>
                     <%= strata_corporation.name%>
@@ -39,34 +35,61 @@
                   </div>
                 </a> 
               </div>
-              <div class="strata_listing_details app_area"> 
-                <p>Listing details</p>
+              <div class="details_listing app_area"> 
+                <ul>
+                  <li>
+                    <div class="detail_item">
+                      <div class="detail_item_icon app_area">
+                        <p>Icon</p>
+                      </div>
+                      <div class="detail_item_description app_area">
+                        <p>Construction type</p>
+                      </div>
+                    </div>
+                    <div class="detail_item">
+                      <div class="detail_item_icon app_area">
+                        <p>Icon</p>
+                      </div>
+                      <div class="detail_item_description app_area">
+                        <p>Location area</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                
               </div>              
             </div>
             <div class="strata_listing_right app_area">
-              <p>Listing Right</p>
-              <div class="strata_listing_scoring app_area">
-                <p>Listing scoring</p>
-                <div class="strata_listing_scoring_overall app_area">
+              <div class="scoring app_area">
+                <p>Scoring</p>
+                <div class="overall_score app_area">
                   <p>Listing scoring overall</p>
                 </div>
-                <div class="strata_listing_score_up app_area">
-                  <p>Listing score up</p>
-                  <div class="strata_listing_score_thumbs_up app_area">
-                    <p>Listing thumb up</p>
-                  </div>
-                  <div class="strata_listing_score_up_items app_area">
-                    <p>Listing score up items</p>
-                  </div>
-                </div>
-                <div class="strata_listing_score_down app_area">
-                  <p>Listing score down</p>
-                  <div class="strata_listing_score_thumbs_down app_area">
-                    <p>Listing score thumb down</p>
-                  </div>
-                  <div class="strata_listing_score_down_items app_area">
-                    <p>Listing score down items</p>
-                  </div>
+                <div class="score_up_and_down app_area">
+                  <div class="score_up_and_down_item app_area">
+                    <div class="thumbs_up app_area">
+                      <i class="thumbs up icon outline icon"></i>
+                    </div>
+                    <div class="score_items score_up_items app_area">
+                      <ul>
+                        <div class="score_item">
+                          <p>Listing score up item</p>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>  
+                  <div class="score_up_and_down_item app_area">
+                    <div class="thumbs_down app_area">
+                      <i class="thumbs down icon outline icon"></i>
+                    </div>
+                    <div class="score_items score_down_items app_area">
+                      <ul>
+                        <div class="score_item">
+                          <p>Listing score up item</p>
+                        </div>
+                      </ul>
+                    </div>
+                  </div> 
                 </div>
               </div>
               <div class="heart app_area">
