@@ -1,3 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Staatliches|Thasadith');
+@import url('reset.css');
+
+html,
+body {
+  height: 100%;
+  /* required for min-height: 100% to work on the header; alternatively, you could use min-height: 100vh; */
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+
+body {
+  /* background: linear-gradient(120deg, #001F28 0%, #F4EACF 100%); */
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  margin-bottom: 1.25em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  /* margin: 1.75rem 0 1rem; */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052em;
+}
+
+h2 {
+  font-size: 2.441em;
+}
+
+h3 {
+  font-size: 1.953em;
+}
+
+h4 {
+  font-size: 1.563em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+small,
+.text_small {
+  font-size: 0.8em;
+}
+
+.app_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  flex-grow: 1.5;
+  width: 100px;
+  height: 100%;
+  min-height: 100%;
+  background-color: lightblue;
+}
+
+.main {
+  flex-grow: 8.5;
+}
+
+
+
+
+
+
+/* h1 {
+  font-size: 3.052em;
+  font-weight: 900;
+  /* text-align: center; 
+}*/
+
+/* .h2 {
+
+}  */
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.plus_button {
+  width: 48px;
+  height: 48px;
+}
+
 .logo {
   width: 48px;
   height: 48px;
@@ -38,13 +141,6 @@
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
-.sidebar {
-  width: 100px;
-  height: 100%;
-  min-height: 100%;
-  background-color: lightblue;
-}
-
 .strata_listing {
   display: flex;
   flex-direction: row;
@@ -64,10 +160,6 @@
   flex-direction: row;
 }
 
-.app_container {
-  display: flex;
-  flex-direction: row;
-}
 
 .lender {
   margin: 2em;
@@ -114,10 +206,98 @@
   margin: 2px;
 }
 
+
+/* Profile Show */
+
 .profile_container {
   display: flex;
   flex-direction: row;
 }
+
+.profile_left {
+  flex-grow: 3;
+}
+
+.profile_us_top  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+}
+
+ .profile_us_heading, .profile_financial_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+} 
+
+.us_icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+  align-items: center;
+}
+
+.us_icon {
+  width: 48px;
+  height: 48px;
+}
+
+.icon_name {
+  margin: 5px;
+  text-align: center;
+}
+
+.occupant_icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 10px;
+}
+
+.pet_icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 10px;
+}
+
+.vehicle_icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 10px;
+}
+
+.occupants {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 2ems;
+}
+
+.pets {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 2ems;
+}
+
+.profile_elements {
+  flex-grow: 7;
+}
+
+.profile_element {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+
+
+
 
 .listing_container {
   display: flex;
@@ -143,6 +323,12 @@
 }
 
 .scoring {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.strata_listing_left {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -184,12 +370,6 @@
   justify-content: space-between; 
 }
 
-.profile_us_top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; 
-}
-
 .profile_financial_top {
   display: flex;
   flex-direction: row;
@@ -208,34 +388,67 @@
   justify-content: space-between;
 }
 
+.strata_neighbourhood_maps {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 2;
+}
+
 .report_card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  flex-grow: 6;
 }
 
 .report_card_grade {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 30%;
+}
+
+.report_card_grade_icon {
+  flex-grow: 1;
+}
+
+.report_card_grade_description {
+  flex-grow: 3;
+}
+
+.grade_image {
+  flex-grow: 2;
 }
 
 .list_of_items {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-content: center;
+  /* margin: 20px 0 20px 0; */
 }
 
-.list_of_items_row {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+.list_heading {
+  margin: 20px 0 5px 0;
 }
 
 .list_item {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
+}
+
+.list_item_cover_image {
+  margin: 0 20px;
+  height: 25px; 
+  width: 25px;
+}
+
+.list_item_icon {
+  width: 32px;
+  height: 32px;
 }
 
 .profile_element {

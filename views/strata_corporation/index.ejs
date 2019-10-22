@@ -17,48 +17,56 @@
       </div>
     </div>    
   </div>
+  
   <div class="strata_listings app_area">
     <ul>
       <% for (let strata_corporation of strata_corporations) { %>
         <li>
           <div class="strata_listing app_area">
-            <div class="strata_listing_cover_image app_area">
-              <img src="<%= strata_corporation.image_url%>" alt="Strata photo" height="120" width="120">
-            </div>
-            <div class="strata_listing_data app_area">
-              <div class="strata_listing_name app_area">
-                <a href="/stratas/<%= strata_corporation.id %>">              
-                  <div>
-                    <%= strata_corporation.name%>
-                    plan#: <%= strata_corporation.strata_plan_number %>
-                    id: <%= strata_corporation.id%>                          
-                  </div>
-                </a> 
+            <div class="strata_listing_left">
+              <div class="strata_listing_cover_image app_area">
+                <img src="<%= strata_corporation.image_url%>" alt="Strata photo" height="120" width="120">
               </div>
-              <div class="details_listing app_area"> 
-                <ul>
-                  <li>
-                    <div class="detail_item">
-                      <div class="detail_item_icon app_area">
-                        <p>Icon</p>
-                      </div>
-                      <div class="detail_item_description app_area">
-                        <p>Construction type</p>
-                      </div>
+              <div class="strata_listing_data app_area">
+                <div class="strata_listing_name app_area">
+                  <a href="/stratas/<%= strata_corporation.id %>">              
+                    <div>
+                      <h2><%= strata_corporation.name%></h2>
+                      
+                      plan#: <%= strata_corporation.strata_plan_number %>
+                      id: <%= strata_corporation.id%>                          
                     </div>
-                    <div class="detail_item">
-                      <div class="detail_item_icon app_area">
-                        <p>Icon</p>
+                  </a> 
+                </div>
+                <div class="details_listing app_area"> 
+                  <ul>
+                    <li>
+                      <div class="detail_item">
+                        <div class="detail_item_icon app_area">
+                          <i class="far fa-building"></i>
+                        </div>
+                        <div class="detail_item_description app_area">
+                          <p>Construction type</p>
+                        </div>
                       </div>
-                      <div class="detail_item_description app_area">
-                        <p>Location area</p>
+                      <div class="detail_item">
+                        <div class="detail_item_icon app_area">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="detail_item_description app_area">
+                          <p>Location area</p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                </ul>
-                
+                    </li>
+                  </ul>
+                  
+                </div>              
               </div>              
+              
             </div>
+
+            
+
             <div class="strata_listing_right app_area">
               <div class="scoring app_area">
                 <p>Scoring</p>

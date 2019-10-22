@@ -1,72 +1,159 @@
 <%- include("../partials/header") %>
 <div class="container profile_container">
   <div class="profile_left app_area">
-    <p>Left</p>
-
     <div class="profile_us app_area">
-      <p>Us</p>
-      <div class="profile_us_top top app_area">
-        <div class="icon app_area">
-          <p>icon</p>
+      <div class="profile_us_heading">
+        <h1>Us</h1>
+        <div class="buttons">
+          <div class="edit_button">
+            <i data-feather="edit-3"></i>
+          </div>
+        </div>          
+      </div>
+
+      <div class="profile_us_top">
+        <div class="us_icons">
+          <div class="occupant_icons">
+            <div class="occupant">
+              <i data-feather="user" class="us_icon"></i>
+              <div class="icon_name">
+                <p>Jackie</p>
+              </div>
+            </div>  
+
+            <div class="occupant">
+              <i data-feather="user" class="us_icon"></i>
+              <div class="icon_name">
+                <p>John</p>
+              </div>
+            </div>                        
+          </div>
+
+          <div class="pet_icons">
+            <div class="pet">
+              <i class="fas fa-dog fa-3x us_icon"></i>
+              <div class="icon_name">
+                <p>Olive</p>                
+              </div>
+            </div>                       
+          </div>  
+
+          <div class="vehicle_icons">
+            <div class="vehicle">
+              <i class="fas fa-plus fa-2x us_icon"></i>
+            </div>  
+            <div class="vehicle">
+              <i class="fas fa-bicycle fa-3x us_icon"></i>
+              <div class="icon_name">
+                <p>Bicycle</p>                
+              </div>
+            </div>     
+            <div class="vehicle">
+              <i class="fas fa-car fa-3x us_icon"></i>
+              <div class="icon_name">
+                <p>Car</p>                
+              </div>
+            </div>                   
+          </div>        
+      </div>
+    
+    </div>
+
+ 
+    <div class="details app_area">
+      <div class="list_of_items occupants">
+        <div class="list_heading">
+          <h4>Occupants</h4>
         </div>
-        <div class="buttons app_area">
-          <p>buttons</p>
+        <div>
+          <ul>
+            <li>
+              <div class="list_item">
+                <div class="list_item_buttons buttons">
+                  <div class="delete_button">
+                    <i data-feather="x"></i>
+                  </div>
+                  <div class="edit_button">
+                    <i data-feather="edit-3"></i>
+                  </div>                
+                </div>
+                <div class="list_item_cover_image">
+                  <!-- <p>Cover image</p> -->
+                  <i data-feather="user" class="list_item_icon"></i>
+                </div>
+                <div class="list_item_name">
+                  <p>Jackie Gootee</p>             
+                </div>
+              </div>             
+            </li>
+            <li>
+              <div class="list_item">
+                <div class="list_item_buttons buttons">
+                  <div class="delete_button">
+                    <i data-feather="x"></i>
+                  </div>
+                  <div class="edit_button">
+                    <i data-feather="edit-3"></i>
+                  </div>                
+                </div>
+                <div class="list_item_cover_image">
+                  <!-- <p>Cover image</p> -->
+                  <i data-feather="user" class="list_item_icon"></i>
+                </div>
+                <div class="list_item_name">
+                  <p>John Gootee</p>             
+                </div>
+              </div>             
+            </li>
+          </ul>           
         </div>
       </div>
-      <div class="details app_area">
-        <div class="list_of_items app_area occupants">
-          <p>Occupants</p>
+      <div class="list_of_items pets">
+        <div class="list_heading">
+          <h4>Pets</h4>
+        </div>
+        <div>        
           <ul>
             <li>
-              <div class="list_item app_area">
-                <div class="list_item_buttons">
-                  <div class="delete app_area">
-                    <p>X</p>
+              <div class="list_item">
+                <div class="list_item_buttons buttons">
+                  <div class="delete_button">
+                    <i data-feather="x"></i>
                   </div>
+                  <div class="edit_button">
+                    <i data-feather="edit-3"></i>
+                  </div>   
                 </div>
-                <div class="list_item_cover_image app_area">
-                  <p>Cover image</p>
+                <div class="list_item_cover_image">
+                  <img src="/images/olive.jpg" alt="Pet image" height="25" width="25"> 
                 </div>
-                <div class="list_item_name app_area">
-                  <p>Name</p>             
+                <div class="list_item_name">
+                  <p>Olive</p>             
                 </div>
               </div>             
             </li>
-          </ul>            
+          </ul>    
+        </div>        
+      </div>
+      <div class="list_of_items vehicles">
+        <div class="list_heading">
+          <h4>Vehicles</h4>
         </div>
-        <div class="list_of_items app_area pets">
-          <p>Pets</p>
+        <div>    
           <ul>
             <li>
-              <div class="list_item app_area">
-                <div class="list_item_buttons">
-                  <div class="delete app_area">
-                    <p>X</p>
+              <div class="list_item">
+                <div class="list_item_buttons buttons">
+                  <div class="delete_button">
+                    <i data-feather="x"></i>
                   </div>
+                  <div class="edit_button">
+                    <i data-feather="edit-3"></i>
+                  </div>   
                 </div>
-                <div class="list_item_cover_image app_area">
-                  <p>Cover image</p>
-                </div>
-                <div class="list_item_name app_area">
-                  <p>Name</p>             
-                </div>
-              </div>             
-            </li>
-          </ul>            
-        </div>
-        <div class="list_of_items app_area vehicles">
-          <p>Vehicles</p>
-          <ul>
-            <li>
-              <div class="list_item app_area">
-                <div class="list_item_buttons">
-                  <div class="delete app_area">
-                    <p>X</p>
-                  </div>
-                </div>
-                <div class="list_item_cover_image app_area">
-                  <p>Cover image</p>
-                </div>             
+                <div class="list_item_cover_image">
+                  <i class="fas fa-car fa-3x us_icon"></i>
+                </div> 
                 <div class="list_item_type app_area">
                   <p>Type</p>             
                 </div> 
@@ -75,39 +162,67 @@
                 </div>               
               </div>             
             </li>
-          </ul>            
-        </div>
-      </div>
-      <div class="bottom app_area">
-        <div class="buttons app_area">
-          <p>Save</p>
-        </div>
+            
+            <li>
+              <div class="list_item">
+                <div class="list_item_buttons buttons">
+                  <div class="delete_button">
+                    <i data-feather="x"></i>
+                  </div>
+                  <div class="edit_button">
+                    <i data-feather="edit-3"></i>
+                  </div>   
+                </div>
+                <div class="list_item_cover_image">
+                    <i class="fas fa-bicycle fa-3x us_icon"></i>
+                </div> 
+                <div class="list_item_type app_area">
+                  <p>Type</p>             
+                </div> 
+                <div class="list_item_description app_area">
+                  <p>Description</p>             
+                </div>               
+              </div>             
+            </li>
+          </ul>  
+        </div>          
       </div>
     </div>
+    <div class="bottom app_area">
+      <div class="buttons app_area">
+        <p>Save</p>
+      </div>
+    </div>
+  </div>
 
     <div class="profile_financial app_area">
-      <p>Financial</p>
+      <div class="profile_financial_heading">
+        <h1>Financial</h1>
+        <div class="buttons">
+          <div class="edit_button">
+            <i data-feather="edit-3"></i>
+          </div>
+        </div>          
+      </div>
       <div class="profile_financial_top top app_area">
         <div class="icon app_area">
           <p>icon</p>
-        </div>
-        <div class="buttons app_area">
-          <p>buttons</p>
         </div>
       </div>
 
       <div class="details app_area">
         <p>Details</p>
         <div class="budget app_area">
-          <p>Budget</p>
+
           <ul>
             <li>
+              <h4>Budget</h4>              
               <div class="list_item app_area">
-                <div class="list_item_buttons">
+                <!-- <div class="list_item_buttons">
                   <div class="edit app_area">
                     <p>E</p>
                   </div>
-                </div>
+                </div> -->
                 <div class="list_item_icon app_area">
                   <p>icon</p>
                 </div>             
@@ -123,12 +238,13 @@
               </div>             
             </li>
             <li>
+              <h4>Down Payment</h4>
               <div class="list_item app_area">
-                <div class="list_item_buttons">
+                <!-- <div class="list_item_buttons">
                   <div class="edit app_area">
                     <p>E</p>
                   </div>
-                </div>
+                </div> -->
                 <div class="list_item_icon app_area">
                   <p>icon</p>
                 </div>             
@@ -144,12 +260,13 @@
               </div>             
             </li> 
             <li>
+              <p>Savings</p>
               <div class="list_item app_area">
-                <div class="list_item_buttons">
+                <!-- <div class="list_item_buttons">
                   <div class="edit app_area">
                     <p>E</p>
                   </div>
-                </div>
+                </div> -->
                 <div class="list_item_icon app_area">
                   <p>icon</p>
                 </div>             
@@ -160,16 +277,20 @@
                   <p>Amount</p>             
                 </div> 
                 <div class="list_item_description app_area">
-                  <p>Description</p>             
+                  <h4>Description</h4>             
                 </div>               
-              </div>             
-            </li>            
+              </div> 
+
+            </li>   
+            <li>
+              <h4>Transaction</h4>
+            </li>         
             
           </ul>            
         </div>
 
         <div class="lender app_area">
-          <p>Lender:</p>
+          <h4>Lender:</h4>
           <div class="lender">
             <div class="ui checkbox">
               <input type="checkbox" class="lender_preapproved" name="lender_preapproved" value="lender_preapproved"> 
@@ -190,15 +311,12 @@
       </div>
     </div>
   </div>
-</div>
+
 
   <div class="profile_elements app_area">
     <p>Elements</p>
     <div class="profile_element_plus app_area">
-      <p>Plus</p>
-      <div class="profile_element_plus_button app_area">
-        <i class="plus square outline icon"></i>
-      </div>
+      <i data-feather="plus-circle" class="plus_button"></i>
     </div>
     <div class="profile_element_input_new app_area">
       <p>New input</p>
@@ -234,12 +352,14 @@
         <ul>
           <li>
             <div class="profile_element app_area">
-              <div class="delete app_area">
-                <p>X</p>
-              </div>
-              <div class="edit app_area">
-                <p>E</p>
-              </div>                 
+              <div class="buttons">
+                <div class="delete_button">
+                  <i data-feather="x"></i>
+                </div>                
+                <div class="edit_button">
+                  <i data-feather="edit-3"></i>
+                </div>
+              </div>               
               <div class="profile_element_icon app_area">
                 <p>icon</p>
               </div>
@@ -265,4 +385,5 @@
     </div>
   </div>
 </div>
+
 <%- include("../partials/footer") %>
