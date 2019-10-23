@@ -1,14 +1,14 @@
 <%- include("../partials/header") %>
 <div class="container profile_container">
-  <div class="profile_left app_area">
-    <div class="profile_us app_area">
+  <div class="profile_left">
+    <div class="profile_us">
       <div class="profile_us_heading">
         <h1>Us</h1>
-        <div class="buttons">
+        <!-- <div class="buttons">
           <div class="edit_button">
             <i data-feather="edit-3"></i>
           </div>
-        </div>          
+        </div>           -->
       </div>
 
       <div class="profile_us_top">
@@ -60,7 +60,7 @@
     </div>
 
  
-    <div class="details app_area">
+    <div class="details">
       <div class="list_of_items occupants">
         <div class="list_heading">
           <h4>Occupants</h4>
@@ -82,7 +82,7 @@
                   <i data-feather="user" class="list_item_icon"></i>
                 </div>
                 <div class="list_item_name">
-                  <p>Jackie Gootee</p>             
+                  <h5>Jackie Gootee</h5>             
                 </div>
               </div>             
             </li>
@@ -101,7 +101,7 @@
                   <i data-feather="user" class="list_item_icon"></i>
                 </div>
                 <div class="list_item_name">
-                  <p>John Gootee</p>             
+                  <h5>John Gootee</h5>             
                 </div>
               </div>             
             </li>
@@ -125,11 +125,12 @@
                   </div>   
                 </div>
                 <div class="list_item_cover_image">
-                  <img src="/images/olive.jpg" alt="Pet image" height="25" width="25"> 
+                  <img src="/images/olive.jpg" alt="Pet image" height="32" width="32"> 
                 </div>
-                <div class="list_item_name">
-                  <p>Olive</p>             
+                <div class="list_item_type">
+                  <h5>Olive</h5>             
                 </div>
+                <div>  under 15 pounds</div>
               </div>             
             </li>
           </ul>    
@@ -152,13 +153,13 @@
                   </div>   
                 </div>
                 <div class="list_item_cover_image">
-                  <i class="fas fa-car fa-3x us_icon"></i>
+                  <i class="fas fa-car fa-2x us_icon"></i>
                 </div> 
-                <div class="list_item_type app_area">
-                  <p>Type</p>             
+                <div class="list_item_type">
+                  <h5>Compact</h5>             
                 </div> 
-                <div class="list_item_description app_area">
-                  <p>Description</p>             
+                <div class="list_item_description">
+                  <p>Honda Civic</p>             
                 </div>               
               </div>             
             </li>
@@ -174,13 +175,13 @@
                   </div>   
                 </div>
                 <div class="list_item_cover_image">
-                    <i class="fas fa-bicycle fa-3x us_icon"></i>
+                    <i class="fas fa-bicycle fa-2x us_icon"></i>
                 </div> 
-                <div class="list_item_type app_area">
-                  <p>Type</p>             
+                <div class="list_item_type">
+                  <h5>Bicycle</h5>             
                 </div> 
-                <div class="list_item_description app_area">
-                  <p>Description</p>             
+                <div class="list_item_description">
+                  <p>Blue Schwinn</p>             
                 </div>               
               </div>             
             </li>
@@ -188,129 +189,191 @@
         </div>          
       </div>
     </div>
-    <div class="bottom app_area">
+    <!-- <div class="bottom app_area">
       <div class="buttons app_area">
         <p>Save</p>
       </div>
-    </div>
+    </div> -->
   </div>
 
-    <div class="profile_financial app_area">
-      <div class="profile_financial_heading">
-        <h1>Financial</h1>
-        <div class="buttons">
-          <div class="edit_button">
-            <i data-feather="edit-3"></i>
-          </div>
-        </div>          
-      </div>
-      <div class="profile_financial_top top app_area">
-        <div class="icon app_area">
-          <p>icon</p>
+  <div class="profile_financial">
+    <div class="profile_financial_heading">
+      <h1>Financial</h1>
+      <!-- <div class="buttons">
+        <div class="edit_button">
+          <i data-feather="edit-3"></i>
         </div>
-      </div>
-
-      <div class="details app_area">
-        <p>Details</p>
-        <div class="budget app_area">
-
-          <ul>
-            <li>
-              <h4>Budget</h4>              
-              <div class="list_item app_area">
-                <!-- <div class="list_item_buttons">
-                  <div class="edit app_area">
-                    <p>E</p>
-                  </div>
-                </div> -->
-                <div class="list_item_icon app_area">
-                  <p>icon</p>
-                </div>             
-                <div class="list_item_type app_area">
-                  <p>Monthly Housing Budget</p>             
-                </div> 
-                <div class="list_item_amount app_area">
-                  <p>Amount</p>             
-                </div> 
-                <div class="list_item_description app_area">
-                  <p>Description</p>             
-                </div>               
-              </div>             
-            </li>
-            <li>
-              <h4>Down Payment</h4>
-              <div class="list_item app_area">
-                <!-- <div class="list_item_buttons">
-                  <div class="edit app_area">
-                    <p>E</p>
-                  </div>
-                </div> -->
-                <div class="list_item_icon app_area">
-                  <p>icon</p>
-                </div>             
-                <div class="list_item_type app_area">
-                  <p>Down Payment</p>             
-                </div> 
-                <div class="list_item_amount app_area">
-                  <p>Amount</p>             
-                </div> 
-                <div class="list_item_description app_area">
-                  <p>Description</p>             
-                </div>               
-              </div>             
-            </li> 
-            <li>
-              <p>Savings</p>
-              <div class="list_item app_area">
-                <!-- <div class="list_item_buttons">
-                  <div class="edit app_area">
-                    <p>E</p>
-                  </div>
-                </div> -->
-                <div class="list_item_icon app_area">
-                  <p>icon</p>
-                </div>             
-                <div class="list_item_type app_area">
-                  <p>Savingst</p>             
-                </div> 
-                <div class="list_item_amount app_area">
-                  <p>Amount</p>             
-                </div> 
-                <div class="list_item_description app_area">
-                  <h4>Description</h4>             
-                </div>               
-              </div> 
-
-            </li>   
-            <li>
-              <h4>Transaction</h4>
-            </li>         
-            
-          </ul>            
-        </div>
-
-        <div class="lender app_area">
-          <h4>Lender:</h4>
-          <div class="lender">
-            <div class="ui checkbox">
-              <input type="checkbox" class="lender_preapproved" name="lender_preapproved" value="lender_preapproved"> 
-              <label for="lender_preapproved">I've been pre-approved for my mortgage: </label>
-            </div>
-            <div class="control_group">  
-              <input class="lender_info" style = "display: none" type="text" name="lender_name" placeholder="Lender Name">
-              <input class="lender_info" style = "display: none" type="text" name="lender_email" placeholder="Email">
-            </div>
-          </div>            
-        </div>
-      </div>
+      </div>           -->
     </div>
-
-    <div class="bottom app_area">
-      <div class="buttons app_area">
-        <p>Save</p>
+    <!-- <div class="profile_financial_top top app_area">
+      <div class="icon app_area">
+        <p>icon</p>
       </div>
-    </div>
+    </div> -->
+
+    <div class="details">
+      <ul>
+        <li>
+          <h4>Budget</h4>              
+          <div class="list_item">
+
+            <div class="list_item_buttons buttons">
+              <div class="edit_button">
+                <i data-feather="edit-3"></i>
+              </div>   
+            </div>
+
+            <div class="list_item_cover_image">
+              <i class="fas fa-money-check-alt fa-2x"></i>
+            </div>             
+            <div class="list_item_type">
+              <h5>Monthly Housing Budget</h5>             
+            </div> 
+            <div class="list_item_amount">
+              <p>$3000</p>             
+            </div> 
+            <!-- <div class="list_item_description">
+              <p>Description</p>             
+            </div>                -->
+          </div>             
+        </li>
+        <li>
+          <h4>Down Payment</h4>
+          <div class="list_item">
+            <div class="list_item_buttons buttons">
+              <div class="edit_button">
+                <i data-feather="edit-3"></i>
+              </div>   
+            </div>
+            <div class="list_item_cover_image">
+                <i class="fas fa-file-invoice-dollar fa-2x"></i>
+            </div>             
+            <div class="list_item_type">
+              <h5>Down Payment</h5>             
+            </div> 
+            <div class="list_item_amount">
+              <p>Amount</p>             
+            </div> 
+            <div class="list_item_description">
+              <p>Description</p>             
+            </div>               
+          </div>             
+        </li> 
+
+
+        <li>
+          <h4>Savings</h4>            
+          <div class="list_item">
+            <div class="list_item_buttons buttons">
+              <div class="edit_button">
+                <i data-feather="edit-3"></i>
+              </div>   
+            </div>
+            <div class="list_item_cover_image">
+              <i class="fas fa-comment-dollar fa-2x"></i>
+            </div>              
+            <div class="list_item_type">
+              <h5>How I save</h5>             
+            </div> 
+            <div class="list_item_amount">
+              <p>Set aside extra monthly for major expenses</p>             
+            </div> 
+            <!-- <div class="list_item_description">
+              <h4>Description</h4>             
+            </div>                -->
+          </div> 
+        </li> 
+
+        <li>      
+          <div class="list_item">
+            <div class="list_item_buttons buttons">
+              <div class="edit_button">
+                <i data-feather="edit-3"></i>
+              </div>   
+            </div>
+            <div class="list_item_cover_image">
+              <i class="fas fa-piggy-bank fa-2x"></i>
+            </div>              
+            <div class="list_item_type">
+              <h5>Current Contingency Fund Savings</h5>             
+            </div> 
+            <div class="list_item_amount">
+              <p>$25-50K</p>             
+            </div> 
+            <!-- <div class="list_item_description">
+              <h4>Description</h4>             
+            </div>                -->
+          </div> 
+        </li> 
+
+        <li>
+          <h4>Real Estate Agent</h4>
+          <div class="list_item">
+            <div class="list_item_buttons buttons">
+              <div class="edit_button">
+                <i data-feather="edit-3"></i>
+              </div>   
+            </div>
+            <div class="list_item_cover_image">
+              <i class="fas fa-user-tie fa-2x"></i>
+            </div>  
+            <div class="list_item_type">
+              <h5>Not yet affiliated with a Real Estate Agent</h5>
+              <!-- <div class="ui checkbox">
+                <input type="checkbox" class="lender_preapproved" name="lender_preapproved" value="lender_preapproved"> 
+                <label for="lender_preapproved">I've been pre-approved for my mortgage: </label>
+              </div> -->
+              <!-- <div class="control_group">  
+                <input class="lender_info" style = "display: none" type="text" name="lender_name" placeholder="Lender Name">
+                <input class="lender_info" style = "display: none" type="text" name="lender_email" placeholder="Email">
+              </div> -->
+            </div>            
+            <!-- <div class="list_item_amount">
+              <p>$480,000</p>             
+            </div>  -->
+          </div> 
+        </li>          
+        <li>
+            <h4>Lender:</h4>
+          <div class="list_item">
+            <div class="list_item_buttons buttons">
+              <div class="edit_button">
+                <i data-feather="edit-3"></i>
+              </div>   
+            </div>
+            <div class="list_item_cover_image">
+              <i class="fas fa-university fa-2x"></i>
+            </div>  
+            <div class="list_item_type">
+              <h5>Pre-approved by RBC Bank</h5>
+              <!-- <div class="ui checkbox">
+                <input type="checkbox" class="lender_preapproved" name="lender_preapproved" value="lender_preapproved"> 
+                <label for="lender_preapproved">I've been pre-approved for my mortgage: </label>
+              </div> -->
+              <!-- <div class="control_group">  
+                <input class="lender_info" style = "display: none" type="text" name="lender_name" placeholder="Lender Name">
+                <input class="lender_info" style = "display: none" type="text" name="lender_email" placeholder="Email">
+              </div> -->
+            </div>            
+            <div class="list_item_amount">
+              <p>$480,000</p>             
+            </div> 
+          </div> 
+        </li>                              
+      </ul>     
+    </div>            
   </div>
+
+
+  </div>
+</div>
+
+  <div class="bottom app_area">
+    <!-- <div class="buttons app_area">
+      <p>Save</p>
+    </div> -->
+  </div>
+</div>
 
 
   <div class="profile_elements app_area">
@@ -346,12 +409,16 @@
 
     </div>
     <div class="profile_element_importance_levels app_area">
-      <p>Importance levels</p>
       <div class="profile_element_importance_level required app_area">
-        <p>Required</p>
+        <h3>Required</h3>
+
+
+
+
+
         <ul>
           <li>
-            <div class="profile_element app_area">
+            <div class="profile_element">
               <div class="buttons">
                 <div class="delete_button">
                   <i data-feather="x"></i>
@@ -359,28 +426,323 @@
                 <div class="edit_button">
                   <i data-feather="edit-3"></i>
                 </div>
-              </div>               
-              <div class="profile_element_icon app_area">
-                <p>icon</p>
+              </div>    
+              <div class="list_item_cover_image">
+                <i class="fas fa-paw fa-2x"></i>
+              </div>             
+              <div class="profile_element_name">
+                <h5>Pets allowed</h5>
+                <div>Small dog</div>
               </div>
-              <div class="profile_element_name app_area">
-                <p>name</p>
-              </div>
-              <div class="profile_element_importance app_area">
-                <p>importance</p>
-              </div>              
             </div>
           </li>
+
+          <li>
+            <div class="profile_element">
+              <div class="buttons">
+                <div class="delete_button">
+                  <i data-feather="x"></i>
+                </div>                
+                <div class="edit_button">
+                  <i data-feather="edit-3"></i>
+                </div>
+              </div>    
+              <div class="list_item_cover_image">
+                <i class="fas fa-car fa-2x us_icon"></i>
+              </div>             
+              <div class="profile_element_name">
+                <h5>Covered Reserved Parking</h5>
+                <div>Compact car</div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="profile_element">
+              <div class="buttons">
+                <div class="delete_button">
+                  <i data-feather="x"></i>
+                </div>                
+                <div class="edit_button">
+                  <i data-feather="edit-3"></i>
+                </div>
+              </div>    
+              <div class="list_item_cover_image">
+                <i class="fas fa-door-open fa-2x us_icon"></i>
+              </div>             
+              <div class="profile_element_name">
+                <h5>2+ Bedrooms</h5>
+              </div>
+            </div>
+          </li>  
+          
+          <li>
+            <div class="profile_element">
+              <div class="buttons">
+                <div class="delete_button">
+                  <i data-feather="x"></i>
+                </div>                
+                <div class="edit_button">
+                  <i data-feather="edit-3"></i>
+                </div>
+              </div>    
+              <div class="list_item_cover_image">
+                <i class="fas fa-bath fa-2x us_icon"></i>
+              </div>             
+              <div class="profile_element_name">
+                <h5>2+ Bathrooms</h5>
+              </div>
+            </div>
+          </li>  
+          
+          <li>
+            <div class="profile_element">
+              <div class="buttons">
+                <div class="delete_button">
+                  <i data-feather="x"></i>
+                </div>                
+                <div class="edit_button">
+                  <i data-feather="edit-3"></i>
+                </div>
+              </div>    
+              <div class="list_item_cover_image">
+                <i class="fas fa-tshirt fa-2x us_icon"></i>
+              </div>             
+              <div class="profile_element_name">
+                <h5>Laundry</h5>
+                <div>In-unit</div>
+              </div>
+            </div>
+          </li>           
+
+
+          <li>
+            <div class="profile_element">
+              <div class="buttons">
+                <div class="delete_button">
+                  <i data-feather="x"></i>
+                </div>                
+                <div class="edit_button">
+                  <i data-feather="edit-3"></i>
+                </div>
+              </div>    
+              <div class="list_item_cover_image">
+                <i class="fas fa-cloud-sun fa-2x us_icon"></i>
+              </div>             
+              <div class="profile_element_name">
+                <h5>Outdoor Area</h5>
+                <div>Balcony/Deck/Yard</div>
+              </div>
+            </div>
+          </li>   
+
+          <li>
+            <div class="profile_element">
+              <div class="buttons">
+                <div class="delete_button">
+                  <i data-feather="x"></i>
+                </div>                
+                <div class="edit_button">
+                  <i data-feather="edit-3"></i>
+                </div>
+              </div>    
+              <div class="list_item_cover_image">
+                <i class="fas fa-bicycle fa-2x us_icon"></i>
+              </div>             
+              <div class="profile_element_name">
+                <h5>Bicycle to school in 25 minutes</h5>
+                <div>CodeCore New West Office</div>
+              </div>
+            </div>
+          </li>   
+
+
+          <li>
+            <div class="profile_element">
+              <div class="buttons">
+                <div class="delete_button">
+                  <i data-feather="x"></i>
+                </div>                
+                <div class="edit_button">
+                  <i data-feather="edit-3"></i>
+                </div>
+              </div>    
+              <div class="list_item_cover_image">
+                <i class="fas fa-train fa-2x us_icon"></i>
+              </div>             
+              <div class="profile_element_name">
+                <h5>Public Transit to work in 45 minutes</h5>
+                <div>595 Burrard St, Vancouver, BC</div>
+              </div>
+            </div>
+          </li>  
+
+
+
+
+
+
+
+
+
         </ul>
       </div>
       <div class="profile_element_importance_level important app_area">
-        <p>Important</p>
+        <h3>Important</h3>
+        <ul>
+          <li>
+              <div class="profile_element">
+                <div class="buttons">
+                  <div class="delete_button">
+                    <i data-feather="x"></i>
+                  </div>                
+                  <div class="edit_button">
+                    <i data-feather="edit-3"></i>
+                  </div>
+                </div>    
+                <div class="list_item_cover_image">
+                  <i class="fas fa-walking fa-2x us_icon"></i>
+                </div>             
+                <div class="profile_element_name">
+                  <h5>Walk to cafe in 10 minutes</h5>
+                  <!-- <div>CodeCore New West Office</div> -->
+                </div>
+              </div>
+            </li>   
+    
+
+            <li>
+                <div class="profile_element">
+                  <div class="buttons">
+                    <div class="delete_button">
+                      <i data-feather="x"></i>
+                    </div>                
+                    <div class="edit_button">
+                      <i data-feather="edit-3"></i>
+                    </div>
+                  </div>    
+                  <div class="list_item_cover_image">
+                    <i class="fas fa-child fa-2x us_icon"></i>
+                  </div>             
+                  <div class="profile_element_name">
+                    <h5>Playground</h5>
+                    <div>On the property</div>
+                  </div>
+                </div>
+              </li>  
+    
+              <li>
+                <div class="profile_element">
+                  <div class="buttons">
+                    <div class="delete_button">
+                      <i data-feather="x"></i>
+                    </div>                
+                    <div class="edit_button">
+                      <i data-feather="edit-3"></i>
+                    </div>
+                  </div>    
+                  <div class="list_item_cover_image">
+                    <i class="fas fa-suitcase-rolling fa-2x us_icon"></i>
+                  </div>             
+                  <div class="profile_element_name">
+                    <h5>Guest Suite Available</h5>
+                    <!-- <div>595 Burrard St, Vancouver, BC</div> -->
+                  </div>
+                </div>
+              </li>  
+        </ul>
+
       </div>
       <div class="profile_element_importance_level preferred app_area">
-        <p>Preferred</p>
+        <h3>Preferred</h3>
+
+        <ul>
+          <li>
+              <div class="profile_element">
+                <div class="buttons">
+                  <div class="delete_button">
+                    <i data-feather="x"></i>
+                  </div>                
+                  <div class="edit_button">
+                    <i data-feather="edit-3"></i>
+                  </div>
+                </div>    
+                <div class="list_item_cover_image">
+                  <i class="fas fa-utensils fa-2x us_icon"></i>
+                </div>             
+                <div class="profile_element_name">
+                  <h5>Dishwasher</h5>
+                  <!-- <div>In-unit</div> -->
+                </div>
+              </div>
+            </li>   
+
+            <li>
+              <div class="profile_element">
+                <div class="buttons">
+                  <div class="delete_button">
+                    <i data-feather="x"></i>
+                  </div>                
+                  <div class="edit_button">
+                    <i data-feather="edit-3"></i>
+                  </div>
+                </div>    
+                <div class="list_item_cover_image">
+                  <i class="fas fa-dumbbell fa-2x us_icon"></i>
+                </div>             
+                <div class="profile_element_name">
+                  <h5>Gym</h5>
+                  <!-- <div>595 Burrard St, Vancouver, BC</div> -->
+                </div>
+              </div>
+            </li>  
+        
+        </ul>
       </div>
       <div class="profile_element_importance_level avoid app_area">
-        <p>Avoid</p>
+        <h3>Avoid</h3>
+        <ul>
+          <li>
+            <div class="profile_element">
+              <div class="buttons">
+                <div class="delete_button">
+                  <i data-feather="x"></i>
+                </div>                
+                <div class="edit_button">
+                  <i data-feather="edit-3"></i>
+                </div>
+              </div>    
+              <div class="list_item_cover_image">
+                <i class="fas fa-blind fa-2x us_icon"></i>
+              </div>             
+              <div class="profile_element_name">
+                <h5>No stairs</h5>
+                <!-- <div>595 Burrard St, Vancouver, BC</div> -->
+              </div>
+            </div>
+          </li>
+          
+          <li>
+            <div class="profile_element">
+              <div class="buttons">
+                <div class="delete_button">
+                  <i data-feather="x"></i>
+                </div>                
+                <div class="edit_button">
+                  <i data-feather="edit-3"></i>
+                </div>
+              </div>    
+              <div class="list_item_cover_image">
+                <i class="fas fa-smoking fa-2x us_icon"></i>
+              </div>             
+              <div class="profile_element_name">
+                <h5>No smoking</h5>
+                <!-- <div>595 Burrard St, Vancouver, BC</div> -->
+              </div>
+            </div>
+          </li>         
+        </ul>
+
       </div>
     </div>
   </div>
