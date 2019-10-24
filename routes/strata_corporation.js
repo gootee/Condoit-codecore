@@ -56,7 +56,8 @@ router.get("/show", (req, res) => {
       const data = {
         id: 4396,
         name: "Koret",
-        strata_plan_number: "BCS2025"
+        strata_plan_number: "BCS2025",
+        image_url: "https://www.vancitylofts.com/images/2013/04/17/exterior.jpg&w=576"
       }
       res.render("strata_corporation/show",{
         strata_corporation: data,

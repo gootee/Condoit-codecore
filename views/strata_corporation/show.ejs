@@ -1,72 +1,143 @@
 
 <%- include("../partials/header") %>
-
+<%- include("../partials/sidenav") %>
+<div class="main">
   <div class="container">
     <div class="strata_show_top app_area">
-      <div class="strata_show_cover_image app_area">
-        <p>Cover image</p>
-      </div>
-      <div class="strata_show_basic_info app_area">
-        <p>Basic Info</p>
-        <div class="strata_show_name app_area">
-          <p>Name</p>
-          <a href="/stratas/<%= strata_corporation.id %>">              
-            <h2>
-              <%= strata_corporation.name %> <span> <%= strata_corporation.strata_plan_number %> </span>
-            </h2>        
-          </a> 
-          id: <%= strata_corporation.id%>            
+      <div class="strata_information_left">
+        <div class="strata_information_cover_image">
+          <img src="<%= strata_corporation.image_url%>" alt="Strata photo" height="200" width="200">
         </div>
-        <div class="strata_show_details app_area"> 
-          <p>Details</p>
-        </div>              
-      </div>
-      <div class="strata_show_buttons app_area">
-        <div class="heart">
-            <i class="heart outline icon"></i>
-        </div>  
-        <form action="/stratas/<%= strata_corporation.id %>" method="POST">
-          <input type="hidden" value="DELETE" name="_method">
-          <input type="submit" value="Delete"">
-        </form>
-        <a href="/stratas/<%= strata_corporation.id %>/edit">Edit</a>            
+        <div class="strata_information_name">            
+          <div class="strata_information_name_data">
+            <h2><%= strata_corporation.name%></h2>
+            <h5><%= strata_corporation.strata_plan_number %>  (id: <%= strata_corporation.id%>)</h5>
+          </div>
+        </div>
+
+        <div class="details_listing"> 
+          <ul>
+            <li>
+              <div class="detail_item">
+                <div class="detail_item_icon">
+                  <i class="far fa-building"></i>
+                </div>
+                <div class="detail_item_description">
+                  <p>Construction type</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="detail_item">
+                <div class="detail_item_icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="detail_item_description">
+                  <p>55 East Cordova Street (Gastown)</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="detail_item">
+                <div class="detail_item_icon">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="detail_item_description">
+                  <p>Units for sale</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>                         
       </div>
 
+      <div class="strata_listing_right">
+        <div class="heart">
+          <i class="far fa-heart fa-3x"></i>
+        </div>  
+      </div>
     </div>
 
     <div class="strata_show_info app_area">
-      <div class="scoring app_area">
-        <p>Scoring</p>
-        <div class="overall_score app_area">
-          <p>Listing scoring overall</p>
-        </div>
-        <div class="score_up_and_down app_area">
-          <div class="score_up_and_down_item app_area">
-            <div class="thumbs_up app_area">
-              <i class="thumbs up icon outline icon"></i>
+        <div class="scoring">
+            <!-- <div class="overall_score circle"> -->
+            <div class="overall_score app_area">
+              <p>A+</p>
             </div>
-            <div class="score_items score_up_items app_area">
-              <ul>
-                <div class="score_item">
-                  <p>Listing score up item</p>
+            <div class="score_up_and_down">
+              <div class="score_up_and_down_item score_up  app_area">
+                <div class="thumb_icon">
+                  <i class="far fa-thumbs-up fa-2x"></i>
                 </div>
-              </ul>
-            </div>
-          </div>  
-          <div class="score_up_and_down_item app_area">
-            <div class="thumbs_down app_area">
-              <i class="thumbs down icon outline icon"></i>
-            </div>
-            <div class="score_items score_down_items app_area">
-              <ul>
-                <div class="score_item">
-                  <p>Listing score up item</p>
+                <div class="score_items score_up_items">
+                  <ul>
+                    <li>
+                      <div class="score_item">
+                        <p>Listing score up item 1</p>
+                      </div>                          
+                    </li>
+                    <li>
+                      <div class="score_item">
+                        <p>Listing score up item 2</p>
+                      </div>                          
+                    </li>
+                    <li>
+                      <div class="score_item">
+                        <p>Listing score up item 3</p>
+                      </div>                          
+                    </li>
+                    <li>
+                      <div class="score_item">
+                        <p>Listing score up item 4</p>
+                      </div>                          
+                    </li>
+                    <li>
+                      <div class="score_item">
+                        <p>Listing score up item 5</p>
+                      </div>                          
+                    </li>
+                    <li>
+                      <div class="score_item">
+                        <p>Listing score up item 6</p>
+                      </div>                          
+                    </li>
+                  </ul>
                 </div>
-              </ul>
+              </div>  
+              <div class="score_up_and_down_item score_down app_area">
+                <div class="thumb_icon">
+                  <i class="far fa-thumbs-down fa-2x"></i>
+                </div>
+                <div class="score_items score_down_items">
+                  <ul>
+                    <li>
+                      <div class="score_item">
+                        <p>Listing score up item 1</p>
+                      </div>                          
+                    </li>
+                    <li>
+                      <div class="score_item">
+                        <p>Listing score up item 2</p>
+                      </div>                          
+                    </li>
+                    <li>
+                      <div class="score_item">
+                        <p>Listing score up item 3</p>
+                      </div>                          
+                    </li>
+                  </ul>
+                </div>
+              </div> 
             </div>
-          </div> 
-        </div>
-      </div>
+          </div>
+
+
+
+
+
+
+
+
 
       <div class="neigbourhood app_area">
         <p>Neighbourhood</p>
@@ -79,17 +150,46 @@
                     <i class="fas fa-walking fa-2x"></i>
                   </div>
                   <div class="report_card_grade_description">
-                    <p>Walkable Neighbourhood</p>             
+                    <p>Walkable Area</p>             
                   </div>
                   <div class="grade_image">
-                    <p>B+</p>
+                    <p>A</p>
                   </div>
-                </div>             
+                </div>  
               </li>
+              <li>
+                <div class="report_card_grade app_area">
+                  <div class="report_card_grade_icon">
+                    <i class="fas fa-bicycle fa-2x us_icon"></i>
+                    <!-- <i class="fas fa-walking fa-2x"></i> -->
+                  </div>
+                  <div class="report_card_grade_description">
+                    <p>Bikeable Area</p>             
+                  </div>
+                  <div class="grade_image">
+                    <p>B-</p>
+                  </div>
+                </div>  
+              </li>
+              <li>
+                <div class="report_card_grade app_area">
+                  <div class="report_card_grade_icon">
+                    <i class="fas fa-train fa-2x us_icon"></i>
+                  </div>
+                  <div class="report_card_grade_description">
+                    <p>Public Transit</p>             
+                  </div>
+                  <div class="grade_image">
+                    <p>A+</p>
+                  </div>
+                </div>  
+              </li>
+
+
             </ul>
           </div>
           <div class="strata_neighbourhood_maps app_area">
-            <p>Maps</p>
+            <img  src="/images/gastown_map.jpg" alt="Map of area around Koret">
           </div>          
         </div>
         <div class="strata_show_neighbourhood_nearby app_area">
@@ -97,18 +197,66 @@
           <div class="list_of_items app_area">
             <ul>
               <li>
-                <div class="list_item app_area">
-                  <div class="list_item_icon app_area">
-                    <p>Icon</p>
+                <div class="list_item">
+                  <div class="list_item_icon">
+                    <i class="fas fa-utensils fa-2x us_icon"></i>
                   </div>
-                  <div class="list_item_description app_area">
-                    <p>Description</p>             
+                  <div class="list_item_description">
+                    <a href="https://www.yelp.ca/biz/la-casita-vancouver?osq=la+casita">La Casita Mexican Restaurant</a>          
                   </div>
-                  <div class="list_item_extra_info app_area">
+                  <!-- <div class="list_item_extra_info app_area">
                     <p>Extra</p>
-                  </div>
+                  </div> -->
                 </div>             
               </li>
+              
+              <li>
+                <div class="list_item">
+                  <div class="list_item_icon">
+                    <i class="fas fa-utensils fa-2x us_icon"></i>
+                  </div>
+                  <div class="list_item_description">
+                    <a href="https://www.yelp.ca/biz/nicli-antica-pizzeria-vancouver">Nicli Antica Pizzeria</a>          
+                  </div>
+                  <!-- <div class="list_item_extra_info app_area">
+                    <p>Extra</p>
+                  </div> -->
+                </div>             
+              </li>
+
+              <li>
+                <div class="list_item">
+                  <div class="list_item_icon">
+                    <i class="fas fa-utensils fa-2x us_icon"></i>
+                  </div>
+                  <div class="list_item_description">
+                    <a href="https://www.yelp.ca/biz/salty-tongue-caf%C3%A9-vancouver-2">Salty Tongue Cafe</a>          
+                  </div>
+                  <!-- <div class="list_item_extra_info app_area">
+                    <p>Extra</p>
+                  </div> -->
+                </div>             
+              </li>
+
+              <li>
+                <div class="list_item">
+                  <div class="list_item_icon">
+                    <i class="fas fa-utensils fa-2x us_icon"></i>
+                  </div>
+                  <div class="list_item_description">
+                    <a href="https://www.yelp.ca/biz/salty-tongue-caf%C3%A9-vancouver-2">Carrall Supermarket</a>          
+                  </div>
+                  <!-- <div class="list_item_extra_info app_area">
+                    <p>Extra</p>
+                  </div> -->
+                </div>             
+              </li>
+
+
+
+
+
+
             </ul>            
           </div>
         </div>
@@ -223,6 +371,7 @@
       </div>
 
     </div>
+  </div>
   </div>
 
 <%- include("../partials/footer") %>

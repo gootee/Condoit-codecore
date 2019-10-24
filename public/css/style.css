@@ -2,9 +2,20 @@
 @import url('https://fonts.googleapis.com/css?family=Staatliches|Thasadith');
 @import url('reset.css');
 
+/* colors:
+#213352 - dusty medium blud
+#242933 - grey
+#020305 - black
+#072252 - dark blue
+#3F629E - light blue*/
+
+
+
+
 html,
 body {
   height: 100%;
+  background: #3F629E;
   /* required for min-height: 100% to work on the header; alternatively, you could use min-height: 100vh; */
 }
 
@@ -15,43 +26,64 @@ html {
 
 body {
   /* background: linear-gradient(120deg, #001F28 0%, #F4EACF 100%); */
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Thasadith', sans-serif;
 }
 
 /* p {
   margin-bottom: 1.25em;
 } */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
 h5 {
-  /* margin: 1.75rem 0 1rem; */
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 1.15;
-}
+} */
 
 h1 {
   margin-top: 0;
-  font-size: 3.052em;
+  font-size: 9.052em;
+  font-family: 'Staatliches', cursive;
+  color: white;
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 h2 {
-  font-size: 2.441em;
+  font-size: 4.441em;
+  font-family: 'Staatliches', cursive;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 h3 {
-  font-size: 1.953em;
+  font-size: 3.453em;
+  font-family: 'Staatliches', cursive;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 h4 {
-  font-size: 1.563em;
+  font-size: 2.863em;
+  font-family: 'Staatliches', cursive;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 h5 {
-  font-size: 1.25em;
+  font-size: 1.95em;
+  font-family: 'Staatliches', cursive;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 small,
@@ -74,6 +106,7 @@ small,
 
 .main {
   flex-grow: 8.5;
+  height: 100vh;
 }
 
 .buttons {
@@ -145,6 +178,23 @@ small,
   flex-direction: row;
 }
 
+.detail_item {
+  margin: 10px;
+}
+
+.detail_item_icon {
+  margin: 0 10px 0 0;
+}
+
+.strata_listing_data {
+  margin: 0 0 0 20px;
+}
+
+.strata_listing_name_data {
+  display: flex;
+  flex-direction: column;
+  /* align-items: end; */
+}
 /* 
 .lender {
   margin: 2em;
@@ -191,11 +241,109 @@ small,
   margin: 2px;
 }
 
+
+/* Welcome Splash*/
+
+.main_splash {
+  flex-grow: 8.5;
+  background-image: url(../images/coal_harbour2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.main_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.to_profile {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-grow: 5;
+  justify-content: end;
+  align-items: end;
+  align-self: flex-end;
+}
+
+.profile_button {
+  display: flex;
+  flex-grow: 5;
+  /* justify-content: end;
+  align-items: end; */
+  align-self: flex-end;
+  background-color: #242933;
+  /* padding: 10px 15px; */
+  font-size: 14px;
+  text-align: center;
+
+  /* background: white; */
+  border-radius: 1em;
+  /* Rounded corners */
+  border: none;
+  padding: 1em 2em;
+  margin: 0 0 75px 0;
+
+
+  /* cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999; */
+}
+/* .button_to_profile:hover {background-color: #3e8e41}
+
+.button_to_profile:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+} */
+
+
+
+
+
+
+
+
+
+
+
+.splash_sub_heading {
+  margin: 0 0 40px 0;
+}
+
+/* Strata Show */
+.strata_show_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+
+.strata_information_left {
+  display: flex;
+  flex-direction: row;
+}
+
+.strata_information_name {
+  margin: 0 80px 0 40px;
+}
+
+
+
+
+
+
+
+
+
+
 /* Strata Index */
-
-
-
-
 .listing_container {
   display: flex;
   flex-direction: column;
@@ -223,6 +371,7 @@ small,
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 0 50px 0 50px;
 }
 
 .overall_score {
@@ -232,6 +381,20 @@ small,
   align-items: center;
   font-size: 4em;
   text-align: center;
+  margin: 20px;
+}
+
+.circle{
+  width:100%;
+  border-radius:50%;
+  text-align:center;
+  /* font-size: 48px; */
+  padding:50% 0;
+  line-height:0;
+  position:relative;
+  background: #38a9e4;
+  color: white;
+  font-family: Helvetica, Arial Black, sans;
 }
 
 .strata_listing_left {
@@ -256,6 +419,21 @@ small,
   display: flex;
   flex-direction: column;
   justify-content: start; 
+}
+
+.score_item {
+  margin: 10px;
+}
+
+.thumb_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 5px 0;
+}
+
+.heart {
+  margin: 10px;
 }
 
 .details_listing {
@@ -369,14 +547,6 @@ small,
   margin: 10px;
 }
 
-
-
-.strata_show_top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; 
-}
-
 .profile_financial_top {
   display: flex;
   flex-direction: row;
@@ -449,7 +619,7 @@ small,
 }
 
 .list_item_cover_image {
-  margin: 0 20px;
+  /* margin: 0 x; */
   height: 32px; 
   width: 32px;
   display: flex;

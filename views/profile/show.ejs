@@ -1,4 +1,14 @@
 <%- include("../partials/header") %>
+<%- include("../partials/sidenav") %>
+<!-- <div class="sidebar">
+    <ul>
+      <li>first</li>
+      <li>second</li>
+      <li>third</li>
+      <li>fourth</li>
+    </ul>
+  </div>
+<div class="main"> -->
 <div class="container profile_container">
   <div class="profile_left">
     <div class="profile_us">
@@ -376,15 +386,15 @@
 </div>
 
 
-  <div class="profile_elements app_area">
-    <p>Elements</p>
-    <div class="profile_element_plus app_area">
+  <div class="profile_elements">
+    <h1>Elements</h1>
+    <div class="profile_element_plus">
       <i data-feather="plus-circle" class="plus_button"></i>
     </div>
-    <div class="profile_element_input_new app_area">
+    <div class="profile_element_input_new">
       <p>New input</p>
-      <div class="input_fields app_area">
-        <div class="icon app_area">
+      <div class="input_fields">
+        <div class="icon">
           <div>icon</div>
         </div>
         <p>Inputs</p>
@@ -397,20 +407,20 @@
           </select> 
         </div>
       </div>      
-      <div class="input_buttons app_area">
-        <div class="cancel_button app_area">
+      <div class="input_buttons">
+        <div class="cancel_button">
           <p>Cancel</p>
         </div>   
-        <div class="save_button app_area">
+        <div class="save_button">
           <p>Save</p>
         </div>             
       </div>
 
 
     </div>
-    <div class="profile_element_importance_levels app_area">
-      <div class="profile_element_importance_level required app_area">
-        <h3>Required</h3>
+    <div class="profile_element_importance_levels">
+      <div class="profile_element_importance_level required">
+        <h4>Required</h4>
 
 
 
@@ -420,12 +430,12 @@
           <li>
             <div class="profile_element">
               <div class="buttons">
-                <div class="delete_button">
+                <!-- <div class="delete_button">
                   <i data-feather="x"></i>
                 </div>                
                 <div class="edit_button">
                   <i data-feather="edit-3"></i>
-                </div>
+                </div> -->
               </div>    
               <div class="list_item_cover_image">
                 <i class="fas fa-paw fa-2x"></i>
@@ -587,8 +597,8 @@
 
         </ul>
       </div>
-      <div class="profile_element_importance_level important app_area">
-        <h3>Important</h3>
+      <div class="profile_element_importance_level important">
+        <h4>Important</h4>
         <ul>
           <li>
               <div class="profile_element">
@@ -653,8 +663,8 @@
         </ul>
 
       </div>
-      <div class="profile_element_importance_level preferred app_area">
-        <h3>Preferred</h3>
+      <div class="profile_element_importance_level preferred">
+        <h4>Preferred</h4>
 
         <ul>
           <li>
@@ -699,8 +709,8 @@
         
         </ul>
       </div>
-      <div class="profile_element_importance_level avoid app_area">
-        <h3>Avoid</h3>
+      <div class="profile_element_importance_level avoid">
+        <h4>Avoid</h4>
         <ul>
           <li>
             <div class="profile_element">
@@ -747,5 +757,5 @@
     </div>
   </div>
 </div>
-
+</div>   <!--   main -->
 <%- include("../partials/footer") %>

@@ -1,5 +1,14 @@
 <%- include("../partials/header") %>
-
+<%- include("../partials/sidenav") %>
+<!-- <div class="sidebar">
+  <ul>
+    <li>first</li>
+    <li>second</li>
+    <li>third</li>
+    <li>fourth</li>
+  </ul>
+</div> -->
+<div class="main">
 <div class="container">
   <div class="strata_index_heading app_area">
 
@@ -18,54 +27,56 @@
     </div>    
   </div>
   
-  <div class="strata_listings app_area">
+  <div class="strata_listings">
     <ul>
       <% for (let strata_corporation of strata_corporations) { %>
         <li>
+
+
+          
           <div class="strata_listing app_area">
             <div class="strata_listing_left">
-              <div class="strata_listing_cover_image app_area">
-                <img src="<%= strata_corporation.image_url%>" alt="Strata photo" height="120" width="120">
+              <div class="strata_listing_cover_image">
+                <img src="<%= strata_corporation.image_url%>" alt="Strata photo" height="150" width="150">
               </div>
-              <div class="strata_listing_data app_area">
-                <div class="strata_listing_name app_area">
+              <div class="strata_listing_data">
+                <div class="strata_listing_name">
                   <a href="/stratas/<%= strata_corporation.id %>">              
-                    <div>
+                    <div class="strata_listing_name_data">
                       <h2><%= strata_corporation.name%></h2>
-                      
-                      plan#: <%= strata_corporation.strata_plan_number %>
-                      id: <%= strata_corporation.id%>                          
+                      <h5>     <%= strata_corporation.strata_plan_number %>  (id: <%= strata_corporation.id%>)</h5> 
+                                                
                     </div>
                   </a> 
                 </div>
-                <div class="details_listing app_area"> 
+                <div class="details_listing"> 
                   <ul>
                     <li>
                       <div class="detail_item">
-                        <div class="detail_item_icon app_area">
+                        <div class="detail_item_icon">
                           <i class="far fa-building"></i>
                         </div>
-                        <div class="detail_item_description app_area">
+                        <div class="detail_item_description">
                           <p>Construction type</p>
                         </div>
                       </div>
                     </li>
                     <li>
                       <div class="detail_item">
-                        <div class="detail_item_icon app_area">
+                        <div class="detail_item_icon">
                           <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="detail_item_description app_area">
+                        <div class="detail_item_description">
                           <p>Location area</p>
                         </div>
                       </div>
                     </li>
                     <li>
                       <div class="detail_item">
-                        <div class="detail_item_icon app_area">
-                          <i class="fas fa-map-marker-alt"></i>
+                        <div class="detail_item_icon">
+                          <i class="fas fa-user-tie"></i>
                         </div>
-                        <div class="detail_item_description app_area">
+                        <div class="detail_item_description">
                           <p>Units for sale</p>
                         </div>
                       </div>
@@ -79,41 +90,65 @@
 
             
 
-            <div class="strata_listing_right app_area">
-              <div class="scoring app_area">
-
-                <div class="overall_score">
+            <div class="strata_listing_right">
+              <div class="scoring">
+                <!-- <div class="overall_score circle"> -->
+                <div class="overall_score app_area">
                   <p>A+</p>
                 </div>
-                <div class="score_up_and_down app_area">
-                  <div class="score_up_and_down_item app_area">
-                    <div class="thumbs_up app_area">
-                      <i class="thumbs up icon outline icon"></i>
+                <div class="score_up_and_down">
+                  <div class="score_up_and_down_item score_up  app_area">
+                    <div class="thumb_icon">
+                      <i class="far fa-thumbs-up fa-2x"></i>
                     </div>
-                    <div class="score_items score_up_items app_area">
+                    <div class="score_items score_up_items">
                       <ul>
-                        <div class="score_item">
-                          <p>Listing score up item</p>
-                        </div>
+                        <li>
+                          <div class="score_item">
+                            <p>Listing score up item 1</p>
+                          </div>                          
+                        </li>
+                        <li>
+                          <div class="score_item">
+                            <p>Listing score up item 2</p>
+                          </div>                          
+                        </li>
+                        <li>
+                          <div class="score_item">
+                            <p>Listing score up item 3</p>
+                          </div>                          
+                        </li>
                       </ul>
                     </div>
                   </div>  
-                  <div class="score_up_and_down_item app_area">
-                    <div class="thumbs_down app_area">
-                      <i class="thumbs down icon outline icon"></i>
+                  <div class="score_up_and_down_item score_down app_area">
+                    <div class="thumb_icon">
+                      <i class="far fa-thumbs-down fa-2x"></i>
                     </div>
-                    <div class="score_items score_down_items app_area">
+                    <div class="score_items score_down_items">
                       <ul>
-                        <div class="score_item">
-                          <p>Listing score up item</p>
-                        </div>
+                        <li>
+                          <div class="score_item">
+                            <p>Listing score up item 1</p>
+                          </div>                          
+                        </li>
+                        <li>
+                          <div class="score_item">
+                            <p>Listing score up item 2</p>
+                          </div>                          
+                        </li>
+                        <li>
+                          <div class="score_item">
+                            <p>Listing score up item 3</p>
+                          </div>                          
+                        </li>
                       </ul>
                     </div>
                   </div> 
                 </div>
               </div>
-              <div class="heart app_area">
-                <i class="heart outline icon"></i>
+              <div class="heart">
+                <i class="far fa-heart fa-3x"></i>
               </div>  
             </div>
           </div>
@@ -146,6 +181,6 @@
           </form>
         </div> -->
 </div>
-
+</div>
     
 <%- include("../partials/footer") %>
