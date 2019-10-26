@@ -27,11 +27,15 @@ html {
 body {
   /* background: linear-gradient(120deg, #001F28 0%, #F4EACF 100%); */
   font-family: 'Thasadith', sans-serif;
+
+  /* font-size: 16pt; */
 }
 
-/* p {
-  margin-bottom: 1.25em;
-} */
+p {
+  color: white;
+  /* margin-bottom: 1.25em; */
+  font-size: 20pt;
+}
 
 /* h1,
 h2,
@@ -42,10 +46,20 @@ h5 {
   font-weight: 400;
   line-height: 1.15;
 } */
+.h0 {
+  margin-top: 0;
+  font-size: 10.052em;
+  font-family: 'Staatliches', cursive;
+  color: white;
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
 
 h1 {
   margin-top: 0;
-  font-size: 9.052em;
+  font-size: 8.052em;
   font-family: 'Staatliches', cursive;
   color: white;
   color: black;
@@ -93,7 +107,20 @@ small,
 
 .app_container {
   display: flex;
+  flex-direction: column;
+}
+
+.container {
+  /* margin: 30px; */
+  display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .sidebar {
@@ -115,13 +142,21 @@ small,
 }
 
 .plus_button {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
 }
 
 .logo {
   width: 48px;
   height: 48px;
+}
+
+.menu_links {
+  color: white;
+}
+
+.menu_link {
+  color: white;
 }
 
 .dropbtn {
@@ -159,15 +194,6 @@ small,
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
-.strata_listing {
-  display: flex;
-  flex-direction: row;
-  padding: 10px;
-  border: 1em;
-  border-color: black;
-  border-width: 1em
-}
-
 .strata_listing_details {
   display: flex;
   flex-direction: row;  
@@ -183,10 +209,13 @@ small,
 }
 
 .detail_item_icon {
-  margin: 0 10px 0 0;
+  margin: 0 20px 0 0;
 }
 
 .strata_listing_data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 0 0 0 20px;
 }
 
@@ -200,16 +229,22 @@ small,
   margin: 2em;
 } */
 
-.savings {
+/* .savings {
   margin: 2em;
 }
 
 .monthly {
   margin: 2em;
-}
+} */
 
 .explanation {
-  margin: 0 0 0 4em;
+  margin: 20px 0 25px 0;
+  font-size: 16pt;
+}
+
+.explanation_component {
+  max-width: 450px;
+  /* margin: 20px 0 0 0; */
 }
 
 .downpayment {
@@ -237,9 +272,7 @@ small,
   margin: 5px;
 }
 
-.container {
-  margin: 2px;
-}
+
 
 
 /* Welcome Splash*/
@@ -277,7 +310,7 @@ small,
   align-self: flex-end;
   background-color: #242933;
   /* padding: 10px 15px; */
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
 
   /* background: white; */
@@ -343,7 +376,7 @@ small,
 
 
 
-/* Strata Index */
+/* Strata_Index */
 .listing_container {
   display: flex;
   flex-direction: column;
@@ -365,7 +398,41 @@ small,
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 10px 0 20px 0;
+  border: 1em;
+  border-color: black;
+  border-width: 1em
 }
+
+.strata_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 0 30px 0;
+}
+
+.strata_detail_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 20px 0 20px 0;
+}
+
+
+.strata_score_pro_and_con {
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px 0 0;
+}
+
+.strata_score_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 0 0;
+}
+
 
 .scoring {
   display: flex;
@@ -400,10 +467,16 @@ small,
 .strata_listing_left {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
 }
 
 .strata_listing_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.strata_listing_right_top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -433,20 +506,9 @@ small,
 }
 
 .heart {
-  margin: 10px;
+  margin: 0 0 10px 0;
 }
 
-.details_listing {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.detail_item {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
 
 
 /* Profile Show */
@@ -481,6 +543,116 @@ small,
   margin: 0 0 30px 0;
 }
 
+.profile_importance_heading {
+  font-size: 24pt;
+  margin: 30px 0 0 0;
+}
+
+.unit_bedrooms, .unit_bathrooms {
+  display: flex;
+  flex-direction: row;
+  margin: 40px 0 40px 0;
+}
+
+.dropdown_heading {
+  margin: 0 40px 0 20px;
+}
+
+.unit_dropdown {
+  font-size: 18pt;
+  width: 100px;
+}
+
+.unit_checkbox {
+  /* font-size: 18pt; */
+  width: 35px; 
+  height: 35px;
+  margin: 0 15px 0 0; 
+}
+
+.unit_item {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0 20px 0;
+}
+
+.financials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.financial_group {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0 0 0; 
+}
+
+.financial_heading {
+  /* margin: 0 0 40px 0; */ 
+}
+
+.savings_heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 25px 0;
+}
+
+.savings_group {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 20px 0;
+  font-size: 16pt;
+  max-width: 450px;
+}
+
+.savings_choice {
+  font-size: 20pt;
+}
+
+.savings_field {
+  display: flex;
+  margin: 10px;
+}
+
+.financial_heading {
+  display: flex;
+  justify-content: center;
+}
+
+.financial_amount {
+  max-width: 250px;
+}
+
+.savings_amount {
+  margin: 20px 0 0 0;
+  max-width: 250px;
+}
+
+.savings_group {
+  display: flex;
+  flex-direction: column;
+}
+
+.lender_group {
+  display: flex;
+  flex-direction: column;
+}
+
+.lender_checkbox {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0 0 0;
+}
+
+.lender_info {
+  margin: 20px 0 0 0;
+  font-size: 16pt;
+}
+
 .us_icons {
   display: flex;
   flex-direction: row;
@@ -489,8 +661,8 @@ small,
 }
 
 .us_icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
 }
 
 .icon_name {
@@ -603,11 +775,18 @@ small,
   flex-direction: column;
   justify-content: flex-start;
   align-content: center;
-  /* margin: 20px 0 20px 0; */
+  margin: 30px 0 30px 0;
 }
 
 .list_heading {
   margin: 20px 0 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.list_label {
+  margin: 0 20px 0 0;
 }
 
 .list_item {
@@ -615,21 +794,25 @@ small,
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin: 10px;
+  margin: 20px 0 20px 0;
 }
 
 .list_item_cover_image {
   /* margin: 0 x; */
-  height: 32px; 
-  width: 32px;
+  height: 40px; 
+  width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .list_item_icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
+}
+
+.list_item_data {
+  margin: 0 25px 0 25px;
 }
 
 .list_item_type {
@@ -654,4 +837,105 @@ small,
   display: flex;
   flex-direction: row;
   justify-content: space-between; 
+}
+
+/* Strata Index photo carousel */
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  /* margin: auto; */
+  margin: 0 0 0 0;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
 }

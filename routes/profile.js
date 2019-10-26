@@ -36,6 +36,74 @@ router.get("/show", (req, res) => {
   });
 })
 
+router.get("/show_us", (req, res) => {
+  const profileParams = {
+    // image_url: req.body.imageUrl,
+    // content: req.body.content,
+    // username: res.locals.username
+  };
+  res.render("profile/show_us",{
+    // strata_corporations: data,
+  });
+})
+
+
+router.get("/show_vehicles", (req, res) => {
+  const profileParams = {
+    // image_url: req.body.imageUrl,
+    // content: req.body.content,
+    // username: res.locals.username
+  };
+  res.render("profile/show_vehicles",{
+    // strata_corporations: data,
+  });
+})
+
+router.get("/show_destinations", (req, res) => {
+  const profileParams = {
+    // image_url: req.body.imageUrl,
+    // content: req.body.content,
+    // username: res.locals.username
+  };
+  res.render("profile/show_destinations",{
+    // strata_corporations: data,
+  });
+})
+
+router.get("/show_unit", (req, res) => {
+  const profileParams = {
+    // image_url: req.body.imageUrl,
+    // content: req.body.content,
+    // username: res.locals.username
+  };
+  res.render("profile/show_unit",{
+    // strata_corporations: data,
+  });
+})
+
+router.get("/show_lifestyle", (req, res) => {
+  const profileParams = {
+    // image_url: req.body.imageUrl,
+    // content: req.body.content,
+    // username: res.locals.username
+  };
+  res.render("profile/show_lifestyle",{
+    // strata_corporations: data,
+  });
+})
+
+router.get("/show_financial", (req, res) => {
+  const profileParams = {
+    // image_url: req.body.imageUrl,
+    // content: req.body.content,
+    // username: res.locals.username
+  };
+  res.render("profile/show_financial",{
+    // strata_corporations: data,
+  });
+})
+
+
 // router.get("/index", (req, res) => {
 //   knex("strata_corporations")
 //     .select("*")

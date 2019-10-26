@@ -1,186 +1,183 @@
 <%- include("../partials/header") %>
-<%- include("../partials/sidenav") %>
-<!-- <div class="sidebar">
-  <ul>
-    <li>first</li>
-    <li>second</li>
-    <li>third</li>
-    <li>fourth</li>
-  </ul>
-</div> -->
-<div class="main">
 <div class="container">
-  <div class="strata_index_heading app_area">
+  <%- include("../partials/sidenav") %>
+  <div class="main">
+      <p><%= strata_corporations.length%></p>
+    <div class="strata_listings">
+      <ul>
+        <% for (let strata_corporation of strata_corporations) { %>
+          <!-- <p><%= strata_corporation%></p> -->
+          <!-- <% console.log(strata_corporation)%> -->
+          <li>
+            <div class="strata_listing">
+              <div class="strata_listing_left">
 
-    <div class="strata_index_heading_left app_area">
-      <div class="strata_index_heading_icons app_area">
-        <p>Icons</p>
-      </div>      
-      <div class="strata_index_heading_message app_area">
-        <p>Messages</p>
-      </div>
-    </div>
-    <div class="strata_index_heading_right app_area">
-      <div class="strata_index_heading_menu app_area">
-        <p>Menu icon</p>
-      </div>
-    </div>    
-  </div>
-  
-  <div class="strata_listings">
-    <ul>
-      <% for (let strata_corporation of strata_corporations) { %>
-        <li>
-
-
-          
-          <div class="strata_listing app_area">
-            <div class="strata_listing_left">
-              <div class="strata_listing_cover_image">
-                <img src="<%= strata_corporation.image_url%>" alt="Strata photo" height="150" width="150">
-              </div>
-              <div class="strata_listing_data">
-                <div class="strata_listing_name">
-                  <a href="/stratas/<%= strata_corporation.id %>">              
-                    <div class="strata_listing_name_data">
-                      <h2><%= strata_corporation.name%></h2>
-                      <h5>     <%= strata_corporation.strata_plan_number %>  (id: <%= strata_corporation.id%>)</h5> 
-                                                
-                    </div>
-                  </a> 
-                </div>
-                <div class="details_listing"> 
-                  <ul>
-                    <li>
-                      <div class="detail_item">
-                        <div class="detail_item_icon">
-                          <i class="far fa-building"></i>
-                        </div>
-                        <div class="detail_item_description">
-                          <p>Construction type</p>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="detail_item">
-                        <div class="detail_item_icon">
-                          <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="detail_item_description">
-                          <p>Location area</p>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="detail_item">
-                        <div class="detail_item_icon">
-                          <i class="fas fa-user-tie"></i>
-                        </div>
-                        <div class="detail_item_description">
-                          <p>Units for sale</p>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+                <div class="slideshow-container">
+                  <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="https://www.vancitylofts.com/images/2013/04/17/exterior.jpg&w=576" style="height:500px; width:500px;">
+                    <!-- <div class="text">Caption Text</div> -->
+                  </div>
                   
-                </div>              
-              </div>              
-              
-            </div>
-
-            
-
-            <div class="strata_listing_right">
-              <div class="scoring">
-                <!-- <div class="overall_score circle"> -->
-                <div class="overall_score app_area">
-                  <p>A+</p>
+                  <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="https://assets-listings.rew.ca/brc_idx_rew/brc/R2400319/20190904202041/01.jpeg?trim=auto&fit=crop&w=992&h=745" style="height:500px; width:500px;">
+                    <!-- <div class="text">Caption Two</div> -->
+                  </div>
+                  
+                  <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="http://s3.amazonaws.com/mrp-listings/3/9/8/73370893/cd0584f3b49b757a807c97f299694e85.jpeg" style="height:500px; width:500px;">
+                    <!-- <div class="text">Caption Three</div> -->
+                  </div>
+                  
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span> 
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                  </div>                  
                 </div>
-                <div class="score_up_and_down">
-                  <div class="score_up_and_down_item score_up  app_area">
-                    <div class="thumb_icon">
-                      <i class="far fa-thumbs-up fa-2x"></i>
-                    </div>
-                    <div class="score_items score_up_items">
-                      <ul>
-                        <li>
-                          <div class="score_item">
-                            <p>Listing score up item 1</p>
-                          </div>                          
-                        </li>
-                        <li>
-                          <div class="score_item">
-                            <p>Listing score up item 2</p>
-                          </div>                          
-                        </li>
-                        <li>
-                          <div class="score_item">
-                            <p>Listing score up item 3</p>
-                          </div>                          
-                        </li>
-                      </ul>
-                    </div>
+
+                <div class="strata_listing_data">
+                  <div class="strata_listing_name">
+                    <a href="/stratas/<%= strata_corporation.id %>">              
+                      <div class="strata_listing_name_data">
+                        <h2><%= strata_corporation.name%></h2>
+                        <h5>     <%= strata_corporation.strata_plan_number %>  (id: <%= strata_corporation.id%>)</h5> 
+                                                  
+                      </div>
+                    </a> 
+                  </div>
+
+              
+                  <div class="strata_details"> 
+                    <ul>
+                      <li>
+                        <div class="strata_detail_item">
+                          <div class="detail_item_icon">
+                            <i class="far fa-building fa-2x"></i>
+                          </div>
+                          <div class="detail_item_description">
+                            <p>Hi-rise - 118 units</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="strata_detail_item">
+                          <div class="detail_item_icon">
+                            <i class="fas fa-map-marker-alt fa-2x"></i>
+                          </div>
+                          <div class="detail_item_description">
+                            <p>Gastown (east)</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="strata_detail_item">
+                          <div class="detail_item_icon">
+                            <i class="fas fa-user-tie fa-2x"></i>
+                          </div>
+                          <div class="detail_item_description">
+                            <p>2 Units for sale</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>   
                   </div>  
-                  <div class="score_up_and_down_item score_down app_area">
-                    <div class="thumb_icon">
-                      <i class="far fa-thumbs-down fa-2x"></i>
-                    </div>
-                    <div class="score_items score_down_items">
-                      <ul>
-                        <li>
-                          <div class="score_item">
-                            <p>Listing score up item 1</p>
-                          </div>                          
-                        </li>
-                        <li>
-                          <div class="score_item">
-                            <p>Listing score up item 2</p>
-                          </div>                          
-                        </li>
-                        <li>
-                          <div class="score_item">
-                            <p>Listing score up item 3</p>
-                          </div>                          
-                        </li>
-                      </ul>
-                    </div>
+                </div>              
+              </div>
+              <div class="strata_listing_right">
+                <div class="strata_listing_right_top">
+                  <div class="h0">A+</div>
+                  <div class="heart">
+                    <i class="far fa-heart fa-5x"></i>
                   </div> 
                 </div>
+                <div class="strata_listing_right_bottom">
+                  <div class="strata_score_pro_and_con">
+                    <div class="strata_score_list pro_list">
+                      <div class="strata_score_list_heading">
+                        <h4>Pros</h4>                        
+                      </div>
+                      <ul>
+                        <li>
+                          <div class="score_item">
+                            <p>15 min. ride to work</p>
+                          </div>  
+                        </li>
+                        <li>
+                          <div class="score_item">
+                            <p>5 min. walk to cafe</p>
+                          </div>  
+                        </li>
+                        <li>
+                          <div class="score_item">
+                            <p>Strata Listing - Pro 3</p>
+                          </div>  
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="strata_score_list con_list">
+                      <h4>Cons</h4>
+                      <ul>
+                        <li>
+                          <div class="score_item">
+                            <p>2 BR/1 ba ~112% of budget</p>
+                          </div>  
+                        </li>
+                        <li>
+                          <div class="score_item">
+                            <p>No on-site gym</p>
+                          </div>  
+                        </li>
+                        <li>
+                          <div class="score_item">
+                            <p>Strata Listing - Con 3</p>
+                          </div>  
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="heart">
-                <i class="far fa-heart fa-3x"></i>
-              </div>  
             </div>
-          </div>
-  
-                
-                
-          <!-- </div> -->
-                      
-            <!-- <%# if (cluck.image_url && cluck.image_url.length > 0) { %>
-              <div class="cluckImage">
-                <img src=<%#= cluck.image_url %> alt="Cluck image">
-              </div>                      -->
-            <!-- <%# } %>                -->
-          <!-- </div> -->
-          <!-- </div> -->
-        </li>
-    
-      <% } %>
-    </ul>
-  </div>
+          </li>    
+        <% } %>
+      </ul>
+    </div>
+</div>
+</div>
 
-      
-        <!-- <div>
-          <form action="/clucks/new" method="POST" class="inputForm">
-            <label for="content" class="label">Content</label>
-            <input type="text" name="content" class="input"  placeholder="Whatchoo cluckin' 'bout?'"></input>
-            <label for="imageUrl" class="label">Image URL</label>
-            <input type="text" name="imageUrl" class="input"  placeholder="https://i.imgur.com/qM6AGGG99"></input>
-            <input type="submit" value="Cluck!" class="btn btn-primary submitButton">
-          </form>
-        </div> -->
-</div>
-</div>
-    
+
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+</script>
+
 <%- include("../partials/footer") %>

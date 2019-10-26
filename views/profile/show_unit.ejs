@@ -1,0 +1,221 @@
+<%- include("../partials/header") %>
+<!-- <%- include("../partials/sidenav") %> -->
+
+<div class="container">
+  <div class="profile_us">
+    <!-- <div class="profile_us_heading">
+      <h1>Us</h1>
+    </div> -->
+    <div class="details">
+      <div class="list_of_items destinations">
+        <div class="list_heading">
+          <div class="list_label">
+            <h1>Unit Features</h1>            
+          </div>
+          <!-- <div class="profile_plus">
+            <i data-feather="plus-circle" class="plus_button"></i>
+          </div>           -->
+        </div>
+
+          <!-- <div class="profile_element_input_new">
+            <p>New input</p>
+            <div class="input_fields">
+              <div class="icon">
+                <div>icon</div>
+              </div>
+              <p>Inputs</p>
+              <div class="importance">
+                <select name="importance">
+                  <option value="required">Required</option>
+                  <option value="important">Important</option>
+                  <option value="preferred" selected>Preferred</option>
+                  <option value="avoid">Avoid</option>
+                </select> 
+              </div>
+            </div>      
+            <div class="input_buttons">
+              <div class="cancel_button">
+                <p>Cancel</p>
+              </div>   
+              <div class="save_button">
+                <p>Save</p>
+              </div>             
+            </div>
+      
+      
+          </div> -->
+
+          <!-- <div class="title">
+            <i class="dropdown icon"></i>
+            My new unit
+          </div> -->
+    
+        <div class="unit_features">
+          
+          <div class="unit_bedrooms">
+            <!-- taking up space to align icons -->
+            <div style="width: 45px"></div>  
+            <div class="list_item_cover_image">
+              <i class="fas fa-door-open fa-2x us_icon"></i>
+            </div>   
+            <h4 class="dropdown_heading">Min. Bedrooms</h4>       
+            <select name="min_bedrooms" class="unit_dropdown">
+              <option value="0">Studio</option>
+              <option value="1">1+</option>
+              <option value="2" selected>2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+            </select>              
+          </div>
+          <div class="unit_bathrooms">
+            <!-- taking up space to align icons -->
+            <div style="width: 45px"></div>
+            <div class="list_item_cover_image">
+              <i class="fas fa-bath fa-2x us_icon"></i>
+            </div>  
+            <h4 class="dropdown_heading">Min. Bathrooms</h4>         
+            <select name="min_bathrooms" class="unit_dropdown">
+              <option value="1" selected>1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+            </select>              
+          </div>
+
+          <div class="dishwasher unit_item">
+            <input type="checkbox" class="unit_checkbox" name="dishwasher" value="dishwasher">
+            <div class="list_item_cover_image">
+              <i class="fas fa-utensils fa-2x us_icon"></i>
+            </div> 
+            <h4 class="dropdown_heading">Dishwasher</h4>
+            <div>
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>              
+            </div>
+          </div>
+
+          <div class="laundry unit_item">
+            <input type="checkbox" class="unit_checkbox" name="laundry" value="laundry">
+            <div class="list_item_cover_image">
+              <i class="fas fa-tshirt fa-2x us_icon"></i>
+            </div> 
+            <h4 class="dropdown_heading">Laundry</h4>
+            <div>
+              <select name="laundry_type">
+                <option value="in_unit" selected>In-unit</option>
+                <option value="in_building">In-building</option>
+                <option value="nearby">Nearby</option>
+              </select>                
+            </div>
+            <div>
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>              
+            </div>
+          </div>
+
+          <div class="garburator unit_item">
+            <input type="checkbox" class="unit_checkbox" name="garburator" value="garburator">
+            <div class="list_item_cover_image">
+              <i class="fas fa-trash fa-2x us_icon"></i>
+            </div> 
+            <h4 class="dropdown_heading">Garburator</h4>
+            <div>
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>              
+            </div>
+          </div>
+
+          <div class="fireplace unit_item">
+            <input type="checkbox" class="unit_checkbox" name="fireplace" value="fireplace">
+            <div class="list_item_cover_image">
+              <i class="fas fa-fire fa-2x us_icon"></i>
+            </div> 
+            <h4 class="dropdown_heading">Fireplace</h4>
+            <div>
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>              
+            </div>
+          </div>
+
+          <div class="balcony unit_item">
+            <input type="checkbox" class="unit_checkbox" name="balcony" value="balcony">
+            <div class="list_item_cover_image">
+              <i class="fas fa-cloud-sun fa-2x us_icon"></i>
+            </div> 
+            <div class="list_item_data">
+              <div class="primary_data">
+                <h4>Outdoor area</h4>  
+              </div>
+              <div class="secondary_data">
+                <p>Balcony / Patio /Yard</p>             
+              </div>          
+            </div> 
+            <!-- <div class="unit_data">
+              <h4 class="dropdown_heading"> (balcony/deck/yard)</h4>
+
+            </div> -->
+            <div>
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>              
+            </div>
+          </div>
+
+          <div class="home_office unit_item">
+            <input type="checkbox" class="unit_checkbox" name="home_office" value="home_office">
+            <div class="list_item_cover_image">
+              <i class="fas fa-desktop fa-2x us_icon"></i>
+            </div> 
+            <h4 class="dropdown_heading">Home Office</h4>
+            <div>
+              <select name="importance">
+                <option value="required">Required</option>
+                <option value="important">Important</option>
+                <option value="preferred" selected>Preferred</option>
+                <option value="no_thanks">No thanks</option>
+              </select>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="nav_buttons">
+  <div class="nav_button_left">
+    <a href="/profile/show_destinations">              
+      <div class="profile_button">
+        <h3><< Destinations</h3>   
+      </div>
+    </a>       
+  </div>  
+  <div class="nav_button_right">
+    <a href="/profile/show_lifestyle">              
+      <div class="profile_button">
+        <h3>Lifestyle >></h3>
+      </div>
+    </a>       
+  </div>  
+</div>
+<%- include("../partials/footer") %>

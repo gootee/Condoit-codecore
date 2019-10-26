@@ -21,6 +21,26 @@ const router = express.Router();
 //     });
 // });
 
+// router.get("/index", (req, res) => {
+//   knex('strata_corporations')
+//     .leftJoin('strata_images', 'strata_corporations.id', '=', 'strata_images.strata_corporation_id')
+//     .select(
+//       'strata_corporations.id',
+//       'strata_corporations.name',
+//       'strata_corporations.strata_plan_number', 
+//       'strata_images.image_url')
+//     .whereNotNull('strata_corporations.strata_plan_number')
+//     .andWhereNot('strata_corporations.strata_plan_number', '')
+//     .limit(15)
+//     .then((data) => {
+//       data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
+
+//       res.render("strata_corporation/index",{
+//         strata_corporations: data,
+//       });
+//     });
+// });
+
 router.get("/index", (req, res) => {
   knex('strata_corporations')
     .leftJoin('strata_images', 'strata_corporations.id', '=', 'strata_images.strata_corporation_id')
@@ -33,10 +53,35 @@ router.get("/index", (req, res) => {
     .andWhereNot('strata_corporations.strata_plan_number', '')
     .limit(15)
     .then((data) => {
-      data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
+      let strata_corporations = [], strata_corporation, first_time = true, current_strata_corporation_id = 0;
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].id != current_strata_corporation_id) {
+          if (first_time) {
+            first_time = false;
+          } else {
+            strata_corporations.push(strata_corporation)
+          }
+          
+          strata_corporation = {
+            id: data[i].id,
+            image_urls: []
+          };
+          current_strata_corporation_id = data[i].id
+        }
+        if (data[i].image_url) {
+          strata_corporation.image_urls.push(data[i].image_url)
+        }
+      }
+      
+      if (strata_corporation.id) {
+        strata_corporations.push(strata_corporation)  //last one
+      }
+      
+      // data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
 
       res.render("strata_corporation/index",{
-        strata_corporations: data,
+        // strata_corporations: data,
+        strata_corporations: strata_corporations
       });
     });
 });

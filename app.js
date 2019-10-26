@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 const rootRouter = require("./routes/root");
 const strataCorporationRouter = require("./routes/strata_corporation")
 const profileRouter = require("./routes/profile")
-const listingRouter = require("./routes/listing")
+const salesListingRouter = require("./routes/sales_listing")
 
 //  -= MIDDLEWARE =-
 
@@ -56,7 +56,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(rootRouter);
 app.use("/stratas", strataCorporationRouter);
 app.use ("/profile", profileRouter)
-app.use ("/listing", listingRouter)
+app.use ("/sales_listing", salesListingRouter)
 // app.set allows us to change settings in our express app
 
 app.use(function(req, res, next) {

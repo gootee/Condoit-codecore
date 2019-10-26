@@ -1,0 +1,129 @@
+<%- include("../partials/header") %>
+<!-- <%- include("../partials/sidenav") %> -->
+
+<div class="container">
+  <div class="profile_financial">
+    <div class="details">
+      <div class="list_of_items destinations">
+        <div class="list_heading">
+          <div class="list_label">
+            <h1>Financial</h1>            
+          </div>
+        </div>
+        <div class="financials">
+          <div class="monthly financial_group">
+            <div class="financial_heading">
+              <h4>Monthly housing expenses</h4>
+            </div>
+            <div class="explanation">
+              <p>Your total housing budget including:</p>
+              <ul class="ui list">
+                <li>Mortgage</li>
+                <li>Utilities</li>
+                <li>Property taxes</li> 
+                <li>Property insurance</li>             
+                <li>Repairs & maintenance</li>
+              </ul>              
+            </div>              
+            <div class="ui right labeled input financial_amount">
+              <label for="monthly_budget" class="ui label">$</label>
+              <input type="text" placeholder="Monthly housing budget" id="monthly_budget">
+            </div>                 
+          </div>        
+          
+          <div class="downpayment financial_group">
+            <div class="financial_heading">
+              <h4>Downpayment</h4>
+            </div>
+            <div class="explanation">
+              <div class="explanation_component">
+                <p>The cash you will put into the purchase:</p>
+                <ul class="ui list explanation_component">
+                  <li>Minimum of 5% of purchase price</li>
+                  <li>Downpayments of less than 20%, are charged for mortgage insurance</li>
+                </ul>                  
+              </div>
+            </div>            
+            <div class="ui right labeled input financial_amount">
+              <label for="down_payment" class="ui label">$</label>
+              <input type="text" placeholder="Down payment" id="down_payment">   
+            </div>                 
+          </div>           
+
+
+          <div class="savings financial_group">
+            <div class="savings_heading">
+              <h4>Savings</h4>
+            </div>
+            <div class="savings_group">
+              <div >
+                <p>My savings preference</p>
+                <div class="savings_field">
+                  <div class="ui radio checkbox savings_choice">
+                    <input type="radio" name="savings">
+                    <label style="font-size: 16pt">Pay extra monthly to save for major expenses.</label>
+                  </div>
+                </div>                
+                <div class="savings_field">
+                  <div class="ui radio checkbox savings_choice">
+                    <input type="radio" name="savings">
+                    <label style="font-size: 16pt">Don't save extra.  I'll figure it out when expenses happen.</label>
+                  </div>
+                </div>                
+              </div>
+            </div>
+            <div class="savings_group">
+              <div class="explanation_component">
+                <p>My current personal savings (for </p>
+                <p>unanticipated housing expenses) </p>
+              </div>
+              <div class="savings_amount">
+                <select name="savings_dollars">
+                  <option value="under_10k">Less than $10,000</option>
+                  <option value="under_25k">$10,000 to $25,000</option>
+                  <option value="under_50k">$25,000 to $50,000</option>
+                  <option value="under_100k">$50,000 to $100,000</option>
+                  <option value="100K_plus">$100,000 +</option>
+                </select>                   
+              </div>
+            </div>         
+
+            <div class="lender financial_group">
+              <div class="financial_heading">
+                <h4>Lender</h4>
+              </div>
+              <div class="lender_checkbox">
+                <input type="checkbox" class="unit_checkbox" name="dishwasher" value="dishwasher">
+                <p for="lender_preapproved">I've been pre-approved for my mortgage: </p>                 
+              </div>
+
+              <div class="lender_group">  
+                <input class="lender_info" type="text" name="lender_name" placeholder="Lender Name">
+                <input class="lender_info" type="text" name="lender_email" placeholder="Email">
+              </div>
+            </div>  
+          </div>       
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="nav_buttons">
+  <div class="nav_button_left">
+    <a href="/profile/show_lifestyle">              
+      <div class="profile_button">
+        <h3><< Lifestyle</h3>   
+      </div>
+    </a>       
+  </div>  
+  <div class="nav_button_right">
+    <a href="/stratas/index">              
+      <div class="profile_button">
+        <h3>Your Perfect Condo >></h3>
+      </div>
+    </a>       
+  </div>  
+</div>
+<%- include("../partials/footer") %>
