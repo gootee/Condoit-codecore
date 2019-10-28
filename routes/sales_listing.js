@@ -53,13 +53,30 @@ router.get("/show", (req, res) => {
   //   .then((data) => {
   //     data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
       const data = {
-        id: 111,
-        number: "BR549"
+        // id: 4396,
+        // number: "BR549",
         // name: "Koret",
-        // strata_plan_number: "BCS2025"
+        strata_plan_number: "BCS2025",
+        sales_listing_grade: "B-",
+        sales_listing_pros: [
+          "15 min. ride to work",
+          "5 min. walk to cafe",
+          "Accessible Facilities",
+          "In-unit laundry",
+          "On-site Gym",
+          "On-site Storage Locker"
+        ],
+        sales_listing_cons: [
+          "2 BR/1 ba - 121% of budget",
+          "No garden available",
+          "No dishwasher",
+          "No fireplace",
+          "Smoking allowed in building",
+          "No on-site hot tub"
+        ]
       }
-      res.render("listing/show",{
-        listing: data,
+      res.render("sales_listing/show",{
+        sales_listing: data,
       });
   //   });
 });

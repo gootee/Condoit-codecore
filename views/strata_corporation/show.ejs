@@ -1,344 +1,332 @@
 
 <%- include("../partials/header") %>
-<%- include("../partials/sidenav") %>
-<div class="main">
-  <div class="container">
-    <div class="strata_show_top app_area">
-      <div class="strata_information_left">
-        <div class="strata_information_cover_image">
-          <img src="<%= strata_corporation.image_url%>" alt="Strata photo" height="200" width="200">
-        </div>
-        <div class="strata_information_name">            
-          <div class="strata_information_name_data">
-            <h2><%= strata_corporation.name%></h2>
-            <h5><%= strata_corporation.strata_plan_number %>  (id: <%= strata_corporation.id%>)</h5>
-          </div>
-        </div>
-
-        <div class="details_listing"> 
+<div class="strata_container">
+  <%- include("../partials/sidenav") %>  
+  <div class="strata_show_container">
+      <div class="details">
+        <div class="list_of_items">
           <ul>
             <li>
-              <div class="detail_item">
-                <div class="detail_item_icon">
-                  <i class="far fa-building"></i>
-                </div>
-                <div class="detail_item_description">
-                  <p>Construction type</p>
-                </div>
+              <div class="strata_show_heading">
+                <div class="strata_information_name">            
+                  <div class="strata_information_name_data">
+                    <h2><%= strata_corporation.name%></h2>
+                    <h5><%= strata_corporation.strata_plan_number %>  (id: <%= strata_corporation.id%>)</h5>
+                  </div>
+                </div> 
+                <div class="strata_show_top_right">
+                  <div class="heart">
+                    <i class="far fa-heart fa-5x"></i>
+                  </div>  
+                </div>                 
               </div>
             </li>
             <li>
-              <div class="detail_item">
-                <div class="detail_item_icon">
-                  <i class="fas fa-map-marker-alt"></i>
+              <div class="strata_show_top">
+                <div class="strata_information_cover_image">
+                  <img src="<%= strata_corporation.image_url%>" alt="Strata photo" height="500" width="500">
                 </div>
-                <div class="detail_item_description">
-                  <p>55 East Cordova Street (Gastown)</p>
-                </div>
+                <div class="strata_information_group">
+                  <div class="details_listing"> 
+                    <ul>
+                      <li>
+                        <div class="detail_item">
+                          <div class="detail_item_icon">
+                            <i class="far fa-building fa-2x"></i>
+                          </div>
+                          <div class="detail_item_description">
+                            <ul>
+                              <li><p>High-rise</p></li>
+                              <li><p>Concrete Construction</p></li>
+                              <li><p>118 units</p></li>
+                              <li><p>Year built: 1906</p></li>
+                              
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="detail_item">
+                          <div class="detail_item_icon fa-2x">
+                            <i class="fas fa-map-marker-alt"></i>
+                          </div>
+                          <div class="detail_item_description">
+                            <ul>
+                              <li><p>55 East Cordova Street</p></li>
+                              <li><p>Gastown (East)</p></li>
+                              <li><p>Vancouver, BC</p></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="detail_item">
+                          <div class="detail_item_icon fa-2x">
+                            <i class="fas fa-user-tie"></i>
+                          </div>
+                          <div class="detail_item_description">
+                            <p>3 Units for sale</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>                     
+                </div>  
               </div>
             </li>
+
             <li>
-              <div class="detail_item">
-                <div class="detail_item_icon">
-                  <i class="fas fa-user-tie"></i>
+              <div class="strata_show_score">
+                <div class="strata_show_score_heading">
+                  <h3>Ratings</h3>
                 </div>
-                <div class="detail_item_description">
-                  <p>Units for sale</p>
+                <div class="strata_show_score_data">
+                  <div class="strata_show_score_left">
+                    <div class="h0"><%= strata_corporation.strata_grade%></div>
+                  </div>                
+                  <div class="strata_show_score_right">
+                    <div class="strata_show_score_pro_and_con">
+                      <div class="strata_score_list pro_list">
+                        <div class="strata_score_list_heading">
+                          <h4>Pros</h4>                        
+                        </div>
+                        <ul>
+                          <% for (let i = 0; i < strata_corporation.strata_pros.length; i++) { %>
+                            <li>
+                              <div class="score_item">
+                                <p><%= strata_corporation.strata_pros[i]%></p>
+                              </div>  
+                            </li>                        
+                          <% } %>
+                        </ul>
+                      </div>
+                      <div class="strata_score_list con_list">
+                        <h4>Cons</h4>
+                        <ul>
+                          <% for (let i = 0; i < strata_corporation.strata_cons.length; i++) { %>
+                            <li>
+                              <div class="score_item">
+                                <p><%= strata_corporation.strata_cons[i]%></p>
+                              </div>  
+                            </li>                        
+                          <% } %>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>              
+                </div>                
+              </div>
+              
+
+            </li>
+
+            <li>
+              <div class="strata_show_neigbourhood">
+                <div class="strata_show_neighbourhood_label">
+                  <h3>Neighbourhood</h3>
+                </div>
+                
+                <div class="strata_show_neighbourhood_data">
+                  <div class="report_card_label">
+                    <h4>Rating</h4>
+                  </div>
+                  <div class="report_card"> 
+                    <ul>
+                      <li>
+                        <div class="report_card_grade">
+                          <div class="report_card_grade_icon">
+                            <i class="fas fa-walking fa-3x"></i>
+                          </div>
+                          <div class="report_card_grade_description">
+                            <h5>Walkable Area</h5>             
+                          </div>
+                          <div class="grade_image">
+                            <p>A</p>
+                          </div>
+                        </div>  
+                      </li>
+                      <li>
+                        <div class="report_card_grade">
+                          <div class="report_card_grade_icon">
+                            <i class="fas fa-bicycle fa-2x us_icon"></i>
+                            <!-- <i class="fas fa-walking fa-2x"></i> -->
+                          </div>
+                          <div class="report_card_grade_description">
+                            <h5>Bikeable Area</h5>             
+                          </div>
+                          <div class="grade_image">
+                            <p>B-</p>
+                          </div>
+                        </div>  
+                      </li>
+                      <li>
+                        <div class="report_card_grade">
+                          <div class="report_card_grade_icon">
+                            <i class="fas fa-train fa-2x us_icon"></i>
+                          </div>
+                          <div class="report_card_grade_description">
+                            <h5>Public Transit</h5>             
+                          </div>
+                          <div class="grade_image">
+                            <p>A+</p>
+                          </div>
+                        </div>  
+                      </li>
+                      <li>
+                        <div class="report_card_grade">
+                          <div class="report_card_grade_icon">
+                            <i class="fas fa-utensils fa-2x us_icon"></i>
+                          </div>
+                          <div class="report_card_grade_description">
+                            <h5>Restaurants</h5>             
+                          </div>
+                          <div class="grade_image">
+                            <p>A-</p>
+                          </div>
+                        </div>  
+                      </li>  
+                      <li>
+                        <div class="report_card_grade">
+                          <div class="report_card_grade_icon">
+                            <i class="fas fa-tree fa-2x us_icon"></i>
+                          </div>
+                          <div class="report_card_grade_description">
+                            <h5>Parks</h5>             
+                          </div>
+                          <div class="grade_image">
+                            <p>C</p>
+                          </div>
+                        </div>  
+                      </li>      
+                      <li>
+                        <div class="report_card_grade">
+                          <div class="report_card_grade_icon">
+                            <i class="fas fa-user-shield fa-2x us_icon"></i>
+                          </div>
+                          <div class="report_card_grade_description">
+                            <h5>Crime</h5>             
+                          </div>
+                          <div class="grade_image">
+                            <p>B-</p>
+                          </div>
+                        </div>  
+                      </li>          
+                    </ul>
+                  </div>
+                </div>
+                <div class="strata_show_neighbourhood_nearby">
+                  <div class="strata_show_neighbourhood_nearby_title">
+                    <h4>Nearby</h4>
+                  </div>
+                  <div class="strata_show_neighbourhood_nearby_data">
+                    <ul>
+                      <li>
+                        <div class="strata_show_list_item">
+                          <div class="strata_show_list_item_icon">
+                            <i class="fas fa-utensils fa-2x us_icon"></i>
+                          </div>
+                          <div class="strata_show_list_item_description">
+                            <a href="https://www.yelp.ca/biz/la-casita-vancouver?osq=la+casita">
+                              <h5>La Casita Mexican Rest.</h5>
+                            </a>          
+                          </div>
+                        </div>             
+                      </li>
+                      
+                      <li>
+                        <div class="strata_show_list_item">
+                          <div class="strata_show_list_item_icon">
+                            <i class="fas fa-coffee fa-2x us_icon"></i>
+                          </div>
+                          <div class="strata_show_list_item_description">
+                            <a href="https://www.yelp.ca/biz/nicli-antica-pizzeria-vancouver">
+                              <h5>East Van Roasters</h5>
+                            </a>          
+                          </div>
+                        </div>             
+                      </li>                       
+                      <li>
+                        <div class="strata_show_list_item">
+                          <div class="strata_show_list_item_icon">
+                            <i class="fas fa-utensils fa-2x us_icon"></i>
+                          </div>
+                          <div class="strata_show_list_item_description">
+                            <a href="https://www.yelp.ca/biz/nicli-antica-pizzeria-vancouver">
+                              <h5>Nicli Antica Pizzeria</h5>
+                            </a>          
+                          </div>
+                        </div>             
+                      </li>
+        
+                      <li>
+                        <div class="strata_show_list_item">
+                          <div class="strata_show_list_item_icon">
+                            <i class="fas fa-utensils fa-2x us_icon"></i>
+                          </div>
+                          <div class="strata_show_list_item_description">
+                            <a href="https://www.yelp.ca/biz/salty-tongue-caf%C3%A9-vancouver-2">
+                              <h5>Salty Tongue Cafe</h5>
+                            </a>          
+                          </div>
+                        </div>             
+                      </li>
+        
+                      <li>
+                        <div class="strata_show_list_item">
+                          <div class="strata_show_list_item_icon">
+                            <i class="fas fa-cash-register fa-2x us_icon"></i>
+                          </div>
+                          <div class="strata_show_list_item_description">
+                            <a href="https://www.yelp.ca/biz/salty-tongue-caf%C3%A9-vancouver-2">
+                              <h5>Carrall Supermarket</h5>
+                            </a>          
+                          </div>
+                        </div>             
+                      </li>
+                    </ul>            
+                  </div>
+                </div>                  
+
+                <div class="strata_neighbourhood_maps">
+                  <img  src="/images/gastown_map.jpg" alt="Map of area around Koret">
+                </div> 
+              </div>
+            </li>
+
+            <li>
+              <div class="strata_show_sales">
+                <h3>Unit listings</h3>
+                <div>
+                  <ul class="strata_show_sales_listings">
+                    <% for (let i=0; i < strata_corporation.sales_listings.length; i++) { %>
+                      <li>
+                        <a href="/sales_listing/show">
+                          <!-- <a href="/stratas/<%= strata_corporation.id %>"> -->
+                          <div class="strata_show_sales_listing">
+                            <div class="strata_show_cover_image">
+                              <img src="<%=strata_corporation.sales_listings[i].image_url%>" style="height:200px; width:200px;">
+                            </div>
+                            <div class="strata_show_sales_listing_information">
+                              <p><%=strata_corporation.sales_listings[i].price%></p>
+                              <p><%=strata_corporation.sales_listings[i].bedrooms%></p>
+                              <p><%=strata_corporation.sales_listings[i].bathrooms%></p>
+                              <%=strata_corporation.sales_listings[i].address%>
+                            </div> 
+                          </div>             
+                        </a> 
+                      </li>
+                    <% } %>
+                  </ul>            
                 </div>
               </div>
             </li>
           </ul>
-        </div>                         
-      </div>
-
-      <div class="strata_listing_right">
-        <div class="heart">
-          <i class="far fa-heart fa-3x"></i>
-        </div>  
+        </div>
       </div>
     </div>
+</div>
 
-    <div class="strata_show_info app_area">
-        <div class="scoring">
-            <!-- <div class="overall_score circle"> -->
-            <div class="overall_score app_area">
-              <p>A+</p>
-            </div>
-            <div class="score_up_and_down">
-              <div class="score_up_and_down_item score_up  app_area">
-                <div class="thumb_icon">
-                  <i class="far fa-thumbs-up fa-2x"></i>
-                </div>
-                <div class="score_items score_up_items">
-                  <ul>
-                    <li>
-                      <div class="score_item">
-                        <p>Listing score up item 1</p>
-                      </div>                          
-                    </li>
-                    <li>
-                      <div class="score_item">
-                        <p>Listing score up item 2</p>
-                      </div>                          
-                    </li>
-                    <li>
-                      <div class="score_item">
-                        <p>Listing score up item 3</p>
-                      </div>                          
-                    </li>
-                    <li>
-                      <div class="score_item">
-                        <p>Listing score up item 4</p>
-                      </div>                          
-                    </li>
-                    <li>
-                      <div class="score_item">
-                        <p>Listing score up item 5</p>
-                      </div>                          
-                    </li>
-                    <li>
-                      <div class="score_item">
-                        <p>Listing score up item 6</p>
-                      </div>                          
-                    </li>
-                  </ul>
-                </div>
-              </div>  
-              <div class="score_up_and_down_item score_down app_area">
-                <div class="thumb_icon">
-                  <i class="far fa-thumbs-down fa-2x"></i>
-                </div>
-                <div class="score_items score_down_items">
-                  <ul>
-                    <li>
-                      <div class="score_item">
-                        <p>Listing score up item 1</p>
-                      </div>                          
-                    </li>
-                    <li>
-                      <div class="score_item">
-                        <p>Listing score up item 2</p>
-                      </div>                          
-                    </li>
-                    <li>
-                      <div class="score_item">
-                        <p>Listing score up item 3</p>
-                      </div>                          
-                    </li>
-                  </ul>
-                </div>
-              </div> 
-            </div>
-          </div>
-
-
-
-
-
-
-
-
-
-      <div class="neigbourhood app_area">
-        <p>Neighbourhood</p>
-        <div class="strata_show_neighbourhood_top app_area">
-          <div class="report_card app_area">
-            <ul>
-              <li>
-                <div class="report_card_grade app_area">
-                  <div class="report_card_grade_icon">
-                    <i class="fas fa-walking fa-2x"></i>
-                  </div>
-                  <div class="report_card_grade_description">
-                    <p>Walkable Area</p>             
-                  </div>
-                  <div class="grade_image">
-                    <p>A</p>
-                  </div>
-                </div>  
-              </li>
-              <li>
-                <div class="report_card_grade app_area">
-                  <div class="report_card_grade_icon">
-                    <i class="fas fa-bicycle fa-2x us_icon"></i>
-                    <!-- <i class="fas fa-walking fa-2x"></i> -->
-                  </div>
-                  <div class="report_card_grade_description">
-                    <p>Bikeable Area</p>             
-                  </div>
-                  <div class="grade_image">
-                    <p>B-</p>
-                  </div>
-                </div>  
-              </li>
-              <li>
-                <div class="report_card_grade app_area">
-                  <div class="report_card_grade_icon">
-                    <i class="fas fa-train fa-2x us_icon"></i>
-                  </div>
-                  <div class="report_card_grade_description">
-                    <p>Public Transit</p>             
-                  </div>
-                  <div class="grade_image">
-                    <p>A+</p>
-                  </div>
-                </div>  
-              </li>
-
-
-            </ul>
-          </div>
-          <div class="strata_neighbourhood_maps app_area">
-            <img  src="/images/gastown_map.jpg" alt="Map of area around Koret">
-          </div>          
-        </div>
-        <div class="strata_show_neighbourhood_nearby app_area">
-          <p>Nearby</p>
-          <div class="list_of_items app_area">
-            <ul>
-              <li>
-                <div class="list_item">
-                  <div class="list_item_icon">
-                    <i class="fas fa-utensils fa-2x us_icon"></i>
-                  </div>
-                  <div class="list_item_description">
-                    <a href="https://www.yelp.ca/biz/la-casita-vancouver?osq=la+casita">La Casita Mexican Restaurant</a>          
-                  </div>
-                  <!-- <div class="list_item_extra_info app_area">
-                    <p>Extra</p>
-                  </div> -->
-                </div>             
-              </li>
-              
-              <li>
-                <div class="list_item">
-                  <div class="list_item_icon">
-                    <i class="fas fa-utensils fa-2x us_icon"></i>
-                  </div>
-                  <div class="list_item_description">
-                    <a href="https://www.yelp.ca/biz/nicli-antica-pizzeria-vancouver">Nicli Antica Pizzeria</a>          
-                  </div>
-                  <!-- <div class="list_item_extra_info app_area">
-                    <p>Extra</p>
-                  </div> -->
-                </div>             
-              </li>
-
-              <li>
-                <div class="list_item">
-                  <div class="list_item_icon">
-                    <i class="fas fa-utensils fa-2x us_icon"></i>
-                  </div>
-                  <div class="list_item_description">
-                    <a href="https://www.yelp.ca/biz/salty-tongue-caf%C3%A9-vancouver-2">Salty Tongue Cafe</a>          
-                  </div>
-                  <!-- <div class="list_item_extra_info app_area">
-                    <p>Extra</p>
-                  </div> -->
-                </div>             
-              </li>
-
-              <li>
-                <div class="list_item">
-                  <div class="list_item_icon">
-                    <i class="fas fa-utensils fa-2x us_icon"></i>
-                  </div>
-                  <div class="list_item_description">
-                    <a href="https://www.yelp.ca/biz/salty-tongue-caf%C3%A9-vancouver-2">Carrall Supermarket</a>          
-                  </div>
-                  <!-- <div class="list_item_extra_info app_area">
-                    <p>Extra</p>
-                  </div> -->
-                </div>             
-              </li>
-
-
-
-
-
-
-            </ul>            
-          </div>
-        </div>
-        <div class="strata_show_neighbourhood_groups app_area">
-          <p>Groups</p>
-          <div class="list_of_items app_area">
-              <ul>
-                <li>
-                  <div class="list_item app_area">
-                    <div class="list_item_icon app_area">
-                      <p>Icon</p>
-                    </div>
-                    <div class="list_item_description app_area">
-                      <p>Description</p>             
-                    </div>
-                    <div class="list_item_extra_info app_area">
-                      <p>Extra</p>
-                    </div>
-                  </div>             
-                </li>
-              </ul>            
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="strata_show_features app_area">
-        <p>Features</p>
-        <div class="list_of_items app_area">
-          <ul>
-            <li>
-              <div class="list_item app_area">
-                <div class="list_item_icon app_area">
-                  <p>Icon</p>
-                </div>
-                <div class="list_item_description app_area">
-                  <p>Description</p>             
-                </div>
-                <div class="list_item_grade app_area">
-                  <p>Grade</p>
-                </div>                
-                <div class="list_item_extra_info app_area">
-                  <p>Extra</p>
-                </div>
-              </div>             
-            </li>
-          </ul>            
-        </div>
-      </div>
-
-
-
-
-      <div class="strata_show_listings app_area">
-        <p>Unit listings</p>
-        <div class="list_of_items app_area">
-          <ul>
-            <li>
-              <div class="list_item app_area">
-                <div class="list_item_cover_image app_area">
-                  <p>Cover image</p>
-                </div>
-                <div class="list_item_description app_area">
-                  <p>Description</p>             
-                </div>
-                <div class="list_item_grade app_area">
-                  <p>Grade</p>
-                </div>                
-                <div class="list_item_extra_info app_area">
-                  <p>Extra</p>
-                </div>
-              </div>             
-            </li>
-          </ul>            
-        </div>
-      </div>
-
-
-
-
-
-      <div class="strata_show_rules_and_bylaws app_area">
+      <!-- <div class="strata_show_rules_and_bylaws app_area">
         <p>Rules and bylaws</p>
         <div class="list_of_items app_area">
           <ul>
@@ -358,9 +346,9 @@
             </li>
           </ul>            
         </div>
-      </div>  
+      </div>   -->
 
-    <div class="strata_show_images images app_area">
+    <!-- <div class="strata_show_images images app_area">
       <p>Images</p>
 
       <div class="ui small images list_of_items_row app_area">
@@ -370,7 +358,7 @@
         <img src="/images/wireframe/image.png">
       </div>
 
-    </div>
+    </div> -->
   </div>
   </div>
 

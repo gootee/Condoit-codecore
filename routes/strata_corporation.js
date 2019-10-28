@@ -41,19 +41,38 @@ const router = express.Router();
 //     });
 // });
 
+
+// knex('users').orderBy([{ column: 'email' }, { column: 'age', order: 'desc' }])
+// Outputs:
+// select * from "users" order by "email" asc, "age" desc
+
+
 router.get("/index", (req, res) => {
   knex('strata_corporations')
     .leftJoin('strata_images', 'strata_corporations.id', '=', 'strata_images.strata_corporation_id')
     .select(
       'strata_corporations.id',
       'strata_corporations.name',
+      'strata_corporations.status',
       'strata_corporations.strata_plan_number', 
-      'strata_images.image_url')
+      'strata_images.image_url',
+      'strata_images.order')
     .whereNotNull('strata_corporations.strata_plan_number')
     .andWhereNot('strata_corporations.strata_plan_number', '')
+    .orderBy([{ column: 'strata_corporations.status', order: 'desc'}, { column: 'strata_corporations.id' }, { column: 'strata_images.order'}])
     .limit(15)
     .then((data) => {
-      let strata_corporations = [], strata_corporation, first_time = true, current_strata_corporation_id = 0;
+
+      data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
+
+      let strata_corporations = [], 
+          strata_corporation, 
+          first_time = true, 
+          current_strata_corporation_id = 0,
+          strata_grade,
+          strata_pros,
+          strata_cons;
+
       for (let i = 0; i < data.length; i++) {
         if (data[i].id != current_strata_corporation_id) {
           if (first_time) {
@@ -61,18 +80,52 @@ router.get("/index", (req, res) => {
           } else {
             strata_corporations.push(strata_corporation)
           }
-          
+
+          //fake data
+
+          if (data[i].id === '4396'){
+            strata_grade = "A+";
+            strata_pros = [
+              "15 min. ride to work",
+              "5 min. walk to cafe",
+              "Accessible Facilities"
+            ];
+            strata_cons = [
+              "2 BR/1 ba ~112% of budget",
+              "No garden available"
+            ];
+          } else {
+            strata_grade = "B";
+            strata_pros = [
+              "10 min. drive to work",
+              "On-site Gym",
+              "Non-smoking building"
+            ];
+            strata_cons = [
+              "2 BR/1 ba ~105% of budget",
+              "No on-site hot tub",
+              "No on-site guest suite"
+            ];
+          }           
+             
           strata_corporation = {
             id: data[i].id,
-            image_urls: []
+            name: data[i].name,
+            strata_plan_number: data[i].strata_plan_number,
+            image_urls: [],
+            strata_grade: strata_grade,
+            strata_pros: strata_pros,
+            strata_cons: strata_cons
           };
           current_strata_corporation_id = data[i].id
         }
         if (data[i].image_url) {
           strata_corporation.image_urls.push(data[i].image_url)
         }
+
+
       }
-      
+
       if (strata_corporation.id) {
         strata_corporations.push(strata_corporation)  //last one
       }
@@ -102,7 +155,56 @@ router.get("/show", (req, res) => {
         id: 4396,
         name: "Koret",
         strata_plan_number: "BCS2025",
-        image_url: "https://www.vancitylofts.com/images/2013/04/17/exterior.jpg&w=576"
+        image_url: "https://www.vancitylofts.com/images/2013/04/17/exterior.jpg&w=576",
+        strata_grade: "A+",
+        strata_pros: [
+          "15 min. ride to work",
+          "5 min. walk to cafe",
+          "Accessible Facilities",
+          "Pro #4",
+          "Pro #5",
+          "Pro #6",
+          "Pro #7",
+        ],
+        strata_cons: [
+          "2 BR/1 ba ~112% of budget",
+          "No garden available",
+          "Con #3",
+          "Con #4",
+          "Con #5",
+          "Con #6",
+          "Con #7",
+        ],
+        sales_listings: [
+          {
+            image_url: "https://media.pixilinkserver.com/R/241/43/16/R2414316-1.jpg?s=blu&w=576&h=405&t=y",
+            price: "$829,800",	
+            bedrooms: "1 bed",
+            bathrooms: "1 bath",
+            address: "205 55 E CORDOVA ST."
+          },
+          {
+            image_url: "https://media.pixilinkserver.com/R/240/40/51/R2404051-1.jpg?s=blu&w=576&h=405&t=y",
+            price: "$897,000",	
+            bedrooms: "1 bed",
+            bathrooms: "1 bath",
+            address: "402 55 E CORDOVA ST."
+          },
+          {
+            image_url: "https://media.pixilinkserver.com/R/240/71/92/R2407192-1.jpg?s=blu&w=576&h=405&t=y",
+            price: "$1,199,000",	
+            bedrooms: "1 bed",
+            bathrooms: "2 baths",
+            address: "47 E CORDOVA ST."
+          },
+          {
+            image_url: "https://media.pixilinkserver.com/R/241/43/16/R2414316-1.jpg?s=blu&w=576&h=405&t=y",
+            price: "$1,239,000",	
+            bedrooms: "2 beds",
+            bathrooms: "1 bath",
+            address: "403 55 E CORDOVA ST."
+          }          
+        ]
       }
       res.render("strata_corporation/show",{
         strata_corporation: data,

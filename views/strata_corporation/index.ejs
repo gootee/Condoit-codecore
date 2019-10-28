@@ -1,34 +1,63 @@
 <%- include("../partials/header") %>
 <div class="container">
   <%- include("../partials/sidenav") %>
-  <div class="main">
-      <p><%= strata_corporations.length%></p>
+  <div class="main strata_index_container">
     <div class="strata_listings">
       <ul>
         <% for (let strata_corporation of strata_corporations) { %>
-          <!-- <p><%= strata_corporation%></p> -->
+          <!-- <p><#%= strata_corporation%></p> -->
           <!-- <% console.log(strata_corporation)%> -->
-          <li>
-            <div class="strata_listing">
+          <!-- <#% console.log(strata_corporation.image_urls.length)%> -->
+          <li class="strata_listing_row">
+            <div class="strata_listing" id=<%= strata_corporation.id %>>
               <div class="strata_listing_left">
 
+
                 <div class="slideshow-container">
-                  <div class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
-                    <img src="https://www.vancitylofts.com/images/2013/04/17/exterior.jpg&w=576" style="height:500px; width:500px;">
-                    <!-- <div class="text">Caption Text</div> -->
-                  </div>
+                  <% for (let i = 0; i < strata_corporation.image_urls.length; i++) { %>
+                    <div class="mySlides fade">
+                      <!-- <div class="numbertext">1 / 3</div> -->
+                      <img src=<%=strata_corporation.image_urls[i]%> style="height:500px; width:500px;">
+                    </div>
+                  <% } %>
                   
-                  <div class="mySlides fade">
+                  <!-- <div class="mySlides fade">
                     <div class="numbertext">2 / 3</div>
                     <img src="https://assets-listings.rew.ca/brc_idx_rew/brc/R2400319/20190904202041/01.jpeg?trim=auto&fit=crop&w=992&h=745" style="height:500px; width:500px;">
-                    <!-- <div class="text">Caption Two</div> -->
                   </div>
                   
                   <div class="mySlides fade">
                     <div class="numbertext">3 / 3</div>
                     <img src="http://s3.amazonaws.com/mrp-listings/3/9/8/73370893/cd0584f3b49b757a807c97f299694e85.jpeg" style="height:500px; width:500px;">
-                    <!-- <div class="text">Caption Three</div> -->
+                  </div> -->
+                  <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>                   -->
+                  <a class="prev" onclick="plusSlideForStrataListing(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlideForStrataListing(1)">&#10095;</a>
+                  <div style="text-align:center">
+                    <!-- <span class="dot" onclick="currentSlide(1)"></span> 
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span>  -->
+                    <span class="dot" onclick="currentSlideForStrataListing(1)"></span> 
+                    <span class="dot" onclick="currentSlideForStrataListing(2)"></span> 
+                    <span class="dot" onclick="currentSlideForStrataListing(3)"></span> 
+                  </div>                  
+                </div>
+
+                <!-- <div class="slideshow-container">
+                  <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="https://www.vancitylofts.com/images/2013/04/17/exterior.jpg&w=576" style="height:500px; width:500px;">
+                  </div>
+                  
+                  <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="https://assets-listings.rew.ca/brc_idx_rew/brc/R2400319/20190904202041/01.jpeg?trim=auto&fit=crop&w=992&h=745" style="height:500px; width:500px;">
+                  </div>
+                  
+                  <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="http://s3.amazonaws.com/mrp-listings/3/9/8/73370893/cd0584f3b49b757a807c97f299694e85.jpeg" style="height:500px; width:500px;">
                   </div>
                   
                   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -38,11 +67,12 @@
                     <span class="dot" onclick="currentSlide(2)"></span> 
                     <span class="dot" onclick="currentSlide(3)"></span> 
                   </div>                  
-                </div>
+                </div> -->
 
                 <div class="strata_listing_data">
                   <div class="strata_listing_name">
-                    <a href="/stratas/<%= strata_corporation.id %>">              
+                    <!-- <a href="/stratas/<%= strata_corporation.id %>">     -->
+                    <a href="/stratas/show">          
                       <div class="strata_listing_name_data">
                         <h2><%= strata_corporation.name%></h2>
                         <h5>     <%= strata_corporation.strata_plan_number %>  (id: <%= strata_corporation.id%>)</h5> 
@@ -60,7 +90,7 @@
                             <i class="far fa-building fa-2x"></i>
                           </div>
                           <div class="detail_item_description">
-                            <p>Hi-rise - 118 units</p>
+                            <p>High-rise - 118 units</p>
                           </div>
                         </div>
                       </li>
@@ -80,7 +110,7 @@
                             <i class="fas fa-user-tie fa-2x"></i>
                           </div>
                           <div class="detail_item_description">
-                            <p>2 Units for sale</p>
+                            <p>3 Units for sale</p>
                           </div>
                         </div>
                       </li>
@@ -90,7 +120,8 @@
               </div>
               <div class="strata_listing_right">
                 <div class="strata_listing_right_top">
-                  <div class="h0">A+</div>
+                  <!-- <div class="h0">A+</div> -->
+                  <div class="h0"><%= strata_corporation.strata_grade%></div>
                   <div class="heart">
                     <i class="far fa-heart fa-5x"></i>
                   </div> 
@@ -102,41 +133,25 @@
                         <h4>Pros</h4>                        
                       </div>
                       <ul>
-                        <li>
-                          <div class="score_item">
-                            <p>15 min. ride to work</p>
-                          </div>  
-                        </li>
-                        <li>
-                          <div class="score_item">
-                            <p>5 min. walk to cafe</p>
-                          </div>  
-                        </li>
-                        <li>
-                          <div class="score_item">
-                            <p>Strata Listing - Pro 3</p>
-                          </div>  
-                        </li>
+                        <% for (let i = 0; i < strata_corporation.strata_pros.length; i++) { %>
+                          <li>
+                            <div class="score_item">
+                              <p><%= strata_corporation.strata_pros[i]%></p>
+                            </div>  
+                          </li>                        
+                        <% } %>
                       </ul>
                     </div>
                     <div class="strata_score_list con_list">
                       <h4>Cons</h4>
                       <ul>
-                        <li>
-                          <div class="score_item">
-                            <p>2 BR/1 ba ~112% of budget</p>
-                          </div>  
-                        </li>
-                        <li>
-                          <div class="score_item">
-                            <p>No on-site gym</p>
-                          </div>  
-                        </li>
-                        <li>
-                          <div class="score_item">
-                            <p>Strata Listing - Con 3</p>
-                          </div>  
-                        </li>
+                        <% for (let i = 0; i < strata_corporation.strata_cons.length; i++) { %>
+                          <li>
+                            <div class="score_item">
+                              <p><%= strata_corporation.strata_cons[i]%></p>
+                            </div>  
+                          </li>                        
+                        <% } %>
                       </ul>
                     </div>
                   </div>
@@ -153,8 +168,10 @@
 
 <script>
   var slideIndex = 1;
-  showSlides(slideIndex);
-  
+
+  //showSlides(slideIndex);
+  showSlidesForStrataListings();
+
   function plusSlides(n) {
     showSlides(slideIndex += n);
   }
@@ -162,7 +179,45 @@
   function currentSlide(n) {
     showSlides(slideIndex = n);
   }
+
+  function plusSlideForStrataListing(n) {
+    const strata_listing = document.getElementById(4396)
+    showSlidesForStrataListing(strata_listing, slideIndex += n);
+  }
+
+  function currentSlideForStrataListing(n) {
+    const strata_listing = document.getElementsByID(4396)
+    
+    showSlidesForStrataListing(strata_listing, n)
+    //showSlides(slideIndex = n);
+  }
   
+  function showSlidesForStrataListings() {
+    const strata_listings = document.querySelectorAll(".strata_listing")
+    strata_listings.forEach(strata_listing => {
+      showSlidesForStrataListing(strata_listing, 1)
+    })
+  }
+
+  function showSlidesForStrataListing(strata_listing, n) {
+    let i;
+    let slides = strata_listing.getElementsByClassName("mySlides");
+    let dots = strata_listing.getElementsByClassName("dot");
+
+
+
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+
   function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");

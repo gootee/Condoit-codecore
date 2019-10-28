@@ -205,6 +205,8 @@ small,
 }
 
 .detail_item {
+  display: flex;
+  flex-direction: row; 
   margin: 10px;
 }
 
@@ -224,18 +226,6 @@ small,
   flex-direction: column;
   /* align-items: end; */
 }
-/* 
-.lender {
-  margin: 2em;
-} */
-
-/* .savings {
-  margin: 2em;
-}
-
-.monthly {
-  margin: 2em;
-} */
 
 .explanation {
   margin: 20px 0 25px 0;
@@ -337,38 +327,207 @@ small,
   transform: translateY(4px);
 } */
 
-
-
-
-
-
-
-
-
-
-
 .splash_sub_heading {
   margin: 0 0 40px 0;
 }
 
+
+
+/* Sales Listing Show */
+.sales_listing_show_neigbourhood {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0 0 0;
+}
+
+.sales_listing_show_score {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 50px 0 0 0;
+}
+
+.sales_listing_show_score_data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sales_listing_show_neigbourhood_report_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sales_listing_show_neighbourhood_nearby {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0 40px 0;
+}
+
+.sales_listing_show_list_of_items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sales_listing_show_nearby_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sales_listing_show_nearby_item_icon {
+  min-width: 50px;
+}
+
+.sales_listing_show_nearby_item_description {
+  margin: 0 0 0 40px;
+  min-width: 200px;
+}
+
+
 /* Strata Show */
+.strata_container {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* align-items: center; */
+}
+
+.strata_show_neigbourhood {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 50px 0 0 0;
+}
+
+.strata_show_neighbourhood_nearby{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.strata_show_neighbourhood_data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 40px 0;
+}
+
+.strata_show_list_item_description {
+  margin: 0 30px 0 30px;
+}
+
+.strata_show_container {
+  flex-grow: 8.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.strata_show_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .strata_show_top {
   display: flex;
   flex-direction: row;
   justify-content: space-between; 
 }
 
-.strata_information_left {
+.strata_show_top_left {
   display: flex;
   flex-direction: row;
 }
 
+.strata_show_top_right {
+  margin: 0 0 0 40px;
+}
+
+.strata_show_score_heading {
+  margin: 50px 0 0 0;
+}
+
+.strata_show_score_data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.strata_score_list {
+  margin: 15px 30px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.strata_show_score_pro_and_con {
+  display: flex;
+  flex-direction: row;
+}
 .strata_information_name {
   margin: 0 80px 0 40px;
 }
 
+.strata_information_group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 0 0 40px;
+}
 
+.strata_show_score_label {
+  margin: 50px 0 0 0;
+}
 
+.strata_show_sales_listings {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 40px;
+  /* width: 200px;
+  height: 200px; */
+}
+
+.strata_show_cover_image {
+  /* margin: 0 x; */
+  height: 200px; 
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.strata_show_sales_listing {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+}
+
+.strata_show_list_item {
+  display: flex;
+  flex-direction: row;
+}
+
+.strata_show_list_item_icon {
+  min-width: 50px;
+}
 
 
 
@@ -377,6 +536,7 @@ small,
 
 
 /* Strata_Index */
+
 .listing_container {
   display: flex;
   flex-direction: column;
@@ -404,6 +564,12 @@ small,
   border-width: 1em
 }
 
+.strata_listing_row:nth-child(even) {
+    background-color: #242933;
+    /* #213352 - dusty medium blud
+#242933 - grey */
+}
+
 .strata_details {
   display: flex;
   flex-direction: column;
@@ -423,14 +589,6 @@ small,
   display: flex;
   flex-direction: column;
   margin: 0 30px 0 0;
-}
-
-.strata_score_list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 15px 0 0 0;
 }
 
 
@@ -515,8 +673,12 @@ small,
 
 .profile_container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+
 
 .profile_left {
   flex-grow: 3;
@@ -576,6 +738,15 @@ small,
   margin: 20px 0 20px 0;
 }
 
+/* financial */
+/* .financial_container {
+  background-image: url(../images/budget.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  height: 100vh;
+} */
+
 .financials {
   display: flex;
   flex-direction: column;
@@ -587,6 +758,10 @@ small,
   display: flex;
   flex-direction: column;
   margin: 50px 0 0 0; 
+}
+
+.profile_show_financial_section {
+  margin: 50px 0 0 0;
 }
 
 .financial_heading {
@@ -725,12 +900,6 @@ small,
   justify-content: space-between; 
 }
 
-.strata_show_neighbourhood_top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .listing_top {
   display: flex;
   flex-direction: row;
@@ -741,64 +910,101 @@ small,
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  flex-grow: 2;
+  margin: 40px 0 40px 0;
+  /* flex-grow: 2; */
 }
 
 .report_card {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-grow: 6;
+  flex-direction: row;
+  justify-content: space-between;
+  /* flex-grow: 6; */
 }
 
 .report_card_grade {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 30%;
+  align-items: center;
+  /* width: 30%; */
 }
 
 .report_card_grade_icon {
-  flex-grow: 1;
+  /* flex-grow: 1; */
+  min-width: 50px;
 }
 
 .report_card_grade_description {
-  flex-grow: 3;
+  margin: 0 40px;
+  min-width: 200px;
+  /* flex-grow: 3; */
 }
 
 .grade_image {
   flex-grow: 2;
 }
 
+
+/* lists */
 .list_of_items {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-content: center;
+  align-content: flex-start;
   margin: 30px 0 30px 0;
 }
 
 .list_heading {
   margin: 20px 0 5px 0;
   display: flex;
+  /* width: auto; */
   flex-direction: row;
+  justify-content: flex_start;
+}
+
+.list_plus {
+  margin: 0 0 0 30px;
+}
+
+.list_subheading {
+  display: flex;
   justify-content: center;
+  margin: 0 0 40px 0; 
 }
 
 .list_label {
   margin: 0 20px 0 0;
 }
 
-.list_item {
+.list_elements {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.list_element {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   margin: 20px 0 20px 0;
 }
 
+.list_element_left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.list_element_right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .list_item_cover_image {
-  /* margin: 0 x; */
   height: 40px; 
   width: 40px;
   display: flex;

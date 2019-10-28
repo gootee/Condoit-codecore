@@ -1,103 +1,97 @@
 <%- include("../partials/header") %>
 <!-- <%- include("../partials/sidenav") %> -->
 
-<div class="container">
-  <div class="profile_us">
-    <!-- <div class="profile_us_heading">
-      <h1>Us</h1>
-    </div> -->
-
-    <div class="details">
-      <div class="list_of_items occupants">
-        <div class="list_heading">
-          <div class="list_label">
-            <h1>Occupants</h1>            
+<div class="profile_container">
+  <div class="details">
+    <div class="list_of_items">
+      <ul>
+        <li>
+          <div class="list_heading">
+            <h1>Occupants</h1>
+            <div class="list_plus">
+              <i data-feather="plus-circle" class="plus_button"></i>
+            </div>  
           </div>
-          <div class="profile_plus">
-            <i data-feather="plus-circle" class="plus_button"></i>
-          </div>          
-        </div>
-        <div>
-          <ul>
-            <li>
-              <div class="list_item">
+        </li>
+        <li>
+          <div class="list_element">
+            <div class="list_element_left">
+              <div class="list_item_cover_image">
+                <i class="far fa-user fa-3x"></i>
+              </div> 
+              <div class="list_item_data">
+                <div class="primary_data">
+                  <h4>Jackie</h4>  
+                </div>
+                <div class="secondary_data">
+                  <p>Adult</p>             
+                </div>   
+              </div>           
+            </div>
+            <div class="list_element_right">
+              <!-- XXXXXXXXXX Keep XXXXXXXXXXXXXXXXX -->
+              <!-- <select name="vehicle_parking">
+                <option disabled selected value> -- parking required? -- </option>
+                <option value="garage">Private garage</option>
+                <option value="covered">Covered</option>
+                <option value="covered_reserved">Covered (reserved)</option>
+                <option value="uncovered">Uncovered</option>
+                <option value="uncovered_reserved">Uncovered (reserved)</option>
+                <option value="none">None</option>
+              </select>   -->
+         
+              <!-- XXXXXXXXXX Keep XXXXXXXXXXXXXXXXX -->  
+              <!-- <div class="list_item_buttons buttons">
+                <div class="delete_button">
+                  <i data-feather="x"></i>
+                </div>
+                <div class="edit_button">
+                  <i data-feather="edit-3"></i>
+                </div>   
+              </div> -->
+            </div>
+          </div>        
+        </li>
+        <li>
+          <div class="list_element">
+            <div class="list_element_left">
+              <div class="list_item_cover_image">
+                <img src="/images/john.jpeg" alt="Pet image" height="60" width="60">
+              </div> 
+              <div class="list_item_data">
+                <div class="primary_data">
+                  <h4>John</h4>  
+                </div>
+                <div class="secondary_data">
+                  <p>Adult</p>             
+                </div>   
+              </div>           
+            </div>
+            <div class="list_element_right">
 
-                <div class="list_item_cover_image">
-                  <i class="far fa-user fa-2x"></i>
+            </div>
+          </div>        
+        </li>
+        <li>
+          <div class="list_element">
+            <div class="list_element_left">
+              <div class="list_item_cover_image">
+                <img src="/images/olive.jpg" alt="Pet image" height="60" width="60">
+              </div> 
+              <div class="list_item_data">
+                <div class="primary_data">
+                  <h4>Olive</h4>  
                 </div>
-                <div class="list_item_data">
-                  <h4>Jackie Gootee</h4>             
-                </div>
-                <div class="list_item_buttons buttons">
-                  <div class="delete_button">
-                    <i data-feather="x"></i>
-                  </div>
-                  <div class="edit_button">
-                    <i data-feather="edit-3"></i>
-                  </div>                
-                </div>                
-              </div>             
-            </li>
-            <li>
-              <div class="list_item">
-                <div class="list_item_cover_image">
-                  <!-- <p>Cover image</p> -->
-                  <i class="far fa-user fa-2x"></i>
-                </div>
-                <div class="list_item_data">
-                  <h4>John Gootee</h4>             
-                </div>
-                <div class="list_item_buttons buttons">
-                  <div class="delete_button">
-                    <i data-feather="x"></i>
-                  </div>
-                  <div class="edit_button">
-                    <i data-feather="edit-3"></i>
-                  </div>                
-                </div>                
-              </div>             
-            </li>
-          </ul>           
-        </div>
-      </div>
-      <div class="list_of_items pets">
-        <div class="list_heading">
-          <div class="list_label">
-            <h1>Pets</h1>            
-          </div>
-          <div class="profile_plus">
-            <i data-feather="plus-circle" class="plus_button"></i>
-          </div>          
-        </div>
-        <div>        
-          <ul>
-            <li>
-              <div class="list_item">
-                <div class="list_item_cover_image">
-                  <img src="/images/olive.jpg" alt="Pet image" height="40" width="40"> 
-                </div>
-                <div class="list_item_data">
-                  <div class="primary_data">
-                    <h4>Olive</h4>                     
-                  </div>
-                  <div class="secondary_data">
-                    <p>Dog - under 15 pounds</p>
-                  </div>  
-                </div>
-
-                <div class="list_item_buttons buttons">
-                  <div class="delete_button">
-                    <i data-feather="x"></i>
-                  </div>
-                  <div class="edit_button">
-                    <i data-feather="edit-3"></i>
-                  </div>                  
+                <div class="secondary_data">
+                  <p>Dog - under 20 lbs.</p>             
                 </div>  
-              </div>                         
-            </li>
-          </ul>    
-        </div>        
-      </div>
+              </div>           
+            </div>
+            <div class="list_element_right">
+            </div>
+          </div>        
+        </li>
+      </ul>
     </div>
   </div>
 </div>

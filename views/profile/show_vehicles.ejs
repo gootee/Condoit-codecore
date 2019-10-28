@@ -1,73 +1,107 @@
 <%- include("../partials/header") %>
 <!-- <%- include("../partials/sidenav") %> -->
 
-<div class="container">
-  <div class="profile_us">
-    <!-- <div class="profile_us_heading">
-      <h1>Us</h1>
-    </div> -->
-    <div class="details">
-      <div class="list_of_items vehicles">
-        <div class="list_heading">
-          <div class="list_label">
-            <h1>Vehicles</h1>            
+<div class="profile_container">
+  <div class="details">
+    <div class="list_of_items">
+      <ul>
+        <li>
+          <div class="list_heading">
+            <h1>Vehicles</h1>
+            <div class="list_plus">
+              <i data-feather="plus-circle" class="plus_button"></i>
+            </div>  
           </div>
-          <div class="profile_plus">
-            <i data-feather="plus-circle" class="plus_button"></i>
-          </div>          
-        </div>
-        <div>    
-          <ul>
-            <li>
-              <div class="list_item">
-                <div class="list_item_cover_image">
-                  <i class="fas fa-car fa-3x us_icon"></i>
-                </div> 
-                <div class="list_item_data">
-                  <div class="primary_data">
-                    <h4>Compact Car</h4>                      
-                  </div>
-                  <div class="secondary_data">
-                    <p>Honda Civic</p>             
-                  </div>          
-                </div> 
-                <div class="list_item_buttons buttons">
-                  <div class="delete_button">
-                    <i data-feather="x"></i>
-                  </div>
-                  <div class="edit_button">
-                    <i data-feather="edit-3"></i>
-                  </div>   
+        </li>
+        <li>
+          <div class="list_element">
+            <div class="list_element_left">
+              <div class="list_item_cover_image">
+                <i class="fas fa-car fa-3x us_icon"></i>
+              </div> 
+              <div class="list_item_data">
+                <div class="primary_data">
+                  <h4>Compact Car</h4>  
                 </div>
-              </div>             
-            </li>
-            
-            <li>
-              <div class="list_item">
-                <div class="list_item_cover_image">
-                    <i class="fas fa-bicycle fa-3x us_icon"></i>
-                </div> 
-                <div class="list_item_data">
-                  <div class="primary_data">
-                    <h4>Bicycle</h4>                      
-                  </div>
-                  <div class="secondary_data">
-                    <p>Blue Schwinn</p>             
-                  </div>          
-                </div> 
-                <div class="list_item_buttons buttons">
-                  <div class="delete_button">
-                    <i data-feather="x"></i>
-                  </div>
-                  <div class="edit_button">
-                    <i data-feather="edit-3"></i>
-                  </div>   
-                </div>                             
-              </div>             
-            </li>
-          </ul>  
-        </div>          
-      </div>
+                <div class="secondary_data">
+                  <p>Honda Civic</p>             
+                </div>  
+                <div class="secondary_data">
+                  <p>Covered Parking Required</p>             
+                </div>  
+              </div>           
+            </div>
+            <div class="list_element_right">
+              <!-- XXXXXXXXXX Keep XXXXXXXXXXXXXXXXX -->
+              <!-- <select name="vehicle_parking">
+                <option disabled selected value> -- parking required? -- </option>
+                <option value="garage">Private garage</option>
+                <option value="covered">Covered</option>
+                <option value="covered_reserved">Covered (reserved)</option>
+                <option value="uncovered">Uncovered</option>
+                <option value="uncovered_reserved">Uncovered (reserved)</option>
+                <option value="none">None</option>
+              </select>   -->
+
+              <!-- <div>
+                <select name="importance">
+                  <option value="required">Required</option>
+                  <option value="important">Important</option>
+                  <option value="preferred" selected>Preferred</option>
+                  <option value="no_thanks">No thanks</option>
+                </select>              
+              </div>           -->
+              <!-- XXXXXXXXXX Keep XXXXXXXXXXXXXXXXX -->  
+              <!-- <div class="list_item_buttons buttons">
+                <div class="delete_button">
+                  <i data-feather="x"></i>
+                </div>
+                <div class="edit_button">
+                  <i data-feather="edit-3"></i>
+                </div>   
+              </div> -->
+            </div>
+          </div>        
+        </li>
+        <li>
+          <div class="list_element">
+            <div class="list_element_left">
+              <div class="list_item_cover_image">
+                <i class="fas fa-bicycle fa-3x us_icon"></i>
+              </div> 
+              <div class="list_item_data">
+                <div class="primary_data">
+                  <h4>Bicycle</h4>  
+                </div>
+                <div class="secondary_data">
+                  <p>Blue Schwinn</p>             
+                </div>  
+                <div class="secondary_data">
+                  <p>Bicycle Storage Required</p>             
+                </div>  
+              </div>           
+            </div>
+            <div class="list_element_right">
+              <!-- <div>
+                <select name="importance">
+                  <option value="required">Required</option>
+                  <option value="important">Important</option>
+                  <option value="preferred" selected>Preferred</option>
+                  <option value="no_thanks">No thanks</option>
+                </select>              
+              </div>             -->
+              <!-- <div class="list_item_buttons buttons">
+                <div class="delete_button">
+                  <i data-feather="x"></i>
+                </div>
+                <div class="edit_button">
+                  <i data-feather="edit-3"></i>
+                </div>   
+              </div> -->
+            </div>
+          </div>        
+        </li>
+      </ul>
     </div>
   </div>
 </div>
