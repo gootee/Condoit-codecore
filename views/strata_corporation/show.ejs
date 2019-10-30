@@ -16,7 +16,7 @@
                 </div> 
                 <div class="strata_show_top_right">
                   <div class="heart">
-                    <i class="far fa-heart fa-5x"></i>
+                    <i class="fas fa-heart fa-5x"></i>
                   </div>  
                 </div>                 
               </div>
@@ -361,5 +361,32 @@
     </div> -->
   </div>
   </div>
+
+  <script>
+    function load () {
+
+      const strataName1 = "Koret Lofts A+"
+      const strataName2 = "Canadian B"
+
+      let favouriteStratas
+      favouriteStratas = document.querySelector(".sidebar_favourite_stratas")
+
+      //console.log(favouriteStratas)
+      htmlString = "<div class='favourite_strata'>" +
+        strataName1 +
+        "</div>";  
+      favouriteStratas.insertAdjacentHTML('beforeend', htmlString);
+
+      htmlString = "<div class='favourite_strata'>" +
+        strataName2 +
+        "</div>";  
+      favouriteStratas.insertAdjacentHTML('beforeend', htmlString);
+
+
+
+    }
+
+    load();
+  </script>
 
 <%- include("../partials/footer") %>

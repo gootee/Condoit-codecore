@@ -63,15 +63,13 @@
             <h4 class="dropdown_heading">Dishwasher</h4>            
           </div>
           <div class="list_element_right">
-            <input type="checkbox" class="unit_checkbox" name="dishwasher" value="dishwasher">
-            <div>
-              <select name="importance">
-                <option value="required">Required</option>
-                <option value="important">Important</option>
-                <option value="preferred" selected>Preferred</option>
-                <option value="no_thanks">No thanks</option>
-              </select>              
-            </div>            
+            <div class="importance display_off" id="-1">
+              <span id="ban" class="fa fa-ban fa-2x rating"></span>
+              <span id="preferred" class="fa fa-star fa-2x rating checked"></span>
+              <span id="important" class="fa fa-star fa-2x rating"></span>
+              <span id="required" class="fa fa-star fa-2x rating"></span>
+            </div>   
+            <input type="checkbox" class="feature_checkbox" name="dishwasher" value="dishwasher">         
           </div>
         </div>        
       </li>
@@ -91,15 +89,13 @@
             </div>             
           </div>
           <div class="list_element_right">
-            <input type="checkbox" class="unit_checkbox" name="laundry" value="laundry">
-            <div>
-              <select name="importance">
-                <option value="required">Required</option>
-                <option value="important">Important</option>
-                <option value="preferred" selected>Preferred</option>
-                <option value="no_thanks">No thanks</option>
-              </select>              
-            </div>            
+            <div class="importance display_off" id="-1">
+              <span id="ban" class="fa fa-ban fa-2x rating"></span>
+              <span id="preferred" class="fa fa-star fa-2x rating checked"></span>
+              <span id="important" class="fa fa-star fa-2x rating"></span>
+              <span id="required" class="fa fa-star fa-2x rating"></span>
+            </div>  
+            <input type="checkbox" class="feature_checkbox" name="laundry" value="laundry">       
           </div>
         </div>        
       </li>
@@ -112,15 +108,13 @@
             <h4 class="dropdown_heading">Garburator</h4>            
           </div>
           <div class="list_element_right">
-            <input type="checkbox" class="unit_checkbox" name="garburator" value="garburator">
-            <div>
-              <select name="importance">
-                <option value="required">Required</option>
-                <option value="important">Important</option>
-                <option value="preferred" selected>Preferred</option>
-                <option value="no_thanks">No thanks</option>
-              </select>              
-            </div>            
+            <div class="importance display_off" id="-1">
+              <span id="ban" class="fa fa-ban fa-2x rating"></span>
+              <span id="preferred" class="fa fa-star fa-2x rating checked"></span>
+              <span id="important" class="fa fa-star fa-2x rating"></span>
+              <span id="required" class="fa fa-star fa-2x rating"></span>
+            </div>  
+            <input type="checkbox" class="feature_checkbox" name="garburator" value="garburator"> 
           </div>
         </div>        
       </li>
@@ -133,15 +127,13 @@
             <h4 class="dropdown_heading">Fireplace</h4>            
           </div>
           <div class="list_element_right">
-            <input type="checkbox" class="unit_checkbox" name="fireplace" value="fireplace">
-            <div>
-              <select name="importance">
-                <option value="required">Required</option>
-                <option value="important">Important</option>
-                <option value="preferred" selected>Preferred</option>
-                <option value="no_thanks">No thanks</option>
-              </select>              
-            </div>            
+            <div class="importance display_off" id="-1">
+              <span id="ban" class="fa fa-ban fa-2x rating"></span>
+              <span id="preferred" class="fa fa-star fa-2x rating checked"></span>
+              <span id="important" class="fa fa-star fa-2x rating"></span>
+              <span id="required" class="fa fa-star fa-2x rating"></span>
+            </div>               
+            <input type="checkbox" class="feature_checkbox" name="fireplace" value="fireplace">
           </div>
         </div>        
       </li>
@@ -162,15 +154,13 @@
 
           </div>
           <div class="list_element_right">
-            <input type="checkbox" class="unit_checkbox" name="balcony" value="balcony">
-            <div>
-              <select name="importance">
-                <option value="required">Required</option>
-                <option value="important">Important</option>
-                <option value="preferred" selected>Preferred</option>
-                <option value="no_thanks">No thanks</option>
-              </select>              
-            </div>            
+            <div class="importance display_off" id="-1">
+              <span id="ban" class="fa fa-ban fa-2x rating"></span>
+              <span id="preferred" class="fa fa-star fa-2x rating checked"></span>
+              <span id="important" class="fa fa-star fa-2x rating"></span>
+              <span id="required" class="fa fa-star fa-2x rating"></span>
+            </div>  
+            <input type="checkbox" class="feature_checkbox" name="balcony" value="balcony">
           </div>
         </div>        
       </li>
@@ -188,15 +178,13 @@
 
           </div>
           <div class="list_element_right">
-            <input type="checkbox" class="unit_checkbox" name="balcony" value="balcony">
-            <div>
-              <select name="importance">
-                <option value="required">Required</option>
-                <option value="important">Important</option>
-                <option value="preferred" selected>Preferred</option>
-                <option value="no_thanks">No thanks</option>
-              </select>              
-            </div>            
+            <div class="importance display_off" id="-1">
+              <span id="ban" class="fa fa-ban fa-2x rating"></span>
+              <span id="preferred" class="fa fa-star fa-2x rating checked"></span>
+              <span id="important" class="fa fa-star fa-2x rating"></span>
+              <span id="required" class="fa fa-star fa-2x rating"></span>
+            </div>  
+            <input type="checkbox" class="feature_checkbox" name="balcony" value="balcony">      
           </div>
         </div>        
       </li>
@@ -221,4 +209,66 @@
     </a>       
   </div>  
 </div>
+
+<script>
+  function toggleRatings(event) {
+    const importance = event.target.parentNode.querySelector(".importance")
+    event.target.checked ? importance.classList.remove("display_off") : importance.classList.add("display_off")
+  }
+
+  function rate(event) {
+    event.preventDefault();
+    const targetType = event.target.id
+    const banNode = event.target.parentNode.querySelector("#ban")
+    const preferredNode = event.target.parentNode.querySelector("#preferred")
+    const importantNode = event.target.parentNode.querySelector("#important")
+    const requiredNode = event.target.parentNode.querySelector("#required")
+
+    //console.log(targetType)
+    if (targetType === "ban") {
+      banNode.classList.add("checked")
+      preferredNode.classList.remove("checked")
+      importantNode.classList.remove("checked")
+      requiredNode.classList.remove("checked")
+    } else {
+      banNode.classList.remove("checked")
+      switch (targetType) {
+        case "preferred": {
+          preferredNode.classList.add("checked");
+          importantNode.classList.remove("checked");
+          requiredNode.classList.remove("checked");
+          break;
+        }
+        case "important": {
+          preferredNode.classList.add("checked");
+          importantNode.classList.add("checked");
+          requiredNode.classList.remove("checked");
+          break;
+        }
+        case "required": {
+          preferredNode.classList.add("checked");
+          importantNode.classList.add("checked");
+          requiredNode.classList.add("checked");
+          break;
+        }
+      }
+    }
+  }
+
+  function load() {
+    const ratings = document.querySelectorAll(".rating")
+    ratings.forEach(r => {
+      r.addEventListener("click", rate)
+    })
+
+    const checkBoxes = document.querySelectorAll(".feature_checkbox")
+    console.log(checkBoxes)
+    checkBoxes.forEach(l => {
+      l.addEventListener("click", toggleRatings)
+    })    
+  }
+
+  load();
+</script>
+
 <%- include("../partials/footer") %>

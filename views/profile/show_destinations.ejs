@@ -32,14 +32,12 @@
               </div>           
             </div>
             <div class="list_element_right">
-              <h4 class="dropdown_heading">25 min.</h4>
-              <div>
-                <select name="importance">
-                  <option value="required">Required</option>
-                  <option value="important">Important</option>
-                  <option value="preferred" selected>Preferred</option>
-                  <option value="no_thanks">No thanks</option>
-                </select>              
+              <h4>25 min.</h4>
+              <div class="importance" id="-1">
+                <span id="ban" class="fa fa-ban fa-2x rating"></span>
+                <span id="preferred" class="fa fa-star fa-2x rating checked"></span>
+                <span id="important" class="fa fa-star fa-2x rating"></span>
+                <span id="required" class="fa fa-star fa-2x rating"></span>
               </div>            
             </div>
           </div>        
@@ -63,15 +61,13 @@
               </div>           
             </div>
             <div class="list_element_right">
-              <h4 class="dropdown_heading">45 min.</h4>
-              <div>
-                <select name="importance">
-                  <option value="required">Required</option>
-                  <option value="important">Important</option>
-                  <option value="preferred" selected>Preferred</option>
-                  <option value="no_thanks">No thanks</option>
-                </select>              
-              </div>            
+              <h4>45 min.</h4>
+              <div class="importance" id="-1">
+                <span id="ban" class="fa fa-ban fa-2x rating"></span>
+                <span id="preferred" class="fa fa-star fa-2x rating checked"></span>
+                <span id="important" class="fa fa-star fa-2x rating"></span>
+                <span id="required" class="fa fa-star fa-2x rating"></span>
+              </div>              
             </div>
           </div>        
         </li>
@@ -88,15 +84,13 @@
               </div>           
             </div>
             <div class="list_element_right">
-              <h4 class="dropdown_heading">10 min.</h4>
-              <div>
-                <select name="importance">
-                  <option value="required">Required</option>
-                  <option value="important">Important</option>
-                  <option value="preferred" selected>Preferred</option>
-                  <option value="no_thanks">No thanks</option>
-                </select>              
-              </div>            
+              <h4>10 min.</h4>
+              <div class="importance" id="-1">
+                <span id="ban" class="fa fa-ban fa-2x rating"></span>
+                <span id="preferred" class="fa fa-star fa-2x rating checked"></span>
+                <span id="important" class="fa fa-star fa-2x rating"></span>
+                <span id="required" class="fa fa-star fa-2x rating"></span>
+              </div>             
             </div>
           </div>        
         </li>
@@ -121,4 +115,58 @@
     </a>       
   </div>  
 </div>
+
+<script>
+  load();
+
+  function rate(event) {
+    const targetType = event.target.id
+    const banNode = event.target.parentNode.querySelector("#ban")
+    const preferredNode = event.target.parentNode.querySelector("#preferred")
+    const importantNode = event.target.parentNode.querySelector("#important")
+    const requiredNode = event.target.parentNode.querySelector("#required")
+
+    if (targetType === "ban") {
+      banNode.classList.add("checked")
+      preferredNode.classList.remove("checked")
+      importantNode.classList.remove("checked")
+      requiredNode.classList.remove("checked")
+    } else {
+      banNode.classList.remove("checked")
+      switch (targetType) {
+        case "preferred": {
+          preferredNode.classList.add("checked");
+          importantNode.classList.remove("checked");
+          requiredNode.classList.remove("checked");
+          break;
+        }
+        case "important": {
+          preferredNode.classList.add("checked");
+          importantNode.classList.add("checked");
+          requiredNode.classList.remove("checked");
+          break;
+        }
+        case "required": {
+          preferredNode.classList.add("checked");
+          importantNode.classList.add("checked");
+          requiredNode.classList.add("checked");
+          break;
+        }
+      }
+    }
+
+
+  }
+
+  function load() {
+    const ratings = document.querySelectorAll(".rating")
+    ratings.forEach(r => {
+      r.addEventListener("click", rate)
+
+    })    
+  }
+
+
+
+</script>
 <%- include("../partials/footer") %>

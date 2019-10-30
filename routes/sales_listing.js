@@ -59,12 +59,12 @@ router.get("/show", (req, res) => {
         strata_plan_number: "BCS2025",
         sales_listing_grade: "B-",
         sales_listing_pros: [
-          "15 min. ride to work",
-          "5 min. walk to cafe",
           "Accessible Facilities",
           "In-unit laundry",
           "On-site Gym",
-          "On-site Storage Locker"
+          "On-site Storage Locker",
+          "15 min. ride to work",
+          "5 min. walk to cafe"        
         ],
         sales_listing_cons: [
           "2 BR/1 ba - 121% of budget",

@@ -21,17 +21,6 @@
                     </div>
                   <% } %>
                   
-                  <!-- <div class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>
-                    <img src="https://assets-listings.rew.ca/brc_idx_rew/brc/R2400319/20190904202041/01.jpeg?trim=auto&fit=crop&w=992&h=745" style="height:500px; width:500px;">
-                  </div>
-                  
-                  <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
-                    <img src="http://s3.amazonaws.com/mrp-listings/3/9/8/73370893/cd0584f3b49b757a807c97f299694e85.jpeg" style="height:500px; width:500px;">
-                  </div> -->
-                  <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a>                   -->
                   <a class="prev" onclick="plusSlideForStrataListing(-1)">&#10094;</a>
                   <a class="next" onclick="plusSlideForStrataListing(1)">&#10095;</a>
                   <div style="text-align:center">
@@ -43,31 +32,6 @@
                     <span class="dot" onclick="currentSlideForStrataListing(3)"></span> 
                   </div>                  
                 </div>
-
-                <!-- <div class="slideshow-container">
-                  <div class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
-                    <img src="https://www.vancitylofts.com/images/2013/04/17/exterior.jpg&w=576" style="height:500px; width:500px;">
-                  </div>
-                  
-                  <div class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>
-                    <img src="https://assets-listings.rew.ca/brc_idx_rew/brc/R2400319/20190904202041/01.jpeg?trim=auto&fit=crop&w=992&h=745" style="height:500px; width:500px;">
-                  </div>
-                  
-                  <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
-                    <img src="http://s3.amazonaws.com/mrp-listings/3/9/8/73370893/cd0584f3b49b757a807c97f299694e85.jpeg" style="height:500px; width:500px;">
-                  </div>
-                  
-                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                  <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span> 
-                  </div>                  
-                </div> -->
 
                 <div class="strata_listing_data">
                   <div class="strata_listing_name">
@@ -81,7 +45,6 @@
                     </a> 
                   </div>
 
-              
                   <div class="strata_details"> 
                     <ul>
                       <li>
@@ -122,7 +85,7 @@
                 <div class="strata_listing_right_top">
                   <!-- <div class="h0">A+</div> -->
                   <div class="h0"><%= strata_corporation.strata_grade%></div>
-                  <div class="heart">
+                  <div class="heart" id="<%= strata_corporation.name + ' ' + strata_corporation.strata_grade%>">
                     <i class="far fa-heart fa-5x"></i>
                   </div> 
                 </div>
@@ -167,10 +130,34 @@
 
 
 <script>
-  var slideIndex = 1;
+  function load() {
+    const hearts = document.querySelectorAll(".heart")
+    hearts.forEach(heart => {
+      heart.addEventListener("click", toggleHeart)
+    })
 
-  //showSlides(slideIndex);
+//    const checkBoxes = document.querySelectorAll(".lifestyle_checkbox")
+//    console.log(checkBoxes)
+//    checkBoxes.forEach(l => {
+//      l.addEventListener("click", toggleRatings)
+//    })    
+  }
+
+  load();
+  var slideIndex = 1;
   showSlidesForStrataListings();
+
+  function toggleHeart(event) {
+    const strataName = event.currentTarget.id
+//    const currentState = event.target.classList.contains("fas") ? "selected" : "unselected"
+    const favouriteStratas = document.querySelector(".sidebar_favourite_stratas")
+    htmlString = "<div class='favourite_strata'>" +
+      strataName +
+      "</div>"  
+    event.target.classList.toggle("fas");
+    event.target.classList.toggle("far");
+    favouriteStratas.insertAdjacentHTML('beforeend', htmlString);
+  }
 
   function plusSlides(n) {
     showSlides(slideIndex += n);
