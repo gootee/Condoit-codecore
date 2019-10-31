@@ -37,6 +37,12 @@ p {
   font-size: 20pt;
 }
 
+.p2 {
+  color: white;
+  /* margin-bottom: 1.25em; */
+  font-size: 14pt;
+}
+
 /* h1,
 h2,
 h3,
@@ -259,6 +265,10 @@ small,
   margin: 0 20px 0 0;
 }
 
+.detail_item_data {
+  margin: 0 0 10px 0;
+}
+
 .strata_listing_data {
   display: flex;
   flex-direction: column;
@@ -298,6 +308,17 @@ small,
   display: flex;
   flex-direction: row;
   align-content: space-between;
+  align-items: center;
+}
+
+.navbar_right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user_name_display {
+  margin: 0 25px 0 0;
 }
 
 .app_area {
@@ -549,8 +570,7 @@ small,
   flex-direction: row;
   flex-wrap: wrap;
   margin: 40px;
-  /* width: 200px;
-  height: 200px; */
+  max-width: 900px;
 }
 
 .strata_show_cover_image {
@@ -564,10 +584,27 @@ small,
 
 .strata_show_sales_listing {
   display: flex;
-  flex-direction: column;
-  width: 200px;
-  height: 200px;
+  flex-direction: row;
+  margin: 0 0 35px 0;
+  /* width: 200px;
+  height: 200px; */
 }
+
+.strata_show_sales_listing_information {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.strata_show_sales_listing_information_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 150px;
+} 
 
 .strata_show_list_item {
   display: flex;
@@ -790,13 +827,14 @@ small,
 }
 
 /* financial */
-/* .financial_container {
-  background-image: url(../images/budget.png);
+.financial_container {
+  /* background-image: url(../images/budget.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  height: 100vh;
-} */
+  height: 100vh; */
+  /* opacity: 0.25; */
+}
 
 .financials {
   display: flex;
@@ -1010,7 +1048,7 @@ small,
   display: flex;
   /* width: auto; */
   flex-direction: row;
-  justify-content: flex_start;
+  justify-content: center;
 }
 
 .list_plus {
@@ -1031,6 +1069,7 @@ small,
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  /* justify-content: center; */
 }
 
 .list_element {
@@ -1041,18 +1080,32 @@ small,
   margin: 20px 0 20px 0;
 }
 
+.lifestyle_list_element {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 0 20px 0;
+}
+
 .list_element_left {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  min-width: 500px;
 }
 
 .list_element_right {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
+  /* min-width: 350px; */
+}
+
+.importance {
+  margin: 0 0 0 20px;
 }
 
 .list_item_cover_image {

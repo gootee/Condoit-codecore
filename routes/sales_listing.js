@@ -57,22 +57,30 @@ router.get("/show", (req, res) => {
         // number: "BR549",
         // name: "Koret",
         strata_plan_number: "BCS2025",
-        sales_listing_grade: "B-",
+        sales_listing_grade: "B+",
         sales_listing_pros: [
           "Accessible Facilities",
           "In-unit laundry",
           "On-site Gym",
           "On-site Storage Locker",
-          "15 min. ride to work",
-          "5 min. walk to cafe"        
+          "Reserved parking space",              
+          "15 min. train to ABC Company",
+          "5 min. walk to cafe"
         ],
         sales_listing_cons: [
           "2 BR/1 ba - 121% of budget",
           "No garden available",
           "No dishwasher",
           "No fireplace",
+          "25 min. ride to CodeCore",
           "Smoking allowed in building",
           "No on-site hot tub"
+        ],
+        listing_photos: [
+          "https://media.pixilinkserver.com/R/241/43/16/R2414316-1.jpg?s=blu&w=576&h=405&t=y",
+          "https://media.pixilinkserver.com/R/240/40/51/R2404051-1.jpg?s=blu&w=576&h=405&t=y",
+          "https://media.pixilinkserver.com/R/240/71/92/R2407192-1.jpg?s=blu&w=576&h=405&t=y",
+          "https://media.pixilinkserver.com/R/241/43/16/R2414316-1.jpg?s=blu&w=576&h=405&t=y",       
         ]
       }
       res.render("sales_listing/show",{

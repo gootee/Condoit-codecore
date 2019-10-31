@@ -10,6 +10,7 @@
             <h1>Financial</h1>
           </div>
         </li>
+
         <li>
           <div class="list_element">
             <div class="list_element_left">
@@ -38,6 +39,7 @@
             </div>
           </div>        
         </li>
+
         <li>
           <div class="profile_show_financial_section">
             <div class="list_element_left">
@@ -63,6 +65,7 @@
             </div>
           </div>        
         </li>
+
         <li>
           <div class="profile_show_financial_section">
             <div class="list_element_left">
@@ -89,66 +92,49 @@
                   </div>                
                 </div>
                 <div class="savings_group">
-                    <div class="explanation_component">
-                      <p>My current personal savings (for </p>
-                      <p>unanticipated housing expenses) </p>
-                    </div>
-                    <div class="savings_amount">
-                      <select name="savings_dollars">
-                        <option value="under_10k">Less than $10,000</option>
-                        <option value="under_25k">$10,000 to $25,000</option>
-                        <option value="under_50k">$25,000 to $50,000</option>
-                        <option value="under_100k">$50,000 to $100,000</option>
-                        <option value="100K_plus">$100,000 +</option>
-                      </select>                   
-                    </div>
-                  </div>   
-
-
+                  <div class="explanation_component">
+                    <p>My current personal savings (for </p>
+                    <p>unanticipated housing expenses) </p>
+                  </div>
+                  <div class="savings_amount">
+                    <select name="savings_dollars">
+                      <option value="under_10k">Less than $10,000</option>
+                      <option value="under_25k">$10,000 to $25,000</option>
+                      <option value="under_50k">$25,000 to $50,000</option>
+                      <option value="under_100k">$50,000 to $100,000</option>
+                      <option value="100K_plus">$100,000 +</option>
+                    </select>                   
+                  </div>
+                </div>   
               </div> 
             </div>
           </div>        
         </li>
+
         <li>
-            <div class="profile_show_financial_section">
-              <div class="list_element_left">
-                <!-- <div class="list_item_cover_image">
-                  <i class="far fa-user fa-3x"></i>
-                </div>  -->
-                <div class="">
-                  <div class="primary_data">
-                    <h4>Lender</h4>  
-                  </div>
-                  <div class="lender_checkbox">
-                    <input type="checkbox" class="unit_checkbox" name="dishwasher" value="dishwasher">
-                    <p for="lender_preapproved">I've been pre-approved for my mortgage: </p>
-                  </div>
-                  <div class="lender_group">  
-                    <input class="lender_info" type="text" name="lender_name" placeholder="Lender Name">
-                    <input class="lender_info" type="text" name="lender_email" placeholder="Email">
-                  </div>
-                </div> 
-              </div>
-            </div>        
-          </li>
+          <div class="profile_show_financial_section">
+            <div class="list_element_left">
+              <!-- <div class="list_item_cover_image">
+                <i class="far fa-user fa-3x"></i>
+              </div>  -->
+              <div class="">
+                <div class="primary_data">
+                  <h4>Lender</h4>  
+                </div>
+                <div class="lender_checkbox">
+                  <input type="checkbox" class="lifestyle_checkbox" name="lender" value="lender">
+                  <p for="lender_preapproved">I've been pre-approved for my mortgage: </p>
+                </div>
+                <div class="lender_group">  
+                  <input class="lender_info display_off" type="text" name="lender_name" placeholder="Lender Name">
+                  <input class="lender_info display_off" type="text" name="lender_email" placeholder="Email">
+                </div>
+              </div> 
+            </div>
+          </div>        
+        </li>
       </ul>
     </div>
-
-
-<!-- 
-     
- 
-
-            <div class="lender financial_group">
-              <div class="financial_heading">
-                <h4></h4>
-              </div>
-
-
-
-            </div>  
-          </div>       
-        </div> -->
   </div>
 </div>
 
@@ -169,4 +155,21 @@
     </a>       
   </div>  
 </div>
+
+<script>
+  function toggleLender(event) {
+    const lender_info = document.querySelectorAll(".lender_info")
+    lender_info.forEach(l => {
+      event.target.checked ? l.classList.remove("display_off") : l.classList.add("display_off")
+    })
+  }
+
+  function load() {
+    const checkBox = document.querySelector(".lifestyle_checkbox")
+    checkBox.addEventListener("click", toggleLender)  
+  }
+
+  load();
+</script>
+
 <%- include("../partials/footer") %>

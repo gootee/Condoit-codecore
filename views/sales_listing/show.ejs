@@ -1,10 +1,27 @@
 <%- include("../partials/header") %>
 <div class="strata_container">
-  <%- include("../partials/sidenav") %>  
+  <%- include("../partials/sidenav") %> 
+
   <div class="strata_show_container">
-      <div class="details">
+    <div class="details">
+      <!-- <div class="slideshow-container">   
+        <% for (let i = 0; i < sales_listing.listing_photos.length; i++) { %>
+          <%= console.log(sales_listing.listing_photos[i]) %>
+          <div class="mySlides fade">
+            <img src=<%=sales_listing.listing_photos[i]%> style="height:500px; width:500px;">
+          </div>
+        <% } %>
+        
+        <a class="prev" onclick="plusSlideForStrataListing(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlideForStrataListing(1)">&#10095;</a>
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlideForStrataListing(1)"></span> 
+          <span class="dot" onclick="currentSlideForStrataListing(2)"></span> 
+          <span class="dot" onclick="currentSlideForStrataListing(3)"></span> 
+        </div>                  
+      </div> -->
+
         <div class="list_of_items">
-          <% console.log(sales_listing) %>
           <ul>
             <li>
               <div class="strata_show_heading">
@@ -15,7 +32,7 @@
                   </div>
                 </div> 
                 <div class="strata_show_top_right">
-                  <div class="heart" id="#403 Koret Lofts">
+                  <div class="heart" id="#403 Koret Lofts B+">
                     <i class="far fa-heart fa-5x"></i>
                   </div>  
                 </div>                 
@@ -35,14 +52,20 @@
                             <i class="far fa-building fa-2x"></i>
                           </div>
                           <div class="detail_item_description">
-                            <ul>
-                              <li><p>Price: $1,239,000</p></li>
-                              <li><p>Bedrooms: 2</p></li>
-                              <li><p>Bathrooms: 1</p></li>
-                              <li><p>Taxes(2019): $2,736</p></li>
-                              <li><p>Mnt. Fee: $389</p></li>
-                              <li><p>Size: 1,185 sqft</p></li>
-                            </ul>
+                            <div class="detail_item_data"><p>Price: $1,239,000</p></div>
+                            <div class="detail_item_data"><p>Bedrooms: 2</p></div>
+                            <div class="detail_item_data"><p>Bathrooms: 1</p></div>
+                            <div class="detail_item_data"><p>Taxes(2019): $2,736</p></div>
+                            <div class="detail_item_data"><p>Mnt. Fee: $389</p></div>
+                            <div class="detail_item_data"><p>Size: 1,185 sqft</p></div>
+                            <!-- <ul>
+                              <li></li>
+                              <li><p></p></li>
+                              <li><p></p></li>
+                              <li><p></p></li>
+                              <li><p></p></li>
+                              <li><p></p></li>
+                            </ul> -->
                           </div>
                         </div>
                       </li>
@@ -57,16 +80,6 @@
                               <li><p>Gastown (East)</p></li>
                               <li><p>Vancouver, BC</p></li>
                             </ul>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="detail_item">
-                          <div class="detail_item_icon fa-2x">
-                            <i class="fas fa-user-tie"></i>
-                          </div>
-                          <div class="detail_item_description">
-                            <p>3 Units for sale</p>
                           </div>
                         </div>
                       </li>
@@ -346,9 +359,161 @@
   </div>
   </div>
 
-<script>
-  function load () {
 
+  <!-- <script>
+    function load() {
+      const hearts = document.querySelectorAll(".heart")
+      hearts.forEach(heart => {
+        heart.addEventListener("click", toggleHeart)
+      })
+    }
+  
+    load();
+    var slideIndex = 1;
+    showSlidesForStrataListings();
+  
+    function toggleHeart(event) {
+      const strataName = event.currentTarget.id
+      const favouriteStratas = document.querySelector(".sidebar_favourite_stratas")
+      htmlString = "<div class='favourite_strata'>" +
+        strataName +
+        "</div>"  
+      event.target.classList.toggle("fas");
+      event.target.classList.toggle("far");
+      favouriteStratas.insertAdjacentHTML('beforeend', htmlString);
+    }
+  
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+  
+    function plusSlideForStrataListing(n) {
+      const strata_listing = document.getElementById(4396)
+      showSlidesForStrataListing(strata_listing, slideIndex += n);
+    }
+  
+    function currentSlideForStrataListing(n) {
+      const strata_listing = document.getElementsByID(4396)
+      
+      showSlidesForStrataListing(strata_listing, n)
+      //showSlides(slideIndex = n);
+    }
+    
+    function showSlidesForStrataListings() {
+      const strata_listings = document.querySelectorAll(".strata_listing")
+      strata_listings.forEach(strata_listing => {
+        showSlidesForStrataListing(strata_listing, 1)
+      })
+    }
+  
+    function showSlidesForStrataListing(strata_listing, n) {
+      let i;
+      let slides = strata_listing.getElementsByClassName("mySlides");
+      let dots = strata_listing.getElementsByClassName("dot");
+  
+  
+  
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+  
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+  </script> -->
+
+
+
+
+
+<script>
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function plusSlideForStrataListing(n) {
+    const strata_listing = document.getElementById(4396)
+    showSlidesForStrataListing(strata_listing, slideIndex += n);
+  }
+
+  function currentSlideForStrataListing(n) {
+    const strata_listing = document.getElementsByID(4396)
+    
+    showSlidesForStrataListing(strata_listing, n)
+    //showSlides(slideIndex = n);
+  }
+  
+  function showSlidesForStrataListings() {
+    const strata_listings = document.querySelectorAll(".strata_listing")
+    strata_listings.forEach(strata_listing => {
+      showSlidesForStrataListing(strata_listing, 1)
+    })
+  }
+
+  function showSlidesForStrataListing(strata_listing, n) {
+    let i;
+    let slides = strata_listing.getElementsByClassName("mySlides");
+    let dots = strata_listing.getElementsByClassName("dot");
+
+
+
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+
+  function load () {
     const strataName1 = "Koret Lofts A+"
     const strataName2 = "Canadian B"
 
@@ -373,6 +538,8 @@
   }
 
   load();
+  var slideIndex = 1;
+  showSlidesForStrataListings();
 
   function toggleHeart(event) {
     const unitName = event.currentTarget.id

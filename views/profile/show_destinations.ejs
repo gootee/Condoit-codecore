@@ -14,6 +14,11 @@
           </div>
         </li>
         <li>
+          <div class="list_subheading">
+            <p>(Where do you go?  How do you get there?)</p>
+          </div>
+        </li>
+        <li>
           <div class="list_element">
             <div class="list_element_left">
               <div class="list_item_cover_image">
@@ -33,15 +38,15 @@
             </div>
             <div class="list_element_right">
               <h4>25 min.</h4>
-              <div class="importance" id="-1">
-                <span id="ban" class="fa fa-ban fa-2x rating"></span>
+              <!-- <div class="importance" id="-1">
                 <span id="preferred" class="fa fa-star fa-2x rating checked"></span>
                 <span id="important" class="fa fa-star fa-2x rating"></span>
                 <span id="required" class="fa fa-star fa-2x rating"></span>
-              </div>            
+              </div>             -->
             </div>
           </div>        
         </li>
+
         <li>
           <div class="list_element">
             <div class="list_element_left">
@@ -62,15 +67,15 @@
             </div>
             <div class="list_element_right">
               <h4>45 min.</h4>
-              <div class="importance" id="-1">
-                <span id="ban" class="fa fa-ban fa-2x rating"></span>
+              <!-- <div class="importance" id="-1">
                 <span id="preferred" class="fa fa-star fa-2x rating checked"></span>
                 <span id="important" class="fa fa-star fa-2x rating"></span>
                 <span id="required" class="fa fa-star fa-2x rating"></span>
-              </div>              
+              </div>               -->
             </div>
           </div>        
         </li>
+
         <li>
           <div class="list_element">
             <div class="list_element_left">
@@ -85,12 +90,11 @@
             </div>
             <div class="list_element_right">
               <h4>10 min.</h4>
-              <div class="importance" id="-1">
-                <span id="ban" class="fa fa-ban fa-2x rating"></span>
+              <!-- <div class="importance" id="-1">
                 <span id="preferred" class="fa fa-star fa-2x rating checked"></span>
                 <span id="important" class="fa fa-star fa-2x rating"></span>
                 <span id="required" class="fa fa-star fa-2x rating"></span>
-              </div>             
+              </div>              -->
             </div>
           </div>        
         </li>
@@ -127,12 +131,12 @@
     const requiredNode = event.target.parentNode.querySelector("#required")
 
     if (targetType === "ban") {
-      banNode.classList.add("checked")
+//      banNode.classList.add("checked")
       preferredNode.classList.remove("checked")
       importantNode.classList.remove("checked")
       requiredNode.classList.remove("checked")
     } else {
-      banNode.classList.remove("checked")
+//      banNode.classList.remove("checked")
       switch (targetType) {
         case "preferred": {
           preferredNode.classList.add("checked");
@@ -154,8 +158,6 @@
         }
       }
     }
-
-
   }
 
   function load() {

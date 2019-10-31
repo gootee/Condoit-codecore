@@ -41,7 +41,7 @@ exports.seed = async function(knex, Promise) {
   let thisStrata
   for (let i = 1; i < number_of_strata_corporations - 1; i++) {
     thisStrata = strataCorporations[i].split(',');
-    console.log(i.toString() + " - " + thisStrata[4])
+    // console.log(i.toString() + " - " + thisStrata[4])
     thisStrata = formatStrataCorporation(strataCorporations[i].split(','));
 
     await knex('strata_corporations').insert(thisStrata)

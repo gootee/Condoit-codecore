@@ -86,12 +86,13 @@ router.get("/index", (req, res) => {
           if (data[i].id === '4396'){
             strata_grade = "A+";
             strata_pros = [
-              "15 min. ride to work",
+              "15 min. train to ABC Company",
               "5 min. walk to cafe",
               "Accessible Facilities"
             ];
             strata_cons = [
-              "2 BR/1 ba ~112% of budget",
+              "2 BR/1 ba ~115% of budget",
+              "25 min. ride to CodeCore",
               "No garden available"
             ];
           } else {
@@ -153,12 +154,12 @@ router.get("/show", (req, res) => {
   //     data.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1)
       const data = {
         id: 4396,
-        name: "Koret",
+        name: "Koret Lofts",
         strata_plan_number: "BCS2025",
         image_url: "https://www.vancitylofts.com/images/2013/04/17/exterior.jpg&w=576",
         strata_grade: "A+",
         strata_pros: [
-          "15 min. ride to ABC Company",
+          "15 min. train to ABC Company",
           "5 min. walk to cafe",
           "Accessible Facilities",
           "Olive allowed",
@@ -168,38 +169,43 @@ router.get("/show", (req, res) => {
         strata_cons: [
           "2 BR/1 ba ~112% of budget",
           "No garden available",
-          "20 min. ride to CodeCore",
+          "25 min. ride to CodeCore",
           "Smoking unprohibited",
           "No hot tub",
+          "No garden"
         ],
         sales_listings: [
           {
             image_url: "https://media.pixilinkserver.com/R/241/43/16/R2414316-1.jpg?s=blu&w=576&h=405&t=y",
             price: "$829,800",	
+            grade: "C-",
             bedrooms: "1 bed",
             bathrooms: "1 bath",
-            address: "205 55 E CORDOVA ST."
+            address: "#205"
           },
           {
             image_url: "https://media.pixilinkserver.com/R/240/40/51/R2404051-1.jpg?s=blu&w=576&h=405&t=y",
             price: "$897,000",	
+            grade: "D",
             bedrooms: "1 bed",
             bathrooms: "1 bath",
-            address: "402 55 E CORDOVA ST."
+            address: "#402"
           },
           {
             image_url: "https://media.pixilinkserver.com/R/240/71/92/R2407192-1.jpg?s=blu&w=576&h=405&t=y",
             price: "$1,199,000",	
+            grade: "C",
             bedrooms: "1 bed",
             bathrooms: "2 baths",
-            address: "47 E CORDOVA ST."
+            address: "#310"
           },
           {
             image_url: "https://media.pixilinkserver.com/R/241/43/16/R2414316-1.jpg?s=blu&w=576&h=405&t=y",
             price: "$1,239,000",	
+            grade: "B+",
             bedrooms: "2 beds",
             bathrooms: "1 bath",
-            address: "403 55 E CORDOVA ST."
+            address: "#403"
           }          
         ]
       }

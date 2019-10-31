@@ -10,7 +10,7 @@
               <div class="strata_show_heading">
                 <div class="strata_information_name">            
                   <div class="strata_information_name_data">
-                    <h2><%= strata_corporation.name%></h2>
+                    <h1><%= strata_corporation.name%></h1>
                     <h5><%= strata_corporation.strata_plan_number %>  (id: <%= strata_corporation.id%>)</h5>
                   </div>
                 </div> 
@@ -40,7 +40,6 @@
                               <li><p>Concrete Construction</p></li>
                               <li><p>118 units</p></li>
                               <li><p>Year built: 1906</p></li>
-                              
                             </ul>
                           </div>
                         </div>
@@ -294,24 +293,30 @@
             </li>
 
             <li>
-              <div class="strata_show_sales">
+              <div>
                 <h3>Unit listings</h3>
-                <div>
+                <div class="strata_show_sales">
                   <ul class="strata_show_sales_listings">
                     <% for (let i=0; i < strata_corporation.sales_listings.length; i++) { %>
                       <li>
                         <a href="/sales_listing/show">
                           <!-- <a href="/stratas/<%= strata_corporation.id %>"> -->
                           <div class="strata_show_sales_listing">
+                            <div class="strata_show_sales_listing_information">
+                              <div class="strata_show_sales_listing_information_heading">
+                                <h2><%=strata_corporation.sales_listings[i].grade%></h2>
+                                <h5><%=strata_corporation.sales_listings[i].address%></h5>
+                              </div>
+                              <div class="strata_show_sales_listing_information_data">
+                                <p><%=strata_corporation.sales_listings[i].price%></p>
+                                <p><%=strata_corporation.sales_listings[i].bedrooms%></p>
+                                <p><%=strata_corporation.sales_listings[i].bathrooms%></p>
+                              </div>
+ 
+                            </div> 
                             <div class="strata_show_cover_image">
                               <img src="<%=strata_corporation.sales_listings[i].image_url%>" style="height:200px; width:200px;">
-                            </div>
-                            <div class="strata_show_sales_listing_information">
-                              <p><%=strata_corporation.sales_listings[i].price%></p>
-                              <p><%=strata_corporation.sales_listings[i].bedrooms%></p>
-                              <p><%=strata_corporation.sales_listings[i].bathrooms%></p>
-                              <%=strata_corporation.sales_listings[i].address%>
-                            </div> 
+                            </div>                            
                           </div>             
                         </a> 
                       </li>
