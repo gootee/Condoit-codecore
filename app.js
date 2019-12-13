@@ -38,11 +38,7 @@ app.use(cookieParser());
 // cookie-parser middleware will look for cookies sent through the headers of
 // a request and create a req.cookies object that houses the cookie data
 app.use(getUsernameMiddleware);
-app.use(express.static(path.join(__dirname, 'public')));
-
-
-
-
+// app.use(express.static(path.join(__dirname, 'public')));
 
 //Models
 // const User = bookshelf.model('User', {
